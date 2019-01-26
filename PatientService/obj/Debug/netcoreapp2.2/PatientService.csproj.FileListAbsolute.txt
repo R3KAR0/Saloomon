@@ -1,0 +1,11 @@
+F:\Repos\saloomon\Server\GatewayService\PatientService\obj\Debug\netcoreapp2.2\PatientService.csproj.CoreCompileInputs.cache
+F:\Repos\saloomon\Server\GatewayService\PatientService\obj\Debug\netcoreapp2.2\PatientService.AssemblyInfoInputs.cache
+F:\Repos\saloomon\Server\GatewayService\PatientService\obj\Debug\netcoreapp2.2\PatientService.AssemblyInfo.cs
+F:\Repos\saloomon\Server\GatewayService\PatientService\bin\Debug\netcoreapp2.2\PatientService.deps.json
+F:\Repos\saloomon\Server\GatewayService\PatientService\bin\Debug\netcoreapp2.2\PatientService.runtimeconfig.json
+F:\Repos\saloomon\Server\GatewayService\PatientService\bin\Debug\netcoreapp2.2\PatientService.runtimeconfig.dev.json
+F:\Repos\saloomon\Server\GatewayService\PatientService\bin\Debug\netcoreapp2.2\PatientService.dll
+F:\Repos\saloomon\Server\GatewayService\PatientService\obj\Debug\netcoreapp2.2\PatientService.csprojAssemblyReference.cache
+F:\Repos\saloomon\Server\GatewayService\PatientService\obj\Debug\netcoreapp2.2\PatientService.RazorAssemblyInfo.cache
+F:\Repos\saloomon\Server\GatewayService\PatientService\obj\Debug\netcoreapp2.2\PatientService.RazorAssemblyInfo.cs
+F:\Repos\saloomon\Server\GatewayService\PatientService\obj\Debug\netcoreapp2.2\PatientService.RazorTargetAssemblyInfo.cache

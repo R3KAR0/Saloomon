@@ -1,0 +1,3 @@
+F:\Repos\saloomon\Server\GatewayService\SALOOMON\obj\Debug\netcoreapp2.2\SALOOMON.csproj.CoreCompileInputs.cache
+F:\Repos\saloomon\Server\GatewayService\SALOOMON\obj\Debug\netcoreapp2.2\SALOOMON.AssemblyInfoInputs.cache
+F:\Repos\saloomon\Server\GatewayService\SALOOMON\obj\Debug\netcoreapp2.2\SALOOMON.AssemblyInfo.cs

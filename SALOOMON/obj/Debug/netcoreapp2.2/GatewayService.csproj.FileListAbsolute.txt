@@ -1,0 +1,11 @@
+F:\Repos\saloomon\Server\GatewayService\SALOOMON\bin\Debug\netcoreapp2.2\LogService.dll
+F:\Repos\saloomon\Server\GatewayService\SALOOMON\bin\Debug\netcoreapp2.2\RequestMessages.dll
+F:\Repos\saloomon\Server\GatewayService\SALOOMON\bin\Debug\netcoreapp2.2\ResponseMessages.dll
+F:\Repos\saloomon\Server\GatewayService\SALOOMON\bin\Debug\netcoreapp2.2\UserService.dll
+F:\Repos\saloomon\Server\GatewayService\SALOOMON\obj\Debug\netcoreapp2.2\GatewayService.csprojAssemblyReference.cache
+F:\Repos\saloomon\Server\GatewayService\SALOOMON\obj\Debug\netcoreapp2.2\GatewayService.csproj.CoreCompileInputs.cache
+F:\Repos\saloomon\Server\GatewayService\SALOOMON\obj\Debug\netcoreapp2.2\GatewayService.RazorAssemblyInfo.cache
+F:\Repos\saloomon\Server\GatewayService\SALOOMON\obj\Debug\netcoreapp2.2\GatewayService.RazorAssemblyInfo.cs
+F:\Repos\saloomon\Server\GatewayService\SALOOMON\obj\Debug\netcoreapp2.2\GatewayService.AssemblyInfoInputs.cache
+F:\Repos\saloomon\Server\GatewayService\SALOOMON\obj\Debug\netcoreapp2.2\GatewayService.AssemblyInfo.cs
+F:\Repos\saloomon\Server\GatewayService\SALOOMON\obj\Debug\netcoreapp2.2\GatewayService.RazorTargetAssemblyInfo.cache

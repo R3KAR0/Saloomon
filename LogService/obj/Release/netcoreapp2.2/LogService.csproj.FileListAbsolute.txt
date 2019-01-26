@@ -1,0 +1,6 @@
+F:\Repos\GitLab\saloomon-dotnet\LogService\obj\Release\netcoreapp2.2\LogService.csprojAssemblyReference.cache
+F:\Repos\GitLab\saloomon-dotnet\LogService\obj\Release\netcoreapp2.2\LogService.csproj.CoreCompileInputs.cache
+F:\Repos\GitLab\saloomon-dotnet\LogService\obj\Release\netcoreapp2.2\LogService.RazorAssemblyInfo.cache
+F:\Repos\GitLab\saloomon-dotnet\LogService\obj\Release\netcoreapp2.2\LogService.RazorAssemblyInfo.cs
+F:\Repos\GitLab\saloomon-dotnet\LogService\obj\Release\netcoreapp2.2\LogService.AssemblyInfoInputs.cache
+F:\Repos\GitLab\saloomon-dotnet\LogService\obj\Release\netcoreapp2.2\LogService.AssemblyInfo.cs

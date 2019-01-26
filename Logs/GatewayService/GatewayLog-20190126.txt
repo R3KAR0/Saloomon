@@ -1,0 +1,102 @@
+2019-01-26 17:22:50.011 +01:00 [Debug] Starting bus hosts...
+2019-01-26 17:22:50.242 +01:00 [Debug] Connecting: "admin@localhost:5672/"
+2019-01-26 17:22:50.574 +01:00 [Debug] Connected: "admin@localhost:5672/" (address: "amqp://localhost:5672", local: 56830)
+2019-01-26 17:22:50.831 +01:00 [Debug] Declare exchange ("name: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmpywbdme8kwdnx, type: fanout, auto-delete")
+2019-01-26 17:22:50.846 +01:00 [Debug] Declare queue ("name: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmpywbdme8kwdnx, x-expires: 60000")
+2019-01-26 17:22:50.865 +01:00 [Debug] Bind exchange to queue ("source: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmpywbdme8kwdnx, destination: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmpywbdme8kwdnx")
+2019-01-26 17:22:50.886 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-26 17:22:51.058 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmpywbdme8kwdnx?durable=false&autodelete=true - "amq.ctag-PJegG1-yyNo2xRcnpIjvKg"
+2019-01-26 17:23:33.442 +01:00 [Debug] Starting bus hosts...
+2019-01-26 17:23:33.640 +01:00 [Debug] Connecting: "admin@localhost:5672/"
+2019-01-26 17:23:33.919 +01:00 [Debug] Connected: "admin@localhost:5672/" (address: "amqp://localhost:5672", local: 56838)
+2019-01-26 17:23:34.101 +01:00 [Debug] Declare exchange ("name: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmopdbdme8kw7b5, type: fanout, auto-delete")
+2019-01-26 17:23:34.113 +01:00 [Debug] Declare queue ("name: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmopdbdme8kw7b5, x-expires: 60000")
+2019-01-26 17:23:34.130 +01:00 [Debug] Bind exchange to queue ("source: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmopdbdme8kw7b5, destination: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmopdbdme8kw7b5")
+2019-01-26 17:23:34.157 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-26 17:23:34.323 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmopdbdme8kw7b5?durable=false&autodelete=true - "amq.ctag-f8G11KqP6UmqLc4DjfoxKA"
+2019-01-26 19:14:14.327 +01:00 [Debug] Starting bus hosts...
+2019-01-26 19:14:14.527 +01:00 [Debug] Connecting: "admin@localhost:5672/"
+2019-01-26 19:14:14.820 +01:00 [Debug] Connected: "admin@localhost:5672/" (address: "amqp://localhost:5672", local: 58102)
+2019-01-26 19:14:15.042 +01:00 [Debug] Declare exchange ("name: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybkkoebdme8qourd, type: fanout, auto-delete")
+2019-01-26 19:14:15.071 +01:00 [Debug] Declare queue ("name: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybkkoebdme8qourd, x-expires: 60000")
+2019-01-26 19:14:15.090 +01:00 [Debug] Bind exchange to queue ("source: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybkkoebdme8qourd, destination: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybkkoebdme8qourd")
+2019-01-26 19:14:15.117 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-26 19:14:15.282 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybkkoebdme8qourd?durable=false&autodelete=true - "amq.ctag-ZbTdVjzT5EVYlLea0RbP9g"
+2019-01-26 19:14:50.757 +01:00 [Information] Login was requested by ::1
+2019-01-26 19:14:50.941 +01:00 [Debug] Creating model: "admin@localhost:5672/"
+2019-01-26 19:14:51.008 +01:00 [Debug] Declare exchange ("name: users_login_queue, type: fanout, durable")
+2019-01-26 19:14:51.185 +01:00 [Debug] SEND rabbitmq://localhost/users_login_queue d1000000-5d81-0015-0a10-08d683ba29f0 UserServiceRequestMessages.LoginRequest
+2019-01-26 19:14:53.784 +01:00 [Debug] RECEIVE rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybkkoebdme8qourd?durable=false&autodelete=true d1000000-5d81-0015-636e-08d683ba2b63 UserServiceResponseMessages.LoginResponse MassTransit.MessageHandler<UserServiceResponseMessages.LoginResponse>(00:00:00.0458830)
+2019-01-26 19:14:53.816 +01:00 [Debug] Creating model: "admin@localhost:5672/"
+2019-01-26 19:14:53.826 +01:00 [Debug] Declare exchange ("name: LogServiceRequestMessages:LogRequest, type: fanout, durable")
+2019-01-26 19:14:53.880 +01:00 [Debug] SEND rabbitmq://localhost/LogServiceRequestMessages:LogRequest d1000000-5d81-0015-9245-08d683ba2b9c LogServiceRequestMessages.LogRequest
+2019-01-26 19:14:54.557 +01:00 [Information] Login was requested by ::1
+2019-01-26 19:14:54.578 +01:00 [Debug] SEND rabbitmq://localhost/users_login_queue d1000000-5d81-0015-8e95-08d683ba2c0b UserServiceRequestMessages.LoginRequest
+2019-01-26 19:14:54.609 +01:00 [Debug] RECEIVE rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybkkoebdme8qourd?durable=false&autodelete=true d1000000-5d81-0015-b1a7-08d683ba2c10 UserServiceResponseMessages.LoginResponse MassTransit.MessageHandler<UserServiceResponseMessages.LoginResponse>(00:00:00.0032721)
+2019-01-26 19:14:54.611 +01:00 [Debug] SEND rabbitmq://localhost/LogServiceRequestMessages:LogRequest d1000000-5d81-0015-a352-08d683ba2c12 LogServiceRequestMessages.LogRequest
+2019-01-26 20:57:50.562 +01:00 [Debug] Starting bus hosts...
+2019-01-26 20:57:50.751 +01:00 [Debug] Connecting: "admin@localhost:5672/"
+2019-01-26 20:57:51.019 +01:00 [Debug] Connected: "admin@localhost:5672/" (address: "amqp://localhost:5672", local: 58987)
+2019-01-26 20:57:51.219 +01:00 [Debug] Declare exchange ("name: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmxjgbdme81rcfz, type: fanout, auto-delete")
+2019-01-26 20:57:51.233 +01:00 [Debug] Declare queue ("name: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmxjgbdme81rcfz, x-expires: 60000")
+2019-01-26 20:57:51.249 +01:00 [Debug] Bind exchange to queue ("source: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmxjgbdme81rcfz, destination: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmxjgbdme81rcfz")
+2019-01-26 20:57:51.266 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-26 20:57:51.379 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmxjgbdme81rcfz?durable=false&autodelete=true - "amq.ctag-a6nJk7O2RSYa_YRtvTHyXA"
+2019-01-26 20:59:49.776 +01:00 [Debug] Starting bus hosts...
+2019-01-26 20:59:49.949 +01:00 [Debug] Connecting: "admin@localhost:5672/"
+2019-01-26 20:59:50.244 +01:00 [Debug] Connected: "admin@localhost:5672/" (address: "amqp://localhost:5672", local: 59016)
+2019-01-26 20:59:50.443 +01:00 [Debug] Declare exchange ("name: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybm9kqbdme81gugj, type: fanout, auto-delete")
+2019-01-26 20:59:50.458 +01:00 [Debug] Declare queue ("name: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybm9kqbdme81gugj, x-expires: 60000")
+2019-01-26 20:59:50.479 +01:00 [Debug] Bind exchange to queue ("source: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybm9kqbdme81gugj, destination: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybm9kqbdme81gugj")
+2019-01-26 20:59:50.515 +01:00 [Debug] Setting Prefetch Count: 32
+2019-01-26 20:59:50.634 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybm9kqbdme81gugj?durable=false&autodelete=true - "amq.ctag-h7AgQtrwtPu2IEdUmH8YXA"
+2019-01-26 20:59:52.151 +01:00 [Debug] Stopping hosts...
+2019-01-26 20:59:52.175 +01:00 [Debug] Stopping consumer: rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybm9kqbdme81gugj?durable=false&autodelete=true
+2019-01-26 20:59:52.190 +01:00 [Debug] Consumer Cancel Ok: rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybm9kqbdme81gugj?durable=false&autodelete=true - "amq.ctag-h7AgQtrwtPu2IEdUmH8YXA"
+2019-01-26 20:59:52.196 +01:00 [Debug] Consumer completed "amq.ctag-h7AgQtrwtPu2IEdUmH8YXA": 0 received, 0 concurrent
+2019-01-26 20:59:52.203 +01:00 [Debug] Closing model: 1 / "admin@localhost:5672/"
+2019-01-26 20:59:52.258 +01:00 [Debug] Disconnecting: "admin@localhost:5672/"
+2019-01-26 20:59:52.273 +01:00 [Debug] Disconnected: "admin@localhost:5672/"
+2019-01-26 21:00:15.279 +01:00 [Debug] Starting bus hosts...
+2019-01-26 21:00:15.459 +01:00 [Debug] Connecting: "admin@localhost:5672/"
+2019-01-26 21:00:15.750 +01:00 [Debug] Connected: "admin@localhost:5672/" (address: "amqp://localhost:5672", local: 59022)
+2019-01-26 21:00:15.923 +01:00 [Debug] Declare exchange ("name: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybm3dsbdme818n8h, type: fanout, auto-delete")
+2019-01-26 21:00:15.941 +01:00 [Debug] Declare queue ("name: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybm3dsbdme818n8h, x-expires: 60000")
+2019-01-26 21:00:15.955 +01:00 [Debug] Bind exchange to queue ("source: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybm3dsbdme818n8h, destination: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybm3dsbdme818n8h")
+2019-01-26 21:00:15.972 +01:00 [Debug] Setting Prefetch Count: 50
+2019-01-26 21:00:16.121 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybm3dsbdme818n8h?durable=false&autodelete=true - "amq.ctag-u2FqzMKaRjwL7hLh2gGArA"
+2019-01-26 21:00:31.695 +01:00 [Debug] Stopping hosts...
+2019-01-26 21:00:31.719 +01:00 [Debug] Stopping consumer: rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybm3dsbdme818n8h?durable=false&autodelete=true
+2019-01-26 21:00:31.733 +01:00 [Debug] Consumer Cancel Ok: rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybm3dsbdme818n8h?durable=false&autodelete=true - "amq.ctag-u2FqzMKaRjwL7hLh2gGArA"
+2019-01-26 21:00:31.739 +01:00 [Debug] Consumer completed "amq.ctag-u2FqzMKaRjwL7hLh2gGArA": 0 received, 0 concurrent
+2019-01-26 21:00:31.752 +01:00 [Debug] Closing model: 1 / "admin@localhost:5672/"
+2019-01-26 21:00:31.803 +01:00 [Debug] Disconnecting: "admin@localhost:5672/"
+2019-01-26 21:00:31.811 +01:00 [Debug] Disconnected: "admin@localhost:5672/"
+2019-01-26 21:01:51.301 +01:00 [Debug] Starting bus hosts...
+2019-01-26 21:01:51.477 +01:00 [Debug] Connecting: "admin@localhost:5672/"
+2019-01-26 21:01:51.744 +01:00 [Debug] Connected: "admin@localhost:5672/" (address: "amqp://localhost:5672", local: 59035)
+2019-01-26 21:01:51.945 +01:00 [Debug] Declare exchange ("name: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmhfmbdme81ehbz, type: fanout, auto-delete")
+2019-01-26 21:01:51.963 +01:00 [Debug] Declare queue ("name: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmhfmbdme81ehbz, x-expires: 60000")
+2019-01-26 21:01:51.984 +01:00 [Debug] Bind exchange to queue ("source: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmhfmbdme81ehbz, destination: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmhfmbdme81ehbz")
+2019-01-26 21:01:52.004 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-26 21:01:52.137 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmhfmbdme81ehbz?durable=false&autodelete=true - "amq.ctag-tu_Hgh0GpT3_0m8js3qvRQ"
+2019-01-26 21:03:19.717 +01:00 [Debug] Starting bus hosts...
+2019-01-26 21:03:19.879 +01:00 [Debug] Connecting: "admin@localhost:5672/"
+2019-01-26 21:03:20.180 +01:00 [Debug] Connected: "admin@localhost:5672/" (address: "amqp://localhost:5672", local: 59044)
+2019-01-26 21:03:20.403 +01:00 [Debug] Declare exchange ("name: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmphhbdme81ko8b, type: fanout, auto-delete")
+2019-01-26 21:03:20.418 +01:00 [Debug] Declare queue ("name: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmphhbdme81ko8b, x-expires: 60000")
+2019-01-26 21:03:20.432 +01:00 [Debug] Bind exchange to queue ("source: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmphhbdme81ko8b, destination: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmphhbdme81ko8b")
+2019-01-26 21:03:20.449 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-26 21:03:20.593 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmphhbdme81ko8b?durable=false&autodelete=true - "amq.ctag-wrxnVjPMcPSBPziHqsHSTg"
+2019-01-26 21:04:54.021 +01:00 [Debug] Starting bus hosts...
+2019-01-26 21:04:54.204 +01:00 [Debug] Connecting: "admin@localhost:5672/"
+2019-01-26 21:04:54.464 +01:00 [Debug] Connected: "admin@localhost:5672/" (address: "amqp://localhost:5672", local: 59054)
+2019-01-26 21:04:54.645 +01:00 [Debug] Declare exchange ("name: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmjwbbdme81cjy6, type: fanout, auto-delete")
+2019-01-26 21:04:54.661 +01:00 [Debug] Declare queue ("name: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmjwbbdme81cjy6, x-expires: 60000")
+2019-01-26 21:04:54.673 +01:00 [Debug] Bind exchange to queue ("source: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmjwbbdme81cjy6, destination: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmjwbbdme81cjy6")
+2019-01-26 21:04:54.689 +01:00 [Debug] Setting Prefetch Count: 50
+2019-01-26 21:04:54.868 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmjwbbdme81cjy6?durable=false&autodelete=true - "amq.ctag-iKRWGWaots-tib4I3xNYFg"
+2019-01-26 21:05:01.202 +01:00 [Information] Login was requested by ::1
+2019-01-26 21:05:01.379 +01:00 [Debug] Creating model: "admin@localhost:5672/"
+2019-01-26 21:05:01.397 +01:00 [Debug] Declare exchange ("name: users_login_queue, type: fanout, durable")
+2019-01-26 21:05:01.568 +01:00 [Debug] SEND rabbitmq://localhost/users_login_queue d1000000-5d81-0015-be02-08d683c98e09 UserServiceRequestMessages.LoginRequest
