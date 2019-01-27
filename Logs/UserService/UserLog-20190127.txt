@@ -1,0 +1,589 @@
+2019-01-27 07:28:19.425 +01:00 [Debug] Subscribing Consumer: "UserService.Consumers.LoginRequestConsumer" (by type, using object consumer factory)
+2019-01-27 07:28:19.525 +01:00 [Debug] Subscribing Consumer: "UserService.Consumers.RegisterRequestConsumer" (by type, using object consumer factory)
+2019-01-27 07:28:19.529 +01:00 [Debug] Subscribing Consumer: "UserService.Consumers.AllUsersRequestConsumer" (by type, using object consumer factory)
+2019-01-27 07:28:19.533 +01:00 [Debug] Subscribing Consumer: "UserService.Consumers.OneUserRequestConsumer" (by type, using object consumer factory)
+2019-01-27 07:28:19.540 +01:00 [Debug] Subscribing Consumer: "UserService.Consumers.DeleteUserRequestConsumer" (by type, using object consumer factory)
+2019-01-27 07:28:19.545 +01:00 [Debug] Subscribing Consumer: "UserService.Consumers.UpdateUserRequestConsumer" (by type, using object consumer factory)
+2019-01-27 07:28:19.550 +01:00 [Debug] Subscribing Consumer: "UserService.Consumers.CreateAdminConsumer" (by type, using object consumer factory)
+2019-01-27 07:28:20.580 +01:00 [Debug] Starting bus hosts...
+2019-01-27 07:28:20.723 +01:00 [Debug] Connecting: "admin@localhost:5672/"
+2019-01-27 07:28:20.960 +01:00 [Debug] Connected: "admin@localhost:5672/" (address: "amqp://localhost:5672", local: 51645)
+2019-01-27 07:28:21.106 +01:00 [Debug] Declare exchange ("name: users_registration_queue, type: fanout, durable")
+2019-01-27 07:28:21.107 +01:00 [Debug] Declare exchange ("name: users_getAll_queue, type: fanout, durable")
+2019-01-27 07:28:21.106 +01:00 [Debug] Declare exchange ("name: users_delete_queue, type: fanout, durable")
+2019-01-27 07:28:21.106 +01:00 [Debug] Declare exchange ("name: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybkqsgbdmeeefy8m, type: fanout, auto-delete")
+2019-01-27 07:28:21.107 +01:00 [Debug] Declare exchange ("name: users_getOne_queue, type: fanout, durable")
+2019-01-27 07:28:21.107 +01:00 [Debug] Declare exchange ("name: users_login_queue, type: fanout, durable")
+2019-01-27 07:28:21.107 +01:00 [Debug] Declare exchange ("name: users_createAdmin_queue, type: fanout, durable")
+2019-01-27 07:28:21.107 +01:00 [Debug] Declare exchange ("name: users_update_queue, type: fanout, durable")
+2019-01-27 07:28:21.110 +01:00 [Debug] Declare exchange ("name: UserServiceRequestMessages:RegisterRequest, type: fanout, durable")
+2019-01-27 07:28:21.111 +01:00 [Debug] Declare exchange ("name: UserServiceRequestMessages:GetAllUsersRequest, type: fanout, durable")
+2019-01-27 07:28:21.112 +01:00 [Debug] Declare exchange ("name: UserServiceRequestMessages:DeleteUserRequest, type: fanout, durable")
+2019-01-27 07:28:21.119 +01:00 [Debug] Declare exchange ("name: UserServiceRequestMessages:OneUserRequest, type: fanout, durable")
+2019-01-27 07:28:21.121 +01:00 [Debug] Declare exchange ("name: UserServiceRequestMessages:CreateAdminRequest, type: fanout, durable")
+2019-01-27 07:28:21.129 +01:00 [Debug] Declare exchange ("name: UserServiceRequestMessages:LoginRequest, type: fanout, durable")
+2019-01-27 07:28:21.143 +01:00 [Debug] Declare exchange ("name: UserServiceRequestMessages:UpdateUserRequest, type: fanout, durable")
+2019-01-27 07:28:21.144 +01:00 [Debug] Bind exchange to exchange ("source: UserServiceRequestMessages:RegisterRequest, destination: users_registration_queue")
+2019-01-27 07:28:21.144 +01:00 [Debug] Bind exchange to exchange ("source: UserServiceRequestMessages:GetAllUsersRequest, destination: users_getAll_queue")
+2019-01-27 07:28:21.144 +01:00 [Debug] Bind exchange to exchange ("source: UserServiceRequestMessages:LoginRequest, destination: users_login_queue")
+2019-01-27 07:28:21.144 +01:00 [Debug] Bind exchange to exchange ("source: UserServiceRequestMessages:CreateAdminRequest, destination: users_createAdmin_queue")
+2019-01-27 07:28:21.145 +01:00 [Debug] Declare queue ("name: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybkqsgbdmeeefy8m, x-expires: 60000")
+2019-01-27 07:28:21.146 +01:00 [Debug] Bind exchange to exchange ("source: UserServiceRequestMessages:DeleteUserRequest, destination: users_delete_queue")
+2019-01-27 07:28:21.149 +01:00 [Debug] Bind exchange to exchange ("source: UserServiceRequestMessages:OneUserRequest, destination: users_getOne_queue")
+2019-01-27 07:28:21.157 +01:00 [Debug] Declare queue ("name: users_login_queue, durable")
+2019-01-27 07:28:21.162 +01:00 [Debug] Declare queue ("name: users_registration_queue, durable")
+2019-01-27 07:28:21.165 +01:00 [Debug] Declare queue ("name: users_delete_queue, durable")
+2019-01-27 07:28:21.169 +01:00 [Debug] Declare queue ("name: users_createAdmin_queue, durable")
+2019-01-27 07:28:21.177 +01:00 [Debug] Declare queue ("name: users_getAll_queue, durable")
+2019-01-27 07:28:21.181 +01:00 [Debug] Bind exchange to exchange ("source: UserServiceRequestMessages:UpdateUserRequest, destination: users_update_queue")
+2019-01-27 07:28:21.194 +01:00 [Debug] Bind exchange to queue ("source: users_registration_queue, destination: users_registration_queue")
+2019-01-27 07:28:21.194 +01:00 [Debug] Bind exchange to queue ("source: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybkqsgbdmeeefy8m, destination: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybkqsgbdmeeefy8m")
+2019-01-27 07:28:21.194 +01:00 [Debug] Bind exchange to queue ("source: users_delete_queue, destination: users_delete_queue")
+2019-01-27 07:28:21.196 +01:00 [Debug] Bind exchange to queue ("source: users_getAll_queue, destination: users_getAll_queue")
+2019-01-27 07:28:21.198 +01:00 [Debug] Bind exchange to queue ("source: users_createAdmin_queue, destination: users_createAdmin_queue")
+2019-01-27 07:28:21.203 +01:00 [Debug] Declare queue ("name: users_getOne_queue, durable")
+2019-01-27 07:28:21.208 +01:00 [Debug] Bind exchange to queue ("source: users_login_queue, destination: users_login_queue")
+2019-01-27 07:28:21.214 +01:00 [Debug] Declare queue ("name: users_update_queue, durable")
+2019-01-27 07:28:21.232 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 07:28:21.232 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 07:28:21.232 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 07:28:21.232 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 07:28:21.234 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 07:28:21.237 +01:00 [Debug] Bind exchange to queue ("source: users_getOne_queue, destination: users_getOne_queue")
+2019-01-27 07:28:21.241 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 07:28:21.242 +01:00 [Debug] Bind exchange to queue ("source: users_update_queue, destination: users_update_queue")
+2019-01-27 07:28:21.259 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 07:28:21.267 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 07:28:21.329 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/users_registration_queue - "amq.ctag-1BgxPEvmVFGlFptHfwF-lw"
+2019-01-27 07:28:21.329 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/users_getOne_queue - "amq.ctag-2Ou-hSuJ8F4ECYm95-_rmA"
+2019-01-27 07:28:21.329 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/users_update_queue - "amq.ctag-SSxTcpAXX4wWdOiyICnaDQ"
+2019-01-27 07:28:21.331 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/users_delete_queue - "amq.ctag-8hleZeBEyrQpC4qBS32hjQ"
+2019-01-27 07:28:21.337 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybkqsgbdmeeefy8m?durable=false&autodelete=true - "amq.ctag-pFQqlrXYK7Mp4rMqG78R8Q"
+2019-01-27 07:28:21.344 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/users_getAll_queue - "amq.ctag-jSEm7A_bFGWdHCRKIbsbrA"
+2019-01-27 07:28:21.348 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/users_createAdmin_queue - "amq.ctag-SDC_IngbBIlP-feA0p-AYA"
+2019-01-27 07:28:21.356 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/users_login_queue - "amq.ctag-ASaroNYxjCwdNNk4MUgqpg"
+2019-01-27 07:33:13.584 +01:00 [Debug] Creating model: "admin@localhost:5672/"
+2019-01-27 07:33:13.614 +01:00 [Debug] Declare exchange ("name: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybkcskbdmeeefbyc, type: fanout, auto-delete")
+2019-01-27 07:33:13.753 +01:00 [Debug] SEND rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybkcskbdmeeefbyc?durable=false&autodelete=true d1000000-5d81-0015-a2f2-08d68421505a UserServiceResponseMessages.RegisterResponse
+2019-01-27 07:33:13.770 +01:00 [Debug] RECEIVE rabbitmq://localhost/users_createAdmin_queue d1000000-5d81-0015-1c53-08d684214f6d UserServiceRequestMessages.CreateAdminRequest UserService.Consumers.CreateAdminConsumer(00:00:01.1782354)
+2019-01-27 07:33:23.848 +01:00 [Debug] Creating model: "admin@localhost:5672/"
+2019-01-27 07:33:23.862 +01:00 [Debug] Declare exchange ("name: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybkcskbdmeeefbyc, type: fanout, auto-delete")
+2019-01-27 07:33:23.875 +01:00 [Debug] SEND rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybkcskbdmeeefbyc?durable=false&autodelete=true d1000000-5d81-0015-dc25-08d684215672 UserServiceResponseMessages.LoginResponse
+2019-01-27 07:33:23.916 +01:00 [Debug] RECEIVE rabbitmq://localhost/users_login_queue d1000000-5d81-0015-cad2-08d684215660 UserServiceRequestMessages.LoginRequest UserService.Consumers.LoginRequestConsumer(00:00:00.1525462)
+2019-01-27 07:33:41.425 +01:00 [Debug] SEND rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybkcskbdmeeefbyc?durable=false&autodelete=true d1000000-5d81-0015-02a8-08d6842160ea UserServiceResponseMessages.LoginResponse
+2019-01-27 07:33:41.438 +01:00 [Debug] RECEIVE rabbitmq://localhost/users_login_queue d1000000-5d81-0015-d525-08d6842160e4 UserServiceRequestMessages.LoginRequest UserService.Consumers.LoginRequestConsumer(00:00:00.0278787)
+2019-01-27 07:33:50.589 +01:00 [Information] Login failed c.lauer@test.at
+2019-01-27 07:33:50.593 +01:00 [Debug] SEND rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybkcskbdmeeefbyc?durable=false&autodelete=true d1000000-5d81-0015-d908-08d684216660 UserServiceResponseMessages.LoginResponse
+2019-01-27 07:33:50.595 +01:00 [Debug] RECEIVE rabbitmq://localhost/users_login_queue d1000000-5d81-0015-54f5-08d68421665f UserServiceRequestMessages.LoginRequest UserService.Consumers.LoginRequestConsumer(00:00:00.0102381)
+2019-01-27 07:34:12.415 +01:00 [Debug] Creating model: "admin@localhost:5672/"
+2019-01-27 07:34:12.418 +01:00 [Debug] Declare exchange ("name: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybkcskbdmeeefbyc, type: fanout, auto-delete")
+2019-01-27 07:34:12.427 +01:00 [Debug] SEND rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybkcskbdmeeefbyc?durable=false&autodelete=true d1000000-5d81-0015-773a-08d684217364 UserServiceResponseMessages.RegisterResponse
+2019-01-27 07:34:12.430 +01:00 [Debug] RECEIVE rabbitmq://localhost/users_registration_queue d1000000-5d81-0015-bff5-08d68421735c UserServiceRequestMessages.RegisterRequest UserService.Consumers.RegisterRequestConsumer(00:00:00.0389461)
+2019-01-27 07:34:44.387 +01:00 [Debug] SEND rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybkcskbdmeeefbyc?durable=false&autodelete=true d1000000-5d81-0015-33f9-08d684218671 UserServiceResponseMessages.LoginResponse
+2019-01-27 07:34:44.397 +01:00 [Debug] RECEIVE rabbitmq://localhost/users_login_queue d1000000-5d81-0015-ef13-08d68421866e UserServiceRequestMessages.LoginRequest UserService.Consumers.LoginRequestConsumer(00:00:00.0228965)
+2019-01-27 07:35:01.448 +01:00 [Debug] RECEIVE rabbitmq://localhost/users_login_queue d1000000-5d81-0015-4148-08d684219096 UserServiceRequestMessages.LoginRequest UserService.Consumers.LoginRequestConsumer(00:00:00.0365815)
+2019-01-27 07:35:13.141 +01:00 [Debug] RECEIVE rabbitmq://localhost/users_login_queue d1000000-5d81-0015-3447-08d684219791 UserServiceRequestMessages.LoginRequest UserService.Consumers.LoginRequestConsumer(00:00:00.0209140)
+2019-01-27 07:35:17.918 +01:00 [Debug] RECEIVE rabbitmq://localhost/users_login_queue d1000000-5d81-0015-42ff-08d684219a6a UserServiceRequestMessages.LoginRequest UserService.Consumers.LoginRequestConsumer(00:00:00.0208664)
+2019-01-27 07:35:26.965 +01:00 [Information] User had been locked out due to 5 failed login attempts c.lauer@test.at
+2019-01-27 07:35:26.967 +01:00 [Debug] RECEIVE rabbitmq://localhost/users_login_queue d1000000-5d81-0015-e1a0-08d684219fcd UserServiceRequestMessages.LoginRequest UserService.Consumers.LoginRequestConsumer(00:00:00.0282540)
+2019-01-27 07:35:30.932 +01:00 [Information] Login failed c.lauer@test.at
+2019-01-27 07:35:30.935 +01:00 [Debug] SEND rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybkcskbdmeeefbyc?durable=false&autodelete=true d1000000-5d81-0015-de3c-08d68421a22f UserServiceResponseMessages.LoginResponse
+2019-01-27 07:35:30.938 +01:00 [Debug] RECEIVE rabbitmq://localhost/users_login_queue d1000000-5d81-0015-d747-08d68421a22d UserServiceRequestMessages.LoginRequest UserService.Consumers.LoginRequestConsumer(00:00:00.0144814)
+2019-01-27 07:35:33.888 +01:00 [Information] Login failed c.lauer@test.at
+2019-01-27 07:35:33.891 +01:00 [Debug] SEND rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybkcskbdmeeefbyc?durable=false&autodelete=true d1000000-5d81-0015-fa2c-08d68421a3f2 UserServiceResponseMessages.LoginResponse
+2019-01-27 07:35:33.894 +01:00 [Debug] RECEIVE rabbitmq://localhost/users_login_queue d1000000-5d81-0015-8c8f-08d68421a3f1 UserServiceRequestMessages.LoginRequest UserService.Consumers.LoginRequestConsumer(00:00:00.0091535)
+2019-01-27 07:35:34.599 +01:00 [Information] Login failed c.lauer@test.at
+2019-01-27 07:35:34.602 +01:00 [Debug] SEND rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybkcskbdmeeefbyc?durable=false&autodelete=true d1000000-5d81-0015-5c18-08d68421a45f UserServiceResponseMessages.LoginResponse
+2019-01-27 07:35:34.604 +01:00 [Debug] RECEIVE rabbitmq://localhost/users_login_queue d1000000-5d81-0015-31cb-08d68421a45e UserServiceRequestMessages.LoginRequest UserService.Consumers.LoginRequestConsumer(00:00:00.0084180)
+2019-01-27 07:35:35.238 +01:00 [Information] Login failed c.lauer@test.at
+2019-01-27 07:35:35.241 +01:00 [Debug] SEND rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybkcskbdmeeefbyc?durable=false&autodelete=true d1000000-5d81-0015-f83f-08d68421a4c0 UserServiceResponseMessages.LoginResponse
+2019-01-27 07:35:35.244 +01:00 [Debug] RECEIVE rabbitmq://localhost/users_login_queue d1000000-5d81-0015-b904-08d68421a4bf UserServiceRequestMessages.LoginRequest UserService.Consumers.LoginRequestConsumer(00:00:00.0088423)
+2019-01-27 07:35:35.806 +01:00 [Information] Login failed c.lauer@test.at
+2019-01-27 07:35:35.809 +01:00 [Debug] SEND rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybkcskbdmeeefbyc?durable=false&autodelete=true d1000000-5d81-0015-a8e9-08d68421a517 UserServiceResponseMessages.LoginResponse
+2019-01-27 07:35:35.812 +01:00 [Debug] RECEIVE rabbitmq://localhost/users_login_queue d1000000-5d81-0015-4a8b-08d68421a516 UserServiceRequestMessages.LoginRequest UserService.Consumers.LoginRequestConsumer(00:00:00.0092006)
+2019-01-27 07:35:36.478 +01:00 [Information] Login failed c.lauer@test.at
+2019-01-27 07:35:36.504 +01:00 [Debug] SEND rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybkcskbdmeeefbyc?durable=false&autodelete=true d1000000-5d81-0015-a1ce-08d68421a581 UserServiceResponseMessages.LoginResponse
+2019-01-27 07:35:36.507 +01:00 [Debug] RECEIVE rabbitmq://localhost/users_login_queue d1000000-5d81-0015-f892-08d68421a57c UserServiceRequestMessages.LoginRequest UserService.Consumers.LoginRequestConsumer(00:00:00.0319872)
+2019-01-27 07:37:19.221 +01:00 [Debug] Subscribing Consumer: "UserService.Consumers.LoginRequestConsumer" (by type, using object consumer factory)
+2019-01-27 07:37:19.325 +01:00 [Debug] Subscribing Consumer: "UserService.Consumers.RegisterRequestConsumer" (by type, using object consumer factory)
+2019-01-27 07:37:19.333 +01:00 [Debug] Subscribing Consumer: "UserService.Consumers.AllUsersRequestConsumer" (by type, using object consumer factory)
+2019-01-27 07:37:19.338 +01:00 [Debug] Subscribing Consumer: "UserService.Consumers.OneUserRequestConsumer" (by type, using object consumer factory)
+2019-01-27 07:37:19.343 +01:00 [Debug] Subscribing Consumer: "UserService.Consumers.DeleteUserRequestConsumer" (by type, using object consumer factory)
+2019-01-27 07:37:19.348 +01:00 [Debug] Subscribing Consumer: "UserService.Consumers.UpdateUserRequestConsumer" (by type, using object consumer factory)
+2019-01-27 07:37:19.353 +01:00 [Debug] Subscribing Consumer: "UserService.Consumers.CreateAdminConsumer" (by type, using object consumer factory)
+2019-01-27 07:37:20.316 +01:00 [Debug] Starting bus hosts...
+2019-01-27 07:37:20.431 +01:00 [Debug] Connecting: "admin@localhost:5672/"
+2019-01-27 07:37:20.654 +01:00 [Debug] Connected: "admin@localhost:5672/" (address: "amqp://localhost:5672", local: 51822)
+2019-01-27 07:37:20.819 +01:00 [Debug] Declare exchange ("name: users_login_queue, type: fanout, durable")
+2019-01-27 07:37:20.819 +01:00 [Debug] Declare exchange ("name: users_getAll_queue, type: fanout, durable")
+2019-01-27 07:37:20.819 +01:00 [Debug] Declare exchange ("name: users_delete_queue, type: fanout, durable")
+2019-01-27 07:37:20.819 +01:00 [Debug] Declare exchange ("name: users_getOne_queue, type: fanout, durable")
+2019-01-27 07:37:20.819 +01:00 [Debug] Declare exchange ("name: users_update_queue, type: fanout, durable")
+2019-01-27 07:37:20.819 +01:00 [Debug] Declare exchange ("name: users_registration_queue, type: fanout, durable")
+2019-01-27 07:37:20.819 +01:00 [Debug] Declare exchange ("name: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybme9dbdmeeexnfe, type: fanout, auto-delete")
+2019-01-27 07:37:20.819 +01:00 [Debug] Declare exchange ("name: users_createAdmin_queue, type: fanout, durable")
+2019-01-27 07:37:20.822 +01:00 [Debug] Declare exchange ("name: UserServiceRequestMessages:LoginRequest, type: fanout, durable")
+2019-01-27 07:37:20.823 +01:00 [Debug] Declare exchange ("name: UserServiceRequestMessages:GetAllUsersRequest, type: fanout, durable")
+2019-01-27 07:37:20.825 +01:00 [Debug] Declare exchange ("name: UserServiceRequestMessages:DeleteUserRequest, type: fanout, durable")
+2019-01-27 07:37:20.826 +01:00 [Debug] Declare exchange ("name: UserServiceRequestMessages:OneUserRequest, type: fanout, durable")
+2019-01-27 07:37:20.828 +01:00 [Debug] Declare exchange ("name: UserServiceRequestMessages:UpdateUserRequest, type: fanout, durable")
+2019-01-27 07:37:20.831 +01:00 [Debug] Declare exchange ("name: UserServiceRequestMessages:RegisterRequest, type: fanout, durable")
+2019-01-27 07:37:20.834 +01:00 [Debug] Declare exchange ("name: UserServiceRequestMessages:CreateAdminRequest, type: fanout, durable")
+2019-01-27 07:37:20.843 +01:00 [Debug] Declare queue ("name: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybme9dbdmeeexnfe, x-expires: 60000")
+2019-01-27 07:37:20.850 +01:00 [Debug] Bind exchange to exchange ("source: UserServiceRequestMessages:UpdateUserRequest, destination: users_update_queue")
+2019-01-27 07:37:20.850 +01:00 [Debug] Bind exchange to exchange ("source: UserServiceRequestMessages:DeleteUserRequest, destination: users_delete_queue")
+2019-01-27 07:37:20.850 +01:00 [Debug] Bind exchange to exchange ("source: UserServiceRequestMessages:GetAllUsersRequest, destination: users_getAll_queue")
+2019-01-27 07:37:20.850 +01:00 [Debug] Bind exchange to exchange ("source: UserServiceRequestMessages:CreateAdminRequest, destination: users_createAdmin_queue")
+2019-01-27 07:37:20.850 +01:00 [Debug] Bind exchange to exchange ("source: UserServiceRequestMessages:RegisterRequest, destination: users_registration_queue")
+2019-01-27 07:37:20.850 +01:00 [Debug] Bind exchange to exchange ("source: UserServiceRequestMessages:LoginRequest, destination: users_login_queue")
+2019-01-27 07:37:20.853 +01:00 [Debug] Bind exchange to exchange ("source: UserServiceRequestMessages:OneUserRequest, destination: users_getOne_queue")
+2019-01-27 07:37:20.863 +01:00 [Debug] Declare queue ("name: users_createAdmin_queue, durable")
+2019-01-27 07:37:20.865 +01:00 [Debug] Bind exchange to queue ("source: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybme9dbdmeeexnfe, destination: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybme9dbdmeeexnfe")
+2019-01-27 07:37:20.870 +01:00 [Debug] Declare queue ("name: users_login_queue, durable")
+2019-01-27 07:37:20.873 +01:00 [Debug] Declare queue ("name: users_update_queue, durable")
+2019-01-27 07:37:20.875 +01:00 [Debug] Declare queue ("name: users_registration_queue, durable")
+2019-01-27 07:37:20.883 +01:00 [Debug] Declare queue ("name: users_getAll_queue, durable")
+2019-01-27 07:37:20.883 +01:00 [Debug] Declare queue ("name: users_delete_queue, durable")
+2019-01-27 07:37:20.884 +01:00 [Debug] Declare queue ("name: users_getOne_queue, durable")
+2019-01-27 07:37:20.886 +01:00 [Debug] Bind exchange to queue ("source: users_createAdmin_queue, destination: users_createAdmin_queue")
+2019-01-27 07:37:20.892 +01:00 [Debug] Bind exchange to queue ("source: users_login_queue, destination: users_login_queue")
+2019-01-27 07:37:20.897 +01:00 [Debug] Bind exchange to queue ("source: users_update_queue, destination: users_update_queue")
+2019-01-27 07:37:20.900 +01:00 [Debug] Bind exchange to queue ("source: users_registration_queue, destination: users_registration_queue")
+2019-01-27 07:37:20.902 +01:00 [Debug] Bind exchange to queue ("source: users_getAll_queue, destination: users_getAll_queue")
+2019-01-27 07:37:20.905 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 07:37:20.907 +01:00 [Debug] Bind exchange to queue ("source: users_delete_queue, destination: users_delete_queue")
+2019-01-27 07:37:20.909 +01:00 [Debug] Bind exchange to queue ("source: users_getOne_queue, destination: users_getOne_queue")
+2019-01-27 07:37:20.911 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 07:37:20.913 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 07:37:20.917 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 07:37:20.919 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 07:37:20.921 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 07:37:20.930 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 07:37:20.942 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 07:37:20.995 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/users_update_queue - "amq.ctag-L_r_gy9bkh3DjDg7ImE2WA"
+2019-01-27 07:37:20.995 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybme9dbdmeeexnfe?durable=false&autodelete=true - "amq.ctag-sIqPizAhXbL1_hfd11tVlg"
+2019-01-27 07:37:20.998 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/users_getOne_queue - "amq.ctag-k_NrPf2X5j7C3p48pM2X0g"
+2019-01-27 07:37:21.003 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/users_createAdmin_queue - "amq.ctag-WeRW4Hz4919h7_t0Vus5oA"
+2019-01-27 07:37:21.008 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/users_login_queue - "amq.ctag-7PJc0yuYYKdlTDX686K6Iw"
+2019-01-27 07:37:21.015 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/users_registration_queue - "amq.ctag-3D-L0hsbNFerVqlwha-4jg"
+2019-01-27 07:37:21.019 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/users_getAll_queue - "amq.ctag-6YvDxo2wGlvNr5A9vFYDsQ"
+2019-01-27 07:37:21.022 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/users_delete_queue - "amq.ctag-h5sFLnFugoZGqPu7p5y4mw"
+2019-01-27 07:37:28.066 +01:00 [Information] Login failed admin@admin.at
+2019-01-27 07:37:28.169 +01:00 [Debug] Creating model: "admin@localhost:5672/"
+2019-01-27 07:37:28.188 +01:00 [Debug] Declare exchange ("name: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmwqobdmeeexngy, type: fanout, auto-delete")
+2019-01-27 07:37:28.342 +01:00 [Debug] SEND rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmwqobdmeeexngy?durable=false&autodelete=true d1000000-5d81-0015-87ad-08d68421e816 UserServiceResponseMessages.LoginResponse
+2019-01-27 07:37:28.360 +01:00 [Debug] RECEIVE rabbitmq://localhost/users_login_queue d1000000-5d81-0015-56ea-08d68421e72b UserServiceRequestMessages.LoginRequest UserService.Consumers.LoginRequestConsumer(00:00:01.1778652)
+2019-01-27 07:37:31.897 +01:00 [Debug] SEND rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmwqobdmeeexngy?durable=false&autodelete=true d1000000-5d81-0015-1cb1-08d68421ea49 UserServiceResponseMessages.LoginResponse
+2019-01-27 07:37:31.910 +01:00 [Information] Login failed admin@admin.at
+2019-01-27 07:37:31.916 +01:00 [Debug] SEND rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmwqobdmeeexngy?durable=false&autodelete=true d1000000-5d81-0015-a582-08d68421ea4b UserServiceResponseMessages.LoginResponse
+2019-01-27 07:37:31.923 +01:00 [Debug] RECEIVE rabbitmq://localhost/users_login_queue d1000000-5d81-0015-f297-08d68421ea3d UserServiceRequestMessages.LoginRequest UserService.Consumers.LoginRequestConsumer(00:00:00.0855113)
+2019-01-27 07:37:34.355 +01:00 [Information] Login failed used email address: c.lauer@test.at
+2019-01-27 07:37:34.359 +01:00 [Debug] SEND rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmwqobdmeeexngy?durable=false&autodelete=true d1000000-5d81-0015-e829-08d68421ebc0 UserServiceResponseMessages.LoginResponse
+2019-01-27 07:37:34.362 +01:00 [Debug] RECEIVE rabbitmq://localhost/users_login_queue d1000000-5d81-0015-b9c2-08d68421ebbe UserServiceRequestMessages.LoginRequest UserService.Consumers.LoginRequestConsumer(00:00:00.0153796)
+2019-01-27 09:40:20.084 +01:00 [Debug] Subscribing Consumer: "UserService.Consumers.LoginRequestConsumer" (by type, using object consumer factory)
+2019-01-27 09:40:20.186 +01:00 [Debug] Subscribing Consumer: "UserService.Consumers.RegisterRequestConsumer" (by type, using object consumer factory)
+2019-01-27 09:40:20.190 +01:00 [Debug] Subscribing Consumer: "UserService.Consumers.AllUsersRequestConsumer" (by type, using object consumer factory)
+2019-01-27 09:40:20.194 +01:00 [Debug] Subscribing Consumer: "UserService.Consumers.OneUserRequestConsumer" (by type, using object consumer factory)
+2019-01-27 09:40:20.199 +01:00 [Debug] Subscribing Consumer: "UserService.Consumers.DeleteUserRequestConsumer" (by type, using object consumer factory)
+2019-01-27 09:40:20.204 +01:00 [Debug] Subscribing Consumer: "UserService.Consumers.UpdateUserRequestConsumer" (by type, using object consumer factory)
+2019-01-27 09:40:20.209 +01:00 [Debug] Subscribing Consumer: "UserService.Consumers.CreateAdminConsumer" (by type, using object consumer factory)
+2019-01-27 09:40:21.202 +01:00 [Debug] Starting bus hosts...
+2019-01-27 09:40:21.343 +01:00 [Debug] Connecting: "admin@localhost:5672/"
+2019-01-27 09:40:21.557 +01:00 [Debug] Connected: "admin@localhost:5672/" (address: "amqp://localhost:5672", local: 53079)
+2019-01-27 09:40:21.734 +01:00 [Debug] Declare exchange ("name: users_registration_queue, type: fanout, durable")
+2019-01-27 09:40:21.734 +01:00 [Debug] Declare exchange ("name: users_getAll_queue, type: fanout, durable")
+2019-01-27 09:40:21.734 +01:00 [Debug] Declare exchange ("name: users_delete_queue, type: fanout, durable")
+2019-01-27 09:40:21.734 +01:00 [Debug] Declare exchange ("name: users_getOne_queue, type: fanout, durable")
+2019-01-27 09:40:21.734 +01:00 [Debug] Declare exchange ("name: users_update_queue, type: fanout, durable")
+2019-01-27 09:40:21.734 +01:00 [Debug] Declare exchange ("name: users_createAdmin_queue, type: fanout, durable")
+2019-01-27 09:40:21.734 +01:00 [Debug] Declare exchange ("name: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmrbobdmeecat89, type: fanout, auto-delete")
+2019-01-27 09:40:21.734 +01:00 [Debug] Declare exchange ("name: users_login_queue, type: fanout, durable")
+2019-01-27 09:40:21.738 +01:00 [Debug] Declare exchange ("name: UserServiceRequestMessages:RegisterRequest, type: fanout, durable")
+2019-01-27 09:40:21.739 +01:00 [Debug] Declare exchange ("name: UserServiceRequestMessages:GetAllUsersRequest, type: fanout, durable")
+2019-01-27 09:40:21.741 +01:00 [Debug] Declare exchange ("name: UserServiceRequestMessages:DeleteUserRequest, type: fanout, durable")
+2019-01-27 09:40:21.743 +01:00 [Debug] Declare exchange ("name: UserServiceRequestMessages:OneUserRequest, type: fanout, durable")
+2019-01-27 09:40:21.747 +01:00 [Debug] Declare exchange ("name: UserServiceRequestMessages:UpdateUserRequest, type: fanout, durable")
+2019-01-27 09:40:21.749 +01:00 [Debug] Declare exchange ("name: UserServiceRequestMessages:CreateAdminRequest, type: fanout, durable")
+2019-01-27 09:40:21.753 +01:00 [Debug] Declare exchange ("name: UserServiceRequestMessages:LoginRequest, type: fanout, durable")
+2019-01-27 09:40:21.766 +01:00 [Debug] Declare queue ("name: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmrbobdmeecat89, x-expires: 60000")
+2019-01-27 09:40:21.772 +01:00 [Debug] Bind exchange to exchange ("source: UserServiceRequestMessages:UpdateUserRequest, destination: users_update_queue")
+2019-01-27 09:40:21.772 +01:00 [Debug] Bind exchange to exchange ("source: UserServiceRequestMessages:GetAllUsersRequest, destination: users_getAll_queue")
+2019-01-27 09:40:21.772 +01:00 [Debug] Bind exchange to exchange ("source: UserServiceRequestMessages:RegisterRequest, destination: users_registration_queue")
+2019-01-27 09:40:21.773 +01:00 [Debug] Bind exchange to exchange ("source: UserServiceRequestMessages:OneUserRequest, destination: users_getOne_queue")
+2019-01-27 09:40:21.774 +01:00 [Debug] Bind exchange to exchange ("source: UserServiceRequestMessages:CreateAdminRequest, destination: users_createAdmin_queue")
+2019-01-27 09:40:21.775 +01:00 [Debug] Bind exchange to exchange ("source: UserServiceRequestMessages:LoginRequest, destination: users_login_queue")
+2019-01-27 09:40:21.786 +01:00 [Debug] Declare queue ("name: users_getOne_queue, durable")
+2019-01-27 09:40:21.786 +01:00 [Debug] Declare queue ("name: users_getAll_queue, durable")
+2019-01-27 09:40:21.786 +01:00 [Debug] Declare queue ("name: users_registration_queue, durable")
+2019-01-27 09:40:21.790 +01:00 [Debug] Declare queue ("name: users_createAdmin_queue, durable")
+2019-01-27 09:40:21.792 +01:00 [Debug] Bind exchange to exchange ("source: UserServiceRequestMessages:DeleteUserRequest, destination: users_delete_queue")
+2019-01-27 09:40:21.800 +01:00 [Debug] Declare queue ("name: users_update_queue, durable")
+2019-01-27 09:40:21.807 +01:00 [Debug] Bind exchange to queue ("source: users_createAdmin_queue, destination: users_createAdmin_queue")
+2019-01-27 09:40:21.807 +01:00 [Debug] Bind exchange to queue ("source: users_getOne_queue, destination: users_getOne_queue")
+2019-01-27 09:40:21.807 +01:00 [Debug] Bind exchange to queue ("source: users_registration_queue, destination: users_registration_queue")
+2019-01-27 09:40:21.807 +01:00 [Debug] Bind exchange to queue ("source: users_getAll_queue, destination: users_getAll_queue")
+2019-01-27 09:40:21.822 +01:00 [Debug] Declare queue ("name: users_login_queue, durable")
+2019-01-27 09:40:21.823 +01:00 [Debug] Declare queue ("name: users_delete_queue, durable")
+2019-01-27 09:40:21.823 +01:00 [Debug] Bind exchange to queue ("source: users_update_queue, destination: users_update_queue")
+2019-01-27 09:40:21.825 +01:00 [Debug] Bind exchange to queue ("source: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmrbobdmeecat89, destination: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmrbobdmeecat89")
+2019-01-27 09:40:21.835 +01:00 [Debug] Bind exchange to queue ("source: users_login_queue, destination: users_login_queue")
+2019-01-27 09:40:21.838 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 09:40:21.838 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 09:40:21.838 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 09:40:21.838 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 09:40:21.839 +01:00 [Debug] Bind exchange to queue ("source: users_delete_queue, destination: users_delete_queue")
+2019-01-27 09:40:21.843 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 09:40:21.845 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 09:40:21.849 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 09:40:21.881 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 09:40:21.947 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/users_createAdmin_queue - "amq.ctag-aQHKGR_rlwFHhifE_0nEPw"
+2019-01-27 09:40:21.947 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/users_login_queue - "amq.ctag-4NqL1E0HkvyR2iTmBGkbsw"
+2019-01-27 09:40:21.947 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/users_registration_queue - "amq.ctag-OQ4WDjOO6tKWSyasNJXCJA"
+2019-01-27 09:40:21.947 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmrbobdmeecat89?durable=false&autodelete=true - "amq.ctag-NEjjIufziRYMjGqqrnKjIA"
+2019-01-27 09:40:21.955 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/users_getAll_queue - "amq.ctag-wRGB4g6rohmqJh1uKfcTgg"
+2019-01-27 09:40:21.962 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/users_update_queue - "amq.ctag-p6hCGCdwG6OZLGIDCKj-vw"
+2019-01-27 09:40:21.969 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/users_getOne_queue - "amq.ctag-Nw76_lO9IZP16eO3o9aBuQ"
+2019-01-27 09:40:21.976 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/users_delete_queue - "amq.ctag-aE2du6cMitpx1KCYx6sBxA"
+2019-01-27 09:40:22.157 +01:00 [Debug] Stopping hosts...
+2019-01-27 09:40:22.182 +01:00 [Debug] Stopping consumer: rabbitmq://localhost/users_login_queue
+2019-01-27 09:40:22.198 +01:00 [Debug] Consumer Cancel Ok: rabbitmq://localhost/users_login_queue - "amq.ctag-4NqL1E0HkvyR2iTmBGkbsw"
+2019-01-27 09:40:22.206 +01:00 [Debug] Consumer completed "amq.ctag-4NqL1E0HkvyR2iTmBGkbsw": 0 received, 0 concurrent
+2019-01-27 09:40:22.213 +01:00 [Debug] Closing model: 2 / "admin@localhost:5672/"
+2019-01-27 09:40:22.214 +01:00 [Debug] Stopping consumer: rabbitmq://localhost/users_registration_queue
+2019-01-27 09:40:22.218 +01:00 [Debug] Consumer Cancel Ok: rabbitmq://localhost/users_registration_queue - "amq.ctag-OQ4WDjOO6tKWSyasNJXCJA"
+2019-01-27 09:40:22.218 +01:00 [Debug] Stopping consumer: rabbitmq://localhost/users_getAll_queue
+2019-01-27 09:40:22.218 +01:00 [Debug] Consumer completed "amq.ctag-OQ4WDjOO6tKWSyasNJXCJA": 0 received, 0 concurrent
+2019-01-27 09:40:22.225 +01:00 [Debug] Stopping consumer: rabbitmq://localhost/users_getOne_queue
+2019-01-27 09:40:22.226 +01:00 [Debug] Closing model: 1 / "admin@localhost:5672/"
+2019-01-27 09:40:22.230 +01:00 [Debug] Stopping consumer: rabbitmq://localhost/users_delete_queue
+2019-01-27 09:40:22.237 +01:00 [Debug] Stopping consumer: rabbitmq://localhost/users_update_queue
+2019-01-27 09:40:22.237 +01:00 [Debug] Consumer Cancel Ok: rabbitmq://localhost/users_getAll_queue - "amq.ctag-wRGB4g6rohmqJh1uKfcTgg"
+2019-01-27 09:40:22.237 +01:00 [Debug] Consumer Cancel Ok: rabbitmq://localhost/users_getOne_queue - "amq.ctag-Nw76_lO9IZP16eO3o9aBuQ"
+2019-01-27 09:40:22.237 +01:00 [Debug] Consumer Cancel Ok: rabbitmq://localhost/users_delete_queue - "amq.ctag-aE2du6cMitpx1KCYx6sBxA"
+2019-01-27 09:40:22.237 +01:00 [Debug] Consumer completed "amq.ctag-Nw76_lO9IZP16eO3o9aBuQ": 0 received, 0 concurrent
+2019-01-27 09:40:22.237 +01:00 [Debug] Consumer completed "amq.ctag-wRGB4g6rohmqJh1uKfcTgg": 0 received, 0 concurrent
+2019-01-27 09:40:22.237 +01:00 [Debug] Consumer completed "amq.ctag-aE2du6cMitpx1KCYx6sBxA": 0 received, 0 concurrent
+2019-01-27 09:40:22.240 +01:00 [Debug] Consumer Cancel Ok: rabbitmq://localhost/users_update_queue - "amq.ctag-p6hCGCdwG6OZLGIDCKj-vw"
+2019-01-27 09:40:22.241 +01:00 [Debug] Stopping consumer: rabbitmq://localhost/users_createAdmin_queue
+2019-01-27 09:40:22.241 +01:00 [Debug] Consumer completed "amq.ctag-p6hCGCdwG6OZLGIDCKj-vw": 0 received, 0 concurrent
+2019-01-27 09:40:22.246 +01:00 [Debug] Closing model: 5 / "admin@localhost:5672/"
+2019-01-27 09:40:22.248 +01:00 [Debug] Closing model: 4 / "admin@localhost:5672/"
+2019-01-27 09:40:22.250 +01:00 [Debug] Closing model: 3 / "admin@localhost:5672/"
+2019-01-27 09:40:22.264 +01:00 [Debug] Consumer Cancel Ok: rabbitmq://localhost/users_createAdmin_queue - "amq.ctag-aQHKGR_rlwFHhifE_0nEPw"
+2019-01-27 09:40:22.265 +01:00 [Debug] Consumer completed "amq.ctag-aQHKGR_rlwFHhifE_0nEPw": 0 received, 0 concurrent
+2019-01-27 09:40:22.265 +01:00 [Debug] Stopping consumer: rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmrbobdmeecat89?durable=false&autodelete=true
+2019-01-27 09:40:22.268 +01:00 [Debug] Closing model: 8 / "admin@localhost:5672/"
+2019-01-27 09:40:22.280 +01:00 [Debug] Closing model: 6 / "admin@localhost:5672/"
+2019-01-27 09:40:22.282 +01:00 [Debug] Consumer Cancel Ok: rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmrbobdmeecat89?durable=false&autodelete=true - "amq.ctag-NEjjIufziRYMjGqqrnKjIA"
+2019-01-27 09:40:22.283 +01:00 [Debug] Consumer completed "amq.ctag-NEjjIufziRYMjGqqrnKjIA": 0 received, 0 concurrent
+2019-01-27 09:40:22.291 +01:00 [Debug] Closing model: 7 / "admin@localhost:5672/"
+2019-01-27 09:40:22.320 +01:00 [Debug] Disconnecting: "admin@localhost:5672/"
+2019-01-27 09:40:22.328 +01:00 [Debug] Disconnected: "admin@localhost:5672/"
+2019-01-27 10:25:53.058 +01:00 [Debug] Subscribing Consumer: "UserService.Consumers.LoginRequestConsumer" (by type, using object consumer factory)
+2019-01-27 10:25:53.186 +01:00 [Debug] Subscribing Consumer: "UserService.Consumers.RegisterRequestConsumer" (by type, using object consumer factory)
+2019-01-27 10:25:53.191 +01:00 [Debug] Subscribing Consumer: "UserService.Consumers.AllUsersRequestConsumer" (by type, using object consumer factory)
+2019-01-27 10:25:53.197 +01:00 [Debug] Subscribing Consumer: "UserService.Consumers.OneUserRequestConsumer" (by type, using object consumer factory)
+2019-01-27 10:25:53.202 +01:00 [Debug] Subscribing Consumer: "UserService.Consumers.DeleteUserRequestConsumer" (by type, using object consumer factory)
+2019-01-27 10:25:53.209 +01:00 [Debug] Subscribing Consumer: "UserService.Consumers.UpdateUserRequestConsumer" (by type, using object consumer factory)
+2019-01-27 10:25:53.214 +01:00 [Debug] Subscribing Consumer: "UserService.Consumers.CreateAdminConsumer" (by type, using object consumer factory)
+2019-01-27 10:25:54.316 +01:00 [Debug] Starting bus hosts...
+2019-01-27 10:25:54.489 +01:00 [Debug] Connecting: "admin@localhost:5672/"
+2019-01-27 10:25:54.769 +01:00 [Debug] Connected: "admin@localhost:5672/" (address: "amqp://localhost:5672", local: 53863)
+2019-01-27 10:25:54.948 +01:00 [Debug] Declare exchange ("name: users_getAll_queue, type: fanout, durable")
+2019-01-27 10:25:54.948 +01:00 [Debug] Declare exchange ("name: users_delete_queue, type: fanout, durable")
+2019-01-27 10:25:54.948 +01:00 [Debug] Declare exchange ("name: users_getOne_queue, type: fanout, durable")
+2019-01-27 10:25:54.948 +01:00 [Debug] Declare exchange ("name: users_createAdmin_queue, type: fanout, durable")
+2019-01-27 10:25:54.948 +01:00 [Debug] Declare exchange ("name: users_login_queue, type: fanout, durable")
+2019-01-27 10:25:54.948 +01:00 [Debug] Declare exchange ("name: users_update_queue, type: fanout, durable")
+2019-01-27 10:25:54.948 +01:00 [Debug] Declare exchange ("name: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmcxsbdmeeqmq8a, type: fanout, auto-delete")
+2019-01-27 10:25:54.948 +01:00 [Debug] Declare exchange ("name: users_registration_queue, type: fanout, durable")
+2019-01-27 10:25:54.952 +01:00 [Debug] Declare exchange ("name: UserServiceRequestMessages:GetAllUsersRequest, type: fanout, durable")
+2019-01-27 10:25:54.952 +01:00 [Debug] Declare exchange ("name: UserServiceRequestMessages:DeleteUserRequest, type: fanout, durable")
+2019-01-27 10:25:54.954 +01:00 [Debug] Declare exchange ("name: UserServiceRequestMessages:OneUserRequest, type: fanout, durable")
+2019-01-27 10:25:54.956 +01:00 [Debug] Declare exchange ("name: UserServiceRequestMessages:CreateAdminRequest, type: fanout, durable")
+2019-01-27 10:25:54.959 +01:00 [Debug] Declare exchange ("name: UserServiceRequestMessages:LoginRequest, type: fanout, durable")
+2019-01-27 10:25:54.961 +01:00 [Debug] Declare exchange ("name: UserServiceRequestMessages:UpdateUserRequest, type: fanout, durable")
+2019-01-27 10:25:54.965 +01:00 [Debug] Declare exchange ("name: UserServiceRequestMessages:RegisterRequest, type: fanout, durable")
+2019-01-27 10:25:55.000 +01:00 [Debug] Bind exchange to exchange ("source: UserServiceRequestMessages:CreateAdminRequest, destination: users_createAdmin_queue")
+2019-01-27 10:25:55.000 +01:00 [Debug] Bind exchange to exchange ("source: UserServiceRequestMessages:LoginRequest, destination: users_login_queue")
+2019-01-27 10:25:55.000 +01:00 [Debug] Bind exchange to exchange ("source: UserServiceRequestMessages:UpdateUserRequest, destination: users_update_queue")
+2019-01-27 10:25:55.000 +01:00 [Debug] Bind exchange to exchange ("source: UserServiceRequestMessages:DeleteUserRequest, destination: users_delete_queue")
+2019-01-27 10:25:55.000 +01:00 [Debug] Bind exchange to exchange ("source: UserServiceRequestMessages:RegisterRequest, destination: users_registration_queue")
+2019-01-27 10:25:55.000 +01:00 [Debug] Bind exchange to exchange ("source: UserServiceRequestMessages:GetAllUsersRequest, destination: users_getAll_queue")
+2019-01-27 10:25:55.000 +01:00 [Debug] Bind exchange to exchange ("source: UserServiceRequestMessages:OneUserRequest, destination: users_getOne_queue")
+2019-01-27 10:25:55.002 +01:00 [Debug] Declare queue ("name: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmcxsbdmeeqmq8a, x-expires: 60000")
+2019-01-27 10:25:55.007 +01:00 [Debug] Declare queue ("name: users_login_queue, durable")
+2019-01-27 10:25:55.008 +01:00 [Debug] Declare queue ("name: users_createAdmin_queue, durable")
+2019-01-27 10:25:55.013 +01:00 [Debug] Declare queue ("name: users_update_queue, durable")
+2019-01-27 10:25:55.016 +01:00 [Debug] Declare queue ("name: users_delete_queue, durable")
+2019-01-27 10:25:55.019 +01:00 [Debug] Declare queue ("name: users_registration_queue, durable")
+2019-01-27 10:25:55.025 +01:00 [Debug] Declare queue ("name: users_getAll_queue, durable")
+2019-01-27 10:25:55.028 +01:00 [Debug] Declare queue ("name: users_getOne_queue, durable")
+2019-01-27 10:25:55.043 +01:00 [Debug] Bind exchange to queue ("source: users_login_queue, destination: users_login_queue")
+2019-01-27 10:25:55.043 +01:00 [Debug] Bind exchange to queue ("source: users_update_queue, destination: users_update_queue")
+2019-01-27 10:25:55.043 +01:00 [Debug] Bind exchange to queue ("source: users_createAdmin_queue, destination: users_createAdmin_queue")
+2019-01-27 10:25:55.043 +01:00 [Debug] Bind exchange to queue ("source: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmcxsbdmeeqmq8a, destination: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmcxsbdmeeqmq8a")
+2019-01-27 10:25:55.045 +01:00 [Debug] Bind exchange to queue ("source: users_delete_queue, destination: users_delete_queue")
+2019-01-27 10:25:55.047 +01:00 [Debug] Bind exchange to queue ("source: users_registration_queue, destination: users_registration_queue")
+2019-01-27 10:25:55.049 +01:00 [Debug] Bind exchange to queue ("source: users_getAll_queue, destination: users_getAll_queue")
+2019-01-27 10:25:55.052 +01:00 [Debug] Bind exchange to queue ("source: users_getOne_queue, destination: users_getOne_queue")
+2019-01-27 10:25:55.072 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 10:25:55.072 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 10:25:55.072 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 10:25:55.072 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 10:25:55.072 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 10:25:55.073 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 10:25:55.078 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 10:25:55.081 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 10:25:55.174 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/users_getOne_queue - "amq.ctag-dOXVwljNmE6fNRb7zvpPxg"
+2019-01-27 10:25:55.175 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/users_getAll_queue - "amq.ctag-KFOTHQV8FRRYdWTQa9mo0w"
+2019-01-27 10:25:55.175 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/users_update_queue - "amq.ctag-1obzRkg5XJIGbc6rfLcv4Q"
+2019-01-27 10:25:55.175 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmcxsbdmeeqmq8a?durable=false&autodelete=true - "amq.ctag-iuhkVJI7LKbGMYWNW4f8kA"
+2019-01-27 10:25:55.183 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/users_delete_queue - "amq.ctag-d5Sy4UyPV0czWr4ao3erTA"
+2019-01-27 10:25:55.188 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/users_registration_queue - "amq.ctag-o-SvfF5ajTZnPFy-jfUh4A"
+2019-01-27 10:25:55.193 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/users_login_queue - "amq.ctag-DQVHBdV7RcV0lqZaqVsBFA"
+2019-01-27 10:25:55.199 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/users_createAdmin_queue - "amq.ctag-q829DOmmA97MtEPUWAacRQ"
+2019-01-27 10:25:55.448 +01:00 [Debug] Stopping hosts...
+2019-01-27 10:25:55.478 +01:00 [Debug] Stopping consumer: rabbitmq://localhost/users_login_queue
+2019-01-27 10:25:55.494 +01:00 [Debug] Consumer Cancel Ok: rabbitmq://localhost/users_login_queue - "amq.ctag-DQVHBdV7RcV0lqZaqVsBFA"
+2019-01-27 10:25:55.501 +01:00 [Debug] Consumer completed "amq.ctag-DQVHBdV7RcV0lqZaqVsBFA": 0 received, 0 concurrent
+2019-01-27 10:25:55.507 +01:00 [Debug] Stopping consumer: rabbitmq://localhost/users_registration_queue
+2019-01-27 10:25:55.507 +01:00 [Debug] Closing model: 4 / "admin@localhost:5672/"
+2019-01-27 10:25:55.510 +01:00 [Debug] Consumer Cancel Ok: rabbitmq://localhost/users_registration_queue - "amq.ctag-o-SvfF5ajTZnPFy-jfUh4A"
+2019-01-27 10:25:55.510 +01:00 [Debug] Consumer completed "amq.ctag-o-SvfF5ajTZnPFy-jfUh4A": 0 received, 0 concurrent
+2019-01-27 10:25:55.510 +01:00 [Debug] Stopping consumer: rabbitmq://localhost/users_getAll_queue
+2019-01-27 10:25:55.518 +01:00 [Debug] Closing model: 5 / "admin@localhost:5672/"
+2019-01-27 10:25:55.522 +01:00 [Debug] Stopping consumer: rabbitmq://localhost/users_getOne_queue
+2019-01-27 10:25:55.526 +01:00 [Debug] Stopping consumer: rabbitmq://localhost/users_delete_queue
+2019-01-27 10:25:55.527 +01:00 [Debug] Consumer Cancel Ok: rabbitmq://localhost/users_getAll_queue - "amq.ctag-KFOTHQV8FRRYdWTQa9mo0w"
+2019-01-27 10:25:55.528 +01:00 [Debug] Consumer Cancel Ok: rabbitmq://localhost/users_getOne_queue - "amq.ctag-dOXVwljNmE6fNRb7zvpPxg"
+2019-01-27 10:25:55.528 +01:00 [Debug] Consumer completed "amq.ctag-KFOTHQV8FRRYdWTQa9mo0w": 0 received, 0 concurrent
+2019-01-27 10:25:55.528 +01:00 [Debug] Consumer completed "amq.ctag-dOXVwljNmE6fNRb7zvpPxg": 0 received, 0 concurrent
+2019-01-27 10:25:55.529 +01:00 [Debug] Consumer Cancel Ok: rabbitmq://localhost/users_delete_queue - "amq.ctag-d5Sy4UyPV0czWr4ao3erTA"
+2019-01-27 10:25:55.530 +01:00 [Debug] Consumer completed "amq.ctag-d5Sy4UyPV0czWr4ao3erTA": 0 received, 0 concurrent
+2019-01-27 10:25:55.530 +01:00 [Debug] Stopping consumer: rabbitmq://localhost/users_update_queue
+2019-01-27 10:25:55.538 +01:00 [Debug] Closing model: 7 / "admin@localhost:5672/"
+2019-01-27 10:25:55.540 +01:00 [Debug] Closing model: 2 / "admin@localhost:5672/"
+2019-01-27 10:25:55.549 +01:00 [Debug] Closing model: 8 / "admin@localhost:5672/"
+2019-01-27 10:25:55.553 +01:00 [Debug] Consumer Cancel Ok: rabbitmq://localhost/users_update_queue - "amq.ctag-1obzRkg5XJIGbc6rfLcv4Q"
+2019-01-27 10:25:55.553 +01:00 [Debug] Consumer completed "amq.ctag-1obzRkg5XJIGbc6rfLcv4Q": 0 received, 0 concurrent
+2019-01-27 10:25:55.553 +01:00 [Debug] Stopping consumer: rabbitmq://localhost/users_createAdmin_queue
+2019-01-27 10:25:55.568 +01:00 [Debug] Closing model: 1 / "admin@localhost:5672/"
+2019-01-27 10:25:55.571 +01:00 [Debug] Consumer Cancel Ok: rabbitmq://localhost/users_createAdmin_queue - "amq.ctag-q829DOmmA97MtEPUWAacRQ"
+2019-01-27 10:25:55.572 +01:00 [Debug] Consumer completed "amq.ctag-q829DOmmA97MtEPUWAacRQ": 0 received, 0 concurrent
+2019-01-27 10:25:55.572 +01:00 [Debug] Stopping consumer: rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmcxsbdmeeqmq8a?durable=false&autodelete=true
+2019-01-27 10:25:55.581 +01:00 [Debug] Closing model: 6 / "admin@localhost:5672/"
+2019-01-27 10:25:55.585 +01:00 [Debug] Consumer Cancel Ok: rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmcxsbdmeeqmq8a?durable=false&autodelete=true - "amq.ctag-iuhkVJI7LKbGMYWNW4f8kA"
+2019-01-27 10:25:55.586 +01:00 [Debug] Consumer completed "amq.ctag-iuhkVJI7LKbGMYWNW4f8kA": 0 received, 0 concurrent
+2019-01-27 10:25:55.592 +01:00 [Debug] Closing model: 3 / "admin@localhost:5672/"
+2019-01-27 10:25:55.634 +01:00 [Debug] Disconnecting: "admin@localhost:5672/"
+2019-01-27 10:25:55.655 +01:00 [Debug] Disconnected: "admin@localhost:5672/"
+2019-01-27 10:43:22.924 +01:00 [Debug] Subscribing Consumer: "UserService.Consumers.LoginRequestConsumer" (by type, using object consumer factory)
+2019-01-27 10:43:23.053 +01:00 [Debug] Subscribing Consumer: "UserService.Consumers.RegisterRequestConsumer" (by type, using object consumer factory)
+2019-01-27 10:43:23.059 +01:00 [Debug] Subscribing Consumer: "UserService.Consumers.AllUsersRequestConsumer" (by type, using object consumer factory)
+2019-01-27 10:43:23.063 +01:00 [Debug] Subscribing Consumer: "UserService.Consumers.OneUserRequestConsumer" (by type, using object consumer factory)
+2019-01-27 10:43:23.070 +01:00 [Debug] Subscribing Consumer: "UserService.Consumers.DeleteUserRequestConsumer" (by type, using object consumer factory)
+2019-01-27 10:43:23.076 +01:00 [Debug] Subscribing Consumer: "UserService.Consumers.UpdateUserRequestConsumer" (by type, using object consumer factory)
+2019-01-27 10:43:23.082 +01:00 [Debug] Subscribing Consumer: "UserService.Consumers.CreateAdminConsumer" (by type, using object consumer factory)
+2019-01-27 10:44:02.214 +01:00 [Debug] Subscribing Consumer: "UserService.Consumers.LoginRequestConsumer" (by type, using object consumer factory)
+2019-01-27 10:44:02.342 +01:00 [Debug] Subscribing Consumer: "UserService.Consumers.RegisterRequestConsumer" (by type, using object consumer factory)
+2019-01-27 10:44:02.347 +01:00 [Debug] Subscribing Consumer: "UserService.Consumers.AllUsersRequestConsumer" (by type, using object consumer factory)
+2019-01-27 10:44:02.353 +01:00 [Debug] Subscribing Consumer: "UserService.Consumers.OneUserRequestConsumer" (by type, using object consumer factory)
+2019-01-27 10:44:02.359 +01:00 [Debug] Subscribing Consumer: "UserService.Consumers.DeleteUserRequestConsumer" (by type, using object consumer factory)
+2019-01-27 10:44:02.366 +01:00 [Debug] Subscribing Consumer: "UserService.Consumers.UpdateUserRequestConsumer" (by type, using object consumer factory)
+2019-01-27 10:44:02.372 +01:00 [Debug] Subscribing Consumer: "UserService.Consumers.CreateAdminConsumer" (by type, using object consumer factory)
+2019-01-27 10:44:59.720 +01:00 [Debug] Subscribing Consumer: "UserService.Consumers.LoginRequestConsumer" (by type, using object consumer factory)
+2019-01-27 10:44:59.833 +01:00 [Debug] Subscribing Consumer: "UserService.Consumers.RegisterRequestConsumer" (by type, using object consumer factory)
+2019-01-27 10:44:59.837 +01:00 [Debug] Subscribing Consumer: "UserService.Consumers.AllUsersRequestConsumer" (by type, using object consumer factory)
+2019-01-27 10:44:59.841 +01:00 [Debug] Subscribing Consumer: "UserService.Consumers.OneUserRequestConsumer" (by type, using object consumer factory)
+2019-01-27 10:44:59.846 +01:00 [Debug] Subscribing Consumer: "UserService.Consumers.DeleteUserRequestConsumer" (by type, using object consumer factory)
+2019-01-27 10:44:59.850 +01:00 [Debug] Subscribing Consumer: "UserService.Consumers.UpdateUserRequestConsumer" (by type, using object consumer factory)
+2019-01-27 10:44:59.855 +01:00 [Debug] Subscribing Consumer: "UserService.Consumers.CreateAdminConsumer" (by type, using object consumer factory)
+2019-01-27 10:46:04.248 +01:00 [Debug] Subscribing Consumer: "UserService.Consumers.LoginRequestConsumer" (by type, using object consumer factory)
+2019-01-27 10:46:04.390 +01:00 [Debug] Subscribing Consumer: "UserService.Consumers.RegisterRequestConsumer" (by type, using object consumer factory)
+2019-01-27 10:46:04.394 +01:00 [Debug] Subscribing Consumer: "UserService.Consumers.AllUsersRequestConsumer" (by type, using object consumer factory)
+2019-01-27 10:46:04.399 +01:00 [Debug] Subscribing Consumer: "UserService.Consumers.OneUserRequestConsumer" (by type, using object consumer factory)
+2019-01-27 10:46:04.406 +01:00 [Debug] Subscribing Consumer: "UserService.Consumers.DeleteUserRequestConsumer" (by type, using object consumer factory)
+2019-01-27 10:46:04.413 +01:00 [Debug] Subscribing Consumer: "UserService.Consumers.UpdateUserRequestConsumer" (by type, using object consumer factory)
+2019-01-27 10:46:04.419 +01:00 [Debug] Subscribing Consumer: "UserService.Consumers.CreateAdminConsumer" (by type, using object consumer factory)
+2019-01-27 10:46:05.488 +01:00 [Debug] Starting bus hosts...
+2019-01-27 10:46:05.614 +01:00 [Debug] Connecting: "admin@localhost:5672/"
+2019-01-27 10:46:05.846 +01:00 [Debug] Connected: "admin@localhost:5672/" (address: "amqp://localhost:5672", local: 54003)
+2019-01-27 10:46:06.083 +01:00 [Debug] Declare exchange ("name: users_registration_queue, type: fanout, durable")
+2019-01-27 10:46:06.083 +01:00 [Debug] Declare exchange ("name: users_getOne_queue, type: fanout, durable")
+2019-01-27 10:46:06.083 +01:00 [Debug] Declare exchange ("name: users_createAdmin_queue, type: fanout, durable")
+2019-01-27 10:46:06.083 +01:00 [Debug] Declare exchange ("name: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybm15mbdmeexny8r, type: fanout, auto-delete")
+2019-01-27 10:46:06.083 +01:00 [Debug] Declare exchange ("name: users_login_queue, type: fanout, durable")
+2019-01-27 10:46:06.083 +01:00 [Debug] Declare exchange ("name: users_getAll_queue, type: fanout, durable")
+2019-01-27 10:46:06.083 +01:00 [Debug] Declare exchange ("name: users_update_queue, type: fanout, durable")
+2019-01-27 10:46:06.083 +01:00 [Debug] Declare exchange ("name: users_delete_queue, type: fanout, durable")
+2019-01-27 10:46:06.086 +01:00 [Debug] Declare exchange ("name: UserServiceRequestMessages:RegisterRequest, type: fanout, durable")
+2019-01-27 10:46:06.087 +01:00 [Debug] Declare exchange ("name: UserServiceRequestMessages:OneUserRequest, type: fanout, durable")
+2019-01-27 10:46:06.089 +01:00 [Debug] Declare exchange ("name: UserServiceRequestMessages:CreateAdminRequest, type: fanout, durable")
+2019-01-27 10:46:06.096 +01:00 [Debug] Declare exchange ("name: UserServiceRequestMessages:LoginRequest, type: fanout, durable")
+2019-01-27 10:46:06.098 +01:00 [Debug] Declare exchange ("name: UserServiceRequestMessages:DeleteUserRequest, type: fanout, durable")
+2019-01-27 10:46:06.106 +01:00 [Debug] Declare queue ("name: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybm15mbdmeexny8r, x-expires: 60000")
+2019-01-27 10:46:06.108 +01:00 [Debug] Declare exchange ("name: UserServiceRequestMessages:UpdateUserRequest, type: fanout, durable")
+2019-01-27 10:46:06.117 +01:00 [Debug] Bind exchange to exchange ("source: UserServiceRequestMessages:CreateAdminRequest, destination: users_createAdmin_queue")
+2019-01-27 10:46:06.117 +01:00 [Debug] Bind exchange to exchange ("source: UserServiceRequestMessages:RegisterRequest, destination: users_registration_queue")
+2019-01-27 10:46:06.117 +01:00 [Debug] Bind exchange to exchange ("source: UserServiceRequestMessages:DeleteUserRequest, destination: users_delete_queue")
+2019-01-27 10:46:06.119 +01:00 [Debug] Bind exchange to exchange ("source: UserServiceRequestMessages:UpdateUserRequest, destination: users_update_queue")
+2019-01-27 10:46:06.120 +01:00 [Debug] Declare exchange ("name: UserServiceRequestMessages:GetAllUsersRequest, type: fanout, durable")
+2019-01-27 10:46:06.127 +01:00 [Debug] Declare queue ("name: users_delete_queue, durable")
+2019-01-27 10:46:06.129 +01:00 [Debug] Declare queue ("name: users_createAdmin_queue, durable")
+2019-01-27 10:46:06.135 +01:00 [Debug] Declare queue ("name: users_registration_queue, durable")
+2019-01-27 10:46:06.141 +01:00 [Debug] Bind exchange to exchange ("source: UserServiceRequestMessages:OneUserRequest, destination: users_getOne_queue")
+2019-01-27 10:46:06.143 +01:00 [Debug] Bind exchange to exchange ("source: UserServiceRequestMessages:LoginRequest, destination: users_login_queue")
+2019-01-27 10:46:06.153 +01:00 [Debug] Bind exchange to queue ("source: users_delete_queue, destination: users_delete_queue")
+2019-01-27 10:46:06.153 +01:00 [Debug] Bind exchange to queue ("source: users_createAdmin_queue, destination: users_createAdmin_queue")
+2019-01-27 10:46:06.156 +01:00 [Debug] Declare queue ("name: users_getOne_queue, durable")
+2019-01-27 10:46:06.161 +01:00 [Debug] Declare queue ("name: users_update_queue, durable")
+2019-01-27 10:46:06.163 +01:00 [Debug] Bind exchange to queue ("source: users_registration_queue, destination: users_registration_queue")
+2019-01-27 10:46:06.166 +01:00 [Debug] Bind exchange to exchange ("source: UserServiceRequestMessages:GetAllUsersRequest, destination: users_getAll_queue")
+2019-01-27 10:46:06.177 +01:00 [Debug] Bind exchange to queue ("source: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybm15mbdmeexny8r, destination: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybm15mbdmeexny8r")
+2019-01-27 10:46:06.182 +01:00 [Debug] Bind exchange to queue ("source: users_getOne_queue, destination: users_getOne_queue")
+2019-01-27 10:46:06.190 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 10:46:06.190 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 10:46:06.196 +01:00 [Debug] Bind exchange to queue ("source: users_update_queue, destination: users_update_queue")
+2019-01-27 10:46:06.196 +01:00 [Debug] Declare queue ("name: users_login_queue, durable")
+2019-01-27 10:46:06.199 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 10:46:06.206 +01:00 [Debug] Declare queue ("name: users_getAll_queue, durable")
+2019-01-27 10:46:06.210 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 10:46:06.213 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 10:46:06.221 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 10:46:06.223 +01:00 [Debug] Bind exchange to queue ("source: users_getAll_queue, destination: users_getAll_queue")
+2019-01-27 10:46:06.250 +01:00 [Debug] Bind exchange to queue ("source: users_login_queue, destination: users_login_queue")
+2019-01-27 10:46:06.250 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 10:46:06.253 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 10:46:06.287 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/users_registration_queue - "amq.ctag-g18vgx7IotnpTKEnWkeKYA"
+2019-01-27 10:46:06.287 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/users_createAdmin_queue - "amq.ctag--spdgLnvhnmfw_JrVN1fww"
+2019-01-27 10:46:06.287 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybm15mbdmeexny8r?durable=false&autodelete=true - "amq.ctag-9Tq1E_g6-T5hmXGQ1dqycg"
+2019-01-27 10:46:06.287 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/users_delete_queue - "amq.ctag-1vVZttMFSvPG6URXNQRdGQ"
+2019-01-27 10:46:06.292 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/users_getOne_queue - "amq.ctag-5UDko1aQFPD_AfHbWojEMw"
+2019-01-27 10:46:06.299 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/users_update_queue - "amq.ctag-NxHJ5Ru1Pca1aFQf9Xc76g"
+2019-01-27 10:46:06.307 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/users_login_queue - "amq.ctag-NoLEXoIf5amyIxtBZe9fSg"
+2019-01-27 10:46:06.307 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/users_getAll_queue - "amq.ctag-Y6OPT3KorGqrSd_Z9SnxDQ"
+2019-01-27 10:48:20.776 +01:00 [Debug] Creating model: "admin@localhost:5672/"
+2019-01-27 10:48:20.802 +01:00 [Debug] Declare exchange ("name: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmdj6bdmeexnby1, type: fanout, auto-delete")
+2019-01-27 10:48:20.943 +01:00 [Debug] SEND rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmdj6bdmeexnby1?durable=false&autodelete=true d1000000-5d81-0015-7957-08d6843c9260 UserServiceResponseMessages.RegisterResponse
+2019-01-27 10:48:20.962 +01:00 [Debug] RECEIVE rabbitmq://localhost/users_createAdmin_queue d1000000-5d81-0015-a3a9-08d6843c90f0 UserServiceRequestMessages.CreateAdminRequest UserService.Consumers.CreateAdminConsumer(00:00:02.0622738)
+2019-01-27 10:48:30.112 +01:00 [Information] Login failed used email address: c.lauer@test.at
+2019-01-27 10:48:30.123 +01:00 [Debug] Creating model: "admin@localhost:5672/"
+2019-01-27 10:48:30.129 +01:00 [Debug] Declare exchange ("name: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmdj6bdmeexnby1, type: fanout, auto-delete")
+2019-01-27 10:48:30.139 +01:00 [Debug] SEND rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmdj6bdmeexnby1?durable=false&autodelete=true d1000000-5d81-0015-673a-08d6843c97ed UserServiceResponseMessages.LoginResponse
+2019-01-27 10:48:30.141 +01:00 [Debug] RECEIVE rabbitmq://localhost/users_login_queue d1000000-5d81-0015-d831-08d6843c97e2 UserServiceRequestMessages.LoginRequest UserService.Consumers.LoginRequestConsumer(00:00:00.0633559)
+2019-01-27 10:48:42.259 +01:00 [Debug] Creating model: "admin@localhost:5672/"
+2019-01-27 10:48:42.283 +01:00 [Debug] Declare exchange ("name: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmdj6bdmeexnby1, type: fanout, auto-delete")
+2019-01-27 10:48:42.293 +01:00 [Debug] SEND rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmdj6bdmeexnby1?durable=false&autodelete=true d1000000-5d81-0015-b148-08d6843c9f2c UserServiceResponseMessages.RegisterResponse
+2019-01-27 10:48:42.297 +01:00 [Debug] RECEIVE rabbitmq://localhost/users_registration_queue d1000000-5d81-0015-a89f-08d6843c9f20 UserServiceRequestMessages.RegisterRequest UserService.Consumers.RegisterRequestConsumer(00:00:00.0674241)
+2019-01-27 10:48:46.298 +01:00 [Information] Login failed c.lauer@test.at
+2019-01-27 10:48:46.303 +01:00 [Debug] SEND rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmdj6bdmeexnby1?durable=false&autodelete=true d1000000-5d81-0015-9d60-08d6843ca190 UserServiceResponseMessages.LoginResponse
+2019-01-27 10:48:46.305 +01:00 [Debug] RECEIVE rabbitmq://localhost/users_login_queue d1000000-5d81-0015-b473-08d6843ca185 UserServiceRequestMessages.LoginRequest UserService.Consumers.LoginRequestConsumer(00:00:00.0635760)
+2019-01-27 10:48:54.737 +01:00 [Debug] SEND rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmdj6bdmeexnby1?durable=false&autodelete=true d1000000-5d81-0015-8000-08d6843ca697 UserServiceResponseMessages.LoginResponse
+2019-01-27 10:48:54.755 +01:00 [Information] Login failed c.lauer@test.at
+2019-01-27 10:48:54.758 +01:00 [Debug] SEND rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmdj6bdmeexnby1?durable=false&autodelete=true d1000000-5d81-0015-c241-08d6843ca69a UserServiceResponseMessages.LoginResponse
+2019-01-27 10:48:54.761 +01:00 [Debug] RECEIVE rabbitmq://localhost/users_login_queue d1000000-5d81-0015-c167-08d6843ca68f UserServiceRequestMessages.LoginRequest UserService.Consumers.LoginRequestConsumer(00:00:00.0724832)
+2019-01-27 11:18:49.914 +01:00 [Debug] Subscribing Consumer: "UserService.Consumers.LoginRequestConsumer" (by type, using object consumer factory)
+2019-01-27 11:18:50.031 +01:00 [Debug] Subscribing Consumer: "UserService.Consumers.RegisterRequestConsumer" (by type, using object consumer factory)
+2019-01-27 11:18:50.037 +01:00 [Debug] Subscribing Consumer: "UserService.Consumers.AllUsersRequestConsumer" (by type, using object consumer factory)
+2019-01-27 11:18:50.041 +01:00 [Debug] Subscribing Consumer: "UserService.Consumers.OneUserRequestConsumer" (by type, using object consumer factory)
+2019-01-27 11:18:50.046 +01:00 [Debug] Subscribing Consumer: "UserService.Consumers.DeleteUserRequestConsumer" (by type, using object consumer factory)
+2019-01-27 11:18:50.050 +01:00 [Debug] Subscribing Consumer: "UserService.Consumers.UpdateUserRequestConsumer" (by type, using object consumer factory)
+2019-01-27 11:18:50.058 +01:00 [Debug] Subscribing Consumer: "UserService.Consumers.CreateAdminConsumer" (by type, using object consumer factory)
+2019-01-27 11:18:51.233 +01:00 [Debug] Starting bus hosts...
+2019-01-27 11:18:51.386 +01:00 [Debug] Connecting: "admin@localhost:5672/"
+2019-01-27 11:18:51.701 +01:00 [Debug] Connected: "admin@localhost:5672/" (address: "amqp://localhost:5672", local: 54316)
+2019-01-27 11:18:51.930 +01:00 [Debug] Declare exchange ("name: users_getAll_queue, type: fanout, durable")
+2019-01-27 11:18:51.930 +01:00 [Debug] Declare exchange ("name: users_getOne_queue, type: fanout, durable")
+2019-01-27 11:18:51.930 +01:00 [Debug] Declare exchange ("name: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybkwcibdmeeogwrn, type: fanout, auto-delete")
+2019-01-27 11:18:51.930 +01:00 [Debug] Declare exchange ("name: users_delete_queue, type: fanout, durable")
+2019-01-27 11:18:51.930 +01:00 [Debug] Declare exchange ("name: users_createAdmin_queue, type: fanout, durable")
+2019-01-27 11:18:51.930 +01:00 [Debug] Declare exchange ("name: users_login_queue, type: fanout, durable")
+2019-01-27 11:18:51.930 +01:00 [Debug] Declare exchange ("name: users_update_queue, type: fanout, durable")
+2019-01-27 11:18:51.930 +01:00 [Debug] Declare exchange ("name: users_registration_queue, type: fanout, durable")
+2019-01-27 11:18:51.933 +01:00 [Debug] Declare exchange ("name: UserServiceRequestMessages:GetAllUsersRequest, type: fanout, durable")
+2019-01-27 11:18:51.934 +01:00 [Debug] Declare exchange ("name: UserServiceRequestMessages:OneUserRequest, type: fanout, durable")
+2019-01-27 11:18:51.938 +01:00 [Debug] Declare exchange ("name: UserServiceRequestMessages:DeleteUserRequest, type: fanout, durable")
+2019-01-27 11:18:51.942 +01:00 [Debug] Declare exchange ("name: UserServiceRequestMessages:CreateAdminRequest, type: fanout, durable")
+2019-01-27 11:18:51.944 +01:00 [Debug] Declare exchange ("name: UserServiceRequestMessages:LoginRequest, type: fanout, durable")
+2019-01-27 11:18:51.952 +01:00 [Debug] Declare queue ("name: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybkwcibdmeeogwrn, x-expires: 60000")
+2019-01-27 11:18:51.963 +01:00 [Debug] Bind exchange to exchange ("source: UserServiceRequestMessages:LoginRequest, destination: users_login_queue")
+2019-01-27 11:18:51.963 +01:00 [Debug] Bind exchange to exchange ("source: UserServiceRequestMessages:CreateAdminRequest, destination: users_createAdmin_queue")
+2019-01-27 11:18:51.963 +01:00 [Debug] Bind exchange to exchange ("source: UserServiceRequestMessages:DeleteUserRequest, destination: users_delete_queue")
+2019-01-27 11:18:51.963 +01:00 [Debug] Bind exchange to exchange ("source: UserServiceRequestMessages:OneUserRequest, destination: users_getOne_queue")
+2019-01-27 11:18:51.963 +01:00 [Debug] Bind exchange to exchange ("source: UserServiceRequestMessages:GetAllUsersRequest, destination: users_getAll_queue")
+2019-01-27 11:18:51.963 +01:00 [Debug] Declare exchange ("name: UserServiceRequestMessages:UpdateUserRequest, type: fanout, durable")
+2019-01-27 11:18:51.973 +01:00 [Debug] Declare exchange ("name: UserServiceRequestMessages:RegisterRequest, type: fanout, durable")
+2019-01-27 11:18:51.993 +01:00 [Debug] Declare queue ("name: users_getOne_queue, durable")
+2019-01-27 11:18:51.993 +01:00 [Debug] Declare queue ("name: users_getAll_queue, durable")
+2019-01-27 11:18:51.993 +01:00 [Debug] Declare queue ("name: users_createAdmin_queue, durable")
+2019-01-27 11:18:51.993 +01:00 [Debug] Declare queue ("name: users_delete_queue, durable")
+2019-01-27 11:18:51.993 +01:00 [Debug] Declare queue ("name: users_login_queue, durable")
+2019-01-27 11:18:51.994 +01:00 [Debug] Bind exchange to exchange ("source: UserServiceRequestMessages:UpdateUserRequest, destination: users_update_queue")
+2019-01-27 11:18:51.999 +01:00 [Debug] Bind exchange to exchange ("source: UserServiceRequestMessages:RegisterRequest, destination: users_registration_queue")
+2019-01-27 11:18:52.001 +01:00 [Debug] Bind exchange to queue ("source: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybkwcibdmeeogwrn, destination: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybkwcibdmeeogwrn")
+2019-01-27 11:18:52.001 +01:00 [Debug] Bind exchange to queue ("source: users_delete_queue, destination: users_delete_queue")
+2019-01-27 11:18:52.003 +01:00 [Debug] Bind exchange to queue ("source: users_getAll_queue, destination: users_getAll_queue")
+2019-01-27 11:18:52.008 +01:00 [Debug] Bind exchange to queue ("source: users_login_queue, destination: users_login_queue")
+2019-01-27 11:18:52.010 +01:00 [Debug] Bind exchange to queue ("source: users_createAdmin_queue, destination: users_createAdmin_queue")
+2019-01-27 11:18:52.016 +01:00 [Debug] Declare queue ("name: users_update_queue, durable")
+2019-01-27 11:18:52.022 +01:00 [Debug] Bind exchange to queue ("source: users_getOne_queue, destination: users_getOne_queue")
+2019-01-27 11:18:52.027 +01:00 [Debug] Declare queue ("name: users_registration_queue, durable")
+2019-01-27 11:18:52.049 +01:00 [Debug] Bind exchange to queue ("source: users_update_queue, destination: users_update_queue")
+2019-01-27 11:18:52.049 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 11:18:52.049 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 11:18:52.049 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 11:18:52.049 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 11:18:52.049 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 11:18:52.055 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 11:18:52.056 +01:00 [Debug] Bind exchange to queue ("source: users_registration_queue, destination: users_registration_queue")
+2019-01-27 11:18:52.059 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 11:18:52.073 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 11:18:52.148 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/users_getAll_queue - "amq.ctag-LW1LH7e7qKR3ba0uv78dDg"
+2019-01-27 11:18:52.148 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybkwcibdmeeogwrn?durable=false&autodelete=true - "amq.ctag-pD5gvRP2NmAEO7bmG6Pcow"
+2019-01-27 11:18:52.148 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/users_login_queue - "amq.ctag-TNo13-Rx6jdkP0lA6wEWHQ"
+2019-01-27 11:18:52.156 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/users_update_queue - "amq.ctag-8qUeLFG_boT0Y5JexL2Img"
+2019-01-27 11:18:52.163 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/users_createAdmin_queue - "amq.ctag-nDjjSeZQnBpk7H3j6TB1Ug"
+2019-01-27 11:18:52.169 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/users_delete_queue - "amq.ctag-Zg1tx4G1r62-vsplwiKNaQ"
+2019-01-27 11:18:52.175 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/users_registration_queue - "amq.ctag-5ARePQeC2Wbjd04EpVtUXQ"
+2019-01-27 11:18:52.183 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/users_getOne_queue - "amq.ctag-4H0pQm0o5d79h92dxkPm1g"
+2019-01-27 11:23:50.976 +01:00 [Debug] Creating model: "admin@localhost:5672/"
+2019-01-27 11:23:51.003 +01:00 [Debug] Declare exchange ("name: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmystbdmeeogwfa, type: fanout, auto-delete")
+2019-01-27 11:23:51.151 +01:00 [Debug] SEND rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmystbdmeeogwfa?durable=false&autodelete=true d1000000-5d81-0015-0f84-08d684418814 UserServiceResponseMessages.RegisterResponse
+2019-01-27 11:23:51.165 +01:00 [Information] Registration failed to to duplicated entries of c.lauer@test.at 
+2019-01-27 11:23:51.252 +01:00 [Error] Registration Failed
+2019-01-27 11:23:51.393 +01:00 [Debug] SEND rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmystbdmeeogwfa?durable=false&autodelete=true d1000000-5d81-0015-44bb-08d684418848 MassTransit.Fault<UserServiceRequestMessages.RegisterRequest>
+2019-01-27 11:23:51.399 +01:00 [Error] R-FAULT rabbitmq://localhost/users_registration_queue d1000000-5d81-0015-1401-08d6844186c1 UserServiceRequestMessages.RegisterRequest UserService.Consumers.RegisterRequestConsumer(00:00:01.9853369) Registration failed
+UserServiceModels.Exceptions.RegistrationFailedException: Registration Failed ---> UserServiceModels.Exceptions.EmailAlreadyExistsException: Registration failed
+   at UserService.Consumers.RegisterRequestConsumer.Consume(ConsumeContext`1 context) in F:\Repos\GitLab\saloomon-dotnet\UserService\Consumers\RegisterRequestConsumer.cs:line 35
+   --- End of inner exception stack trace ---
+   at UserService.Consumers.RegisterRequestConsumer.Consume(ConsumeContext`1 context) in F:\Repos\GitLab\saloomon-dotnet\UserService\Consumers\RegisterRequestConsumer.cs:line 50
+   at MassTransit.Pipeline.ConsumerFactories.DelegateConsumerFactory`1.Send[TMessage](ConsumeContext`1 context, IPipe`1 next)
+   at MassTransit.Pipeline.Filters.ConsumerMessageFilter`2.GreenPipes.IFilter<MassTransit.ConsumeContext<TMessage>>.Send(ConsumeContext`1 context, IPipe`1 next)
+2019-01-27 11:23:51.473 +01:00 [Debug] Declare exchange ("name: users_registration_queue_error, type: fanout, durable")
+2019-01-27 11:23:51.476 +01:00 [Debug] Declare queue ("name: users_registration_queue_error, durable")
+2019-01-27 11:23:51.480 +01:00 [Debug] Bind exchange to queue ("source: users_registration_queue_error, destination: users_registration_queue_error")
+2019-01-27 11:24:02.354 +01:00 [Debug] Creating model: "admin@localhost:5672/"
+2019-01-27 11:24:02.361 +01:00 [Debug] Declare exchange ("name: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmystbdmeeogwfa, type: fanout, auto-delete")
+2019-01-27 11:24:02.364 +01:00 [Debug] SEND rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmystbdmeeogwfa?durable=false&autodelete=true d1000000-5d81-0015-f6b7-08d684418ed5 UserServiceResponseMessages.RegisterResponse
+2019-01-27 11:24:02.366 +01:00 [Information] Registration failed to to duplicated entries of admin@admin.at 
+2019-01-27 11:24:02.414 +01:00 [Error] Registration Failed
+2019-01-27 11:24:02.474 +01:00 [Debug] SEND rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmystbdmeeogwfa?durable=false&autodelete=true d1000000-5d81-0015-1dce-08d684418ee5 MassTransit.Fault<UserServiceRequestMessages.CreateAdminRequest>
+2019-01-27 11:24:02.474 +01:00 [Error] R-FAULT rabbitmq://localhost/users_createAdmin_queue d1000000-5d81-0015-93af-08d684418ecf UserServiceRequestMessages.CreateAdminRequest UserService.Consumers.CreateAdminConsumer(00:00:00.1198073) Registration failed
+UserServiceModels.Exceptions.RegistrationFailedException: Registration Failed ---> UserServiceModels.Exceptions.EmailAlreadyExistsException: Registration failed
+   at UserService.Consumers.CreateAdminConsumer.Consume(ConsumeContext`1 context) in F:\Repos\GitLab\saloomon-dotnet\UserService\Consumers\CreateAdminConsumer.cs:line 37
+   --- End of inner exception stack trace ---
+   at UserService.Consumers.CreateAdminConsumer.Consume(ConsumeContext`1 context) in F:\Repos\GitLab\saloomon-dotnet\UserService\Consumers\CreateAdminConsumer.cs:line 53
+   at MassTransit.Pipeline.ConsumerFactories.DelegateConsumerFactory`1.Send[TMessage](ConsumeContext`1 context, IPipe`1 next)
+   at MassTransit.Pipeline.Filters.ConsumerMessageFilter`2.GreenPipes.IFilter<MassTransit.ConsumeContext<TMessage>>.Send(ConsumeContext`1 context, IPipe`1 next)
+2019-01-27 11:24:02.491 +01:00 [Debug] Declare exchange ("name: users_createAdmin_queue_error, type: fanout, durable")
+2019-01-27 11:24:02.494 +01:00 [Debug] Declare queue ("name: users_createAdmin_queue_error, durable")
+2019-01-27 11:24:02.498 +01:00 [Debug] Bind exchange to queue ("source: users_createAdmin_queue_error, destination: users_createAdmin_queue_error")
+2019-01-27 11:24:13.444 +01:00 [Information] Login failed c.lauer@test.at
+2019-01-27 11:24:13.457 +01:00 [Debug] Creating model: "admin@localhost:5672/"
+2019-01-27 11:24:13.461 +01:00 [Debug] Declare exchange ("name: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmystbdmeeogwfa, type: fanout, auto-delete")
+2019-01-27 11:24:13.472 +01:00 [Debug] SEND rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmystbdmeeogwfa?durable=false&autodelete=true d1000000-5d81-0015-00ce-08d684419574 UserServiceResponseMessages.LoginResponse
+2019-01-27 11:24:13.478 +01:00 [Debug] RECEIVE rabbitmq://localhost/users_login_queue d1000000-5d81-0015-1bd8-08d68441954c UserServiceRequestMessages.LoginRequest UserService.Consumers.LoginRequestConsumer(00:00:00.2559005)
+2019-01-27 11:24:16.395 +01:00 [Information] Login failed c.lauer@test.at
+2019-01-27 11:24:16.398 +01:00 [Debug] SEND rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmystbdmeeogwfa?durable=false&autodelete=true d1000000-5d81-0015-52b5-08d684419733 UserServiceResponseMessages.LoginResponse
+2019-01-27 11:24:16.401 +01:00 [Debug] RECEIVE rabbitmq://localhost/users_login_queue d1000000-5d81-0015-d197-08d68441972d UserServiceRequestMessages.LoginRequest UserService.Consumers.LoginRequestConsumer(00:00:00.0293775)

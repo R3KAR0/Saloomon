@@ -1,0 +1,489 @@
+2019-01-27 07:28:19.438 +01:00 [Debug] Subscribing Consumer: "LogService.Consumers.LogRequestConsumer" (by type, using object consumer factory)
+2019-01-27 07:28:19.552 +01:00 [Debug] Subscribing Consumer: "LogService.Consumers.GetAllLogsRequestConsumer" (by type, using object consumer factory)
+2019-01-27 07:28:19.557 +01:00 [Debug] Subscribing Consumer: "LogService.Consumers.GetLogsByDateAfterConsumer" (by type, using object consumer factory)
+2019-01-27 07:28:19.563 +01:00 [Debug] Subscribing Consumer: "LogService.Consumers.GetLogsByDateBeforeConsumer" (by type, using object consumer factory)
+2019-01-27 07:28:19.567 +01:00 [Debug] Subscribing Consumer: "LogService.Consumers.GetLogsByDateBetweenConsumer" (by type, using object consumer factory)
+2019-01-27 07:28:19.571 +01:00 [Debug] Subscribing Consumer: "LogService.Consumers.GetLogsByLevelRequestConsumer" (by type, using object consumer factory)
+2019-01-27 07:28:20.572 +01:00 [Debug] Starting bus hosts...
+2019-01-27 07:28:20.689 +01:00 [Debug] Connecting: "admin@localhost:5672/"
+2019-01-27 07:28:20.931 +01:00 [Debug] Connected: "admin@localhost:5672/" (address: "amqp://localhost:5672", local: 51644)
+2019-01-27 07:28:21.083 +01:00 [Debug] Declare exchange ("name: log_queue, type: fanout, durable")
+2019-01-27 07:28:21.083 +01:00 [Debug] Declare exchange ("name: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybkeznbdmeeefy8m, type: fanout, auto-delete")
+2019-01-27 07:28:21.083 +01:00 [Debug] Declare exchange ("name: log_getByDateBefore_queue, type: fanout, durable")
+2019-01-27 07:28:21.083 +01:00 [Debug] Declare exchange ("name: log_getByDateBetween_queue, type: fanout, durable")
+2019-01-27 07:28:21.084 +01:00 [Debug] Declare exchange ("name: log_getByLevel_queue, type: fanout, durable")
+2019-01-27 07:28:21.084 +01:00 [Debug] Declare exchange ("name: log_getAll_queue, type: fanout, durable")
+2019-01-27 07:28:21.084 +01:00 [Debug] Declare exchange ("name: log_getByDateAfter_queue, type: fanout, durable")
+2019-01-27 07:28:21.086 +01:00 [Debug] Declare exchange ("name: LogServiceRequestMessages:LogRequest, type: fanout, durable")
+2019-01-27 07:28:21.089 +01:00 [Debug] Declare exchange ("name: LogServiceRequestMessages:GetLogsByDateBefore, type: fanout, durable")
+2019-01-27 07:28:21.091 +01:00 [Debug] Declare exchange ("name: LogServiceRequestMessages:GetLogsByDateBetween, type: fanout, durable")
+2019-01-27 07:28:21.095 +01:00 [Debug] Declare exchange ("name: LogServiceRequestMessages:GetLogsByDateAfter, type: fanout, durable")
+2019-01-27 07:28:21.097 +01:00 [Debug] Declare queue ("name: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybkeznbdmeeefy8m, x-expires: 60000")
+2019-01-27 07:28:21.103 +01:00 [Debug] Bind exchange to exchange ("source: LogServiceRequestMessages:GetLogsByDateBetween, destination: log_getByDateBetween_queue")
+2019-01-27 07:28:21.103 +01:00 [Debug] Bind exchange to exchange ("source: LogServiceRequestMessages:LogRequest, destination: log_queue")
+2019-01-27 07:28:21.109 +01:00 [Debug] Bind exchange to exchange ("source: LogServiceRequestMessages:GetLogsByDateAfter, destination: log_getByDateAfter_queue")
+2019-01-27 07:28:21.115 +01:00 [Debug] Declare queue ("name: log_getByDateBetween_queue, durable")
+2019-01-27 07:28:21.117 +01:00 [Debug] Declare queue ("name: log_queue, durable")
+2019-01-27 07:28:21.118 +01:00 [Debug] Bind exchange to exchange ("source: LogServiceRequestMessages:GetLogsByDateBefore, destination: log_getByDateBefore_queue")
+2019-01-27 07:28:21.119 +01:00 [Debug] Declare exchange ("name: LogServiceRequestMessages:GetLogsByLevelRequest, type: fanout, durable")
+2019-01-27 07:28:21.120 +01:00 [Debug] Bind exchange to queue ("source: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybkeznbdmeeefy8m, destination: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybkeznbdmeeefy8m")
+2019-01-27 07:28:21.123 +01:00 [Debug] Bind exchange to exchange ("source: LogServiceRequestMessages:GetLogsByLevelRequest, destination: log_getByLevel_queue")
+2019-01-27 07:28:21.129 +01:00 [Debug] Bind exchange to queue ("source: log_getByDateBetween_queue, destination: log_getByDateBetween_queue")
+2019-01-27 07:28:21.131 +01:00 [Debug] Declare queue ("name: log_getByDateAfter_queue, durable")
+2019-01-27 07:28:21.143 +01:00 [Debug] Declare queue ("name: log_getByDateBefore_queue, durable")
+2019-01-27 07:28:21.144 +01:00 [Debug] Declare exchange ("name: LogServiceRequestMessages:GetAllLogsRequest, type: fanout, durable")
+2019-01-27 07:28:21.148 +01:00 [Debug] Bind exchange to queue ("source: log_queue, destination: log_queue")
+2019-01-27 07:28:21.150 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 07:28:21.152 +01:00 [Debug] Declare queue ("name: log_getByLevel_queue, durable")
+2019-01-27 07:28:21.157 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 07:28:21.162 +01:00 [Debug] Bind exchange to queue ("source: log_getByDateAfter_queue, destination: log_getByDateAfter_queue")
+2019-01-27 07:28:21.165 +01:00 [Debug] Bind exchange to queue ("source: log_getByDateBefore_queue, destination: log_getByDateBefore_queue")
+2019-01-27 07:28:21.169 +01:00 [Debug] Bind exchange to exchange ("source: LogServiceRequestMessages:GetAllLogsRequest, destination: log_getAll_queue")
+2019-01-27 07:28:21.173 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 07:28:21.178 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 07:28:21.190 +01:00 [Debug] Declare queue ("name: log_getAll_queue, durable")
+2019-01-27 07:28:21.195 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 07:28:21.200 +01:00 [Debug] Bind exchange to queue ("source: log_getByLevel_queue, destination: log_getByLevel_queue")
+2019-01-27 07:28:21.207 +01:00 [Debug] Bind exchange to queue ("source: log_getAll_queue, destination: log_getAll_queue")
+2019-01-27 07:28:21.211 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 07:28:21.216 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 07:28:21.258 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybkeznbdmeeefy8m?durable=false&autodelete=true - "amq.ctag-8d-HneIttpL0GsFqsgygew"
+2019-01-27 07:28:21.258 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/log_getAll_queue - "amq.ctag-b42G62DG8xUZM3tcHrhBSA"
+2019-01-27 07:28:21.259 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/log_getByDateBetween_queue - "amq.ctag-D2BwFbzVfCg7ob6d2h2N8Q"
+2019-01-27 07:28:21.263 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/log_queue - "amq.ctag-AkbZFuzALEsxme_6wQZ2dw"
+2019-01-27 07:28:21.275 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/log_getByDateAfter_queue - "amq.ctag-0w1tiJTCVn3Yezl7gt1QYg"
+2019-01-27 07:28:21.282 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/log_getByDateBefore_queue - "amq.ctag-R_6Bhr1lt_tm_EBbX2l5Jg"
+2019-01-27 07:28:21.288 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/log_getByLevel_queue - "amq.ctag-ceKniGhq1_NHgw1tBCi34A"
+2019-01-27 07:33:24.957 +01:00 [Information] Information received from GatewayService/UserController at 27/01/2019 07:33:24 
+ Message: Successful login attempt of admin@admin.at with IP ::1 TimeStamp: 27/01/2019 06:33:23 
+2019-01-27 07:33:24.960 +01:00 [Information] LogRequestConsumer consumed a message at 27/01/2019 07:33:24
+2019-01-27 07:33:24.962 +01:00 [Information] MassTransit.Context.ConsumerConsumeContextProxy`2[LogService.Consumers.LogRequestConsumer,LogServiceRequestMessages.LogRequest]
+2019-01-27 07:33:24.973 +01:00 [Debug] RECEIVE rabbitmq://localhost/log_queue d1000000-5d81-0015-97e0-08d684215681 LogServiceRequestMessages.LogRequest LogService.Consumers.LogRequestConsumer(00:00:00.5874185)
+2019-01-27 07:33:28.782 +01:00 [Debug] Creating model: "admin@localhost:5672/"
+2019-01-27 07:33:28.798 +01:00 [Debug] Declare exchange ("name: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybkcskbdmeeefbyc, type: fanout, auto-delete")
+2019-01-27 07:33:28.922 +01:00 [Debug] SEND rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybkcskbdmeeefbyc?durable=false&autodelete=true d1000000-5d81-0015-8089-08d684215966 LogServiceResponseMessages.LogListResponse
+2019-01-27 07:33:28.937 +01:00 [Debug] RECEIVE rabbitmq://localhost/log_getAll_queue d1000000-5d81-0015-2ba9-08d684215934 LogServiceRequestMessages.GetAllLogsRequest LogService.Consumers.GetAllLogsRequestConsumer(00:00:00.4309228)
+2019-01-27 07:33:41.437 +01:00 [Information] Information received from GatewayService/UserController at 27/01/2019 07:33:41 
+ Message: Successful login attempt of admin@admin.at with IP ::1 TimeStamp: 27/01/2019 06:33:41 
+2019-01-27 07:33:41.442 +01:00 [Information] LogRequestConsumer consumed a message at 27/01/2019 07:33:41
+2019-01-27 07:33:41.449 +01:00 [Information] MassTransit.Context.ConsumerConsumeContextProxy`2[LogService.Consumers.LogRequestConsumer,LogServiceRequestMessages.LogRequest]
+2019-01-27 07:33:41.452 +01:00 [Debug] RECEIVE rabbitmq://localhost/log_queue d1000000-5d81-0015-9c25-08d6842160ea LogServiceRequestMessages.LogRequest LogService.Consumers.LogRequestConsumer(00:00:00.0220514)
+2019-01-27 07:33:43.430 +01:00 [Debug] SEND rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybkcskbdmeeefbyc?durable=false&autodelete=true d1000000-5d81-0015-c995-08d68421621b LogServiceResponseMessages.LogListResponse
+2019-01-27 07:33:43.433 +01:00 [Debug] RECEIVE rabbitmq://localhost/log_getAll_queue d1000000-5d81-0015-2575-08d68421621a LogServiceRequestMessages.GetAllLogsRequest LogService.Consumers.GetAllLogsRequestConsumer(00:00:00.0106132)
+2019-01-27 07:33:50.602 +01:00 [Information] Information received from GatewayService/UserController at 27/01/2019 07:33:50 
+ Message: Unsuccessful login attempt of c.lauer@test.at with IP ::1 TimeStamp: 27/01/2019 06:33:50 
+2019-01-27 07:33:50.604 +01:00 [Information] LogRequestConsumer consumed a message at 27/01/2019 07:33:50
+2019-01-27 07:33:50.606 +01:00 [Information] MassTransit.Context.ConsumerConsumeContextProxy`2[LogService.Consumers.LogRequestConsumer,LogServiceRequestMessages.LogRequest]
+2019-01-27 07:33:50.609 +01:00 [Debug] RECEIVE rabbitmq://localhost/log_queue d1000000-5d81-0015-53a8-08d684216661 LogServiceRequestMessages.LogRequest LogService.Consumers.LogRequestConsumer(00:00:00.0130370)
+2019-01-27 07:34:30.334 +01:00 [Debug] SEND rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybkcskbdmeeefbyc?durable=false&autodelete=true d1000000-5d81-0015-e65f-08d684217e10 LogServiceResponseMessages.LogListResponse
+2019-01-27 07:34:30.336 +01:00 [Debug] RECEIVE rabbitmq://localhost/log_getAll_queue d1000000-5d81-0015-f61f-08d684217e0f LogServiceRequestMessages.GetAllLogsRequest LogService.Consumers.GetAllLogsRequestConsumer(00:00:00.0065061)
+2019-01-27 07:34:44.394 +01:00 [Information] Information received from GatewayService/UserController at 27/01/2019 07:34:44 
+ Message: Successful login attempt of c.lauer@test.at with IP ::1 TimeStamp: 27/01/2019 06:34:44 
+2019-01-27 07:34:44.398 +01:00 [Information] LogRequestConsumer consumed a message at 27/01/2019 07:34:44
+2019-01-27 07:34:44.401 +01:00 [Information] MassTransit.Context.ConsumerConsumeContextProxy`2[LogService.Consumers.LogRequestConsumer,LogServiceRequestMessages.LogRequest]
+2019-01-27 07:34:44.407 +01:00 [Debug] RECEIVE rabbitmq://localhost/log_queue d1000000-5d81-0015-c122-08d684218671 LogServiceRequestMessages.LogRequest LogService.Consumers.LogRequestConsumer(00:00:00.0167115)
+2019-01-27 07:35:30.942 +01:00 [Information] Information received from GatewayService/UserController at 27/01/2019 07:35:30 
+ Message: Unsuccessful login attempt of c.lauer@test.at with IP ::1 TimeStamp: 27/01/2019 06:35:30 
+2019-01-27 07:35:30.946 +01:00 [Information] LogRequestConsumer consumed a message at 27/01/2019 07:35:30
+2019-01-27 07:35:30.949 +01:00 [Information] MassTransit.Context.ConsumerConsumeContextProxy`2[LogService.Consumers.LogRequestConsumer,LogServiceRequestMessages.LogRequest]
+2019-01-27 07:35:30.961 +01:00 [Debug] RECEIVE rabbitmq://localhost/log_queue d1000000-5d81-0015-5b91-08d68421a230 LogServiceRequestMessages.LogRequest LogService.Consumers.LogRequestConsumer(00:00:00.0228811)
+2019-01-27 07:35:33.897 +01:00 [Information] Information received from GatewayService/UserController at 27/01/2019 07:35:33 
+ Message: Unsuccessful login attempt of c.lauer@test.at with IP ::1 TimeStamp: 27/01/2019 06:35:33 
+2019-01-27 07:35:33.900 +01:00 [Information] LogRequestConsumer consumed a message at 27/01/2019 07:35:33
+2019-01-27 07:35:33.902 +01:00 [Information] MassTransit.Context.ConsumerConsumeContextProxy`2[LogService.Consumers.LogRequestConsumer,LogServiceRequestMessages.LogRequest]
+2019-01-27 07:35:33.905 +01:00 [Debug] RECEIVE rabbitmq://localhost/log_queue d1000000-5d81-0015-6f85-08d68421a3f3 LogServiceRequestMessages.LogRequest LogService.Consumers.LogRequestConsumer(00:00:00.0109050)
+2019-01-27 07:35:34.616 +01:00 [Information] Information received from GatewayService/UserController at 27/01/2019 07:35:34 
+ Message: Unsuccessful login attempt of c.lauer@test.at with IP ::1 TimeStamp: 27/01/2019 06:35:34 
+2019-01-27 07:35:34.618 +01:00 [Information] LogRequestConsumer consumed a message at 27/01/2019 07:35:34
+2019-01-27 07:35:34.620 +01:00 [Information] MassTransit.Context.ConsumerConsumeContextProxy`2[LogService.Consumers.LogRequestConsumer,LogServiceRequestMessages.LogRequest]
+2019-01-27 07:35:34.624 +01:00 [Debug] RECEIVE rabbitmq://localhost/log_queue d1000000-5d81-0015-050b-08d68421a461 LogServiceRequestMessages.LogRequest LogService.Consumers.LogRequestConsumer(00:00:00.0110043)
+2019-01-27 07:35:35.254 +01:00 [Information] Information received from GatewayService/UserController at 27/01/2019 07:35:35 
+ Message: Unsuccessful login attempt of c.lauer@test.at with IP ::1 TimeStamp: 27/01/2019 06:35:35 
+2019-01-27 07:35:35.257 +01:00 [Information] LogRequestConsumer consumed a message at 27/01/2019 07:35:35
+2019-01-27 07:35:35.260 +01:00 [Information] MassTransit.Context.ConsumerConsumeContextProxy`2[LogService.Consumers.LogRequestConsumer,LogServiceRequestMessages.LogRequest]
+2019-01-27 07:35:35.263 +01:00 [Debug] RECEIVE rabbitmq://localhost/log_queue d1000000-5d81-0015-6c3c-08d68421a4c1 LogServiceRequestMessages.LogRequest LogService.Consumers.LogRequestConsumer(00:00:00.0183854)
+2019-01-27 07:35:35.816 +01:00 [Information] Information received from GatewayService/UserController at 27/01/2019 07:35:35 
+ Message: Unsuccessful login attempt of c.lauer@test.at with IP ::1 TimeStamp: 27/01/2019 06:35:35 
+2019-01-27 07:35:35.818 +01:00 [Information] LogRequestConsumer consumed a message at 27/01/2019 07:35:35
+2019-01-27 07:35:35.820 +01:00 [Information] MassTransit.Context.ConsumerConsumeContextProxy`2[LogService.Consumers.LogRequestConsumer,LogServiceRequestMessages.LogRequest]
+2019-01-27 07:35:35.823 +01:00 [Debug] RECEIVE rabbitmq://localhost/log_queue d1000000-5d81-0015-2320-08d68421a518 LogServiceRequestMessages.LogRequest LogService.Consumers.LogRequestConsumer(00:00:00.0107270)
+2019-01-27 07:35:36.511 +01:00 [Information] Information received from GatewayService/UserController at 27/01/2019 07:35:36 
+ Message: Unsuccessful login attempt of c.lauer@test.at with IP ::1 TimeStamp: 27/01/2019 06:35:36 
+2019-01-27 07:35:36.514 +01:00 [Information] LogRequestConsumer consumed a message at 27/01/2019 07:35:36
+2019-01-27 07:35:36.517 +01:00 [Information] MassTransit.Context.ConsumerConsumeContextProxy`2[LogService.Consumers.LogRequestConsumer,LogServiceRequestMessages.LogRequest]
+2019-01-27 07:35:36.522 +01:00 [Debug] RECEIVE rabbitmq://localhost/log_queue d1000000-5d81-0015-1daf-08d68421a582 LogServiceRequestMessages.LogRequest LogService.Consumers.LogRequestConsumer(00:00:00.0142240)
+2019-01-27 07:37:19.182 +01:00 [Debug] Subscribing Consumer: "LogService.Consumers.LogRequestConsumer" (by type, using object consumer factory)
+2019-01-27 07:37:19.294 +01:00 [Debug] Subscribing Consumer: "LogService.Consumers.GetAllLogsRequestConsumer" (by type, using object consumer factory)
+2019-01-27 07:37:19.298 +01:00 [Debug] Subscribing Consumer: "LogService.Consumers.GetLogsByDateAfterConsumer" (by type, using object consumer factory)
+2019-01-27 07:37:19.302 +01:00 [Debug] Subscribing Consumer: "LogService.Consumers.GetLogsByDateBeforeConsumer" (by type, using object consumer factory)
+2019-01-27 07:37:19.306 +01:00 [Debug] Subscribing Consumer: "LogService.Consumers.GetLogsByDateBetweenConsumer" (by type, using object consumer factory)
+2019-01-27 07:37:19.312 +01:00 [Debug] Subscribing Consumer: "LogService.Consumers.GetLogsByLevelRequestConsumer" (by type, using object consumer factory)
+2019-01-27 07:37:20.049 +01:00 [Debug] Starting bus hosts...
+2019-01-27 07:37:20.176 +01:00 [Debug] Connecting: "admin@localhost:5672/"
+2019-01-27 07:37:20.426 +01:00 [Debug] Connected: "admin@localhost:5672/" (address: "amqp://localhost:5672", local: 51820)
+2019-01-27 07:37:20.585 +01:00 [Debug] Declare exchange ("name: log_getByDateBetween_queue, type: fanout, durable")
+2019-01-27 07:37:20.585 +01:00 [Debug] Declare exchange ("name: log_queue, type: fanout, durable")
+2019-01-27 07:37:20.585 +01:00 [Debug] Declare exchange ("name: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybk5r1bdmeeexnfd, type: fanout, auto-delete")
+2019-01-27 07:37:20.585 +01:00 [Debug] Declare exchange ("name: log_getByDateBefore_queue, type: fanout, durable")
+2019-01-27 07:37:20.585 +01:00 [Debug] Declare exchange ("name: log_getByDateAfter_queue, type: fanout, durable")
+2019-01-27 07:37:20.585 +01:00 [Debug] Declare exchange ("name: log_getAll_queue, type: fanout, durable")
+2019-01-27 07:37:20.585 +01:00 [Debug] Declare exchange ("name: log_getByLevel_queue, type: fanout, durable")
+2019-01-27 07:37:20.588 +01:00 [Debug] Declare exchange ("name: LogServiceRequestMessages:GetLogsByDateBetween, type: fanout, durable")
+2019-01-27 07:37:20.589 +01:00 [Debug] Declare exchange ("name: LogServiceRequestMessages:LogRequest, type: fanout, durable")
+2019-01-27 07:37:20.593 +01:00 [Debug] Declare exchange ("name: LogServiceRequestMessages:GetLogsByDateBefore, type: fanout, durable")
+2019-01-27 07:37:20.596 +01:00 [Debug] Declare exchange ("name: LogServiceRequestMessages:GetLogsByDateAfter, type: fanout, durable")
+2019-01-27 07:37:20.598 +01:00 [Debug] Declare exchange ("name: LogServiceRequestMessages:GetAllLogsRequest, type: fanout, durable")
+2019-01-27 07:37:20.599 +01:00 [Debug] Declare queue ("name: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybk5r1bdmeeexnfd, x-expires: 60000")
+2019-01-27 07:37:20.610 +01:00 [Debug] Bind exchange to exchange ("source: LogServiceRequestMessages:GetAllLogsRequest, destination: log_getAll_queue")
+2019-01-27 07:37:20.610 +01:00 [Debug] Bind exchange to exchange ("source: LogServiceRequestMessages:GetLogsByDateBetween, destination: log_getByDateBetween_queue")
+2019-01-27 07:37:20.610 +01:00 [Debug] Bind exchange to exchange ("source: LogServiceRequestMessages:LogRequest, destination: log_queue")
+2019-01-27 07:37:20.611 +01:00 [Debug] Bind exchange to exchange ("source: LogServiceRequestMessages:GetLogsByDateAfter, destination: log_getByDateAfter_queue")
+2019-01-27 07:37:20.616 +01:00 [Debug] Declare queue ("name: log_getByDateBetween_queue, durable")
+2019-01-27 07:37:20.620 +01:00 [Debug] Declare exchange ("name: LogServiceRequestMessages:GetLogsByLevelRequest, type: fanout, durable")
+2019-01-27 07:37:20.622 +01:00 [Debug] Declare queue ("name: log_getAll_queue, durable")
+2019-01-27 07:37:20.624 +01:00 [Debug] Bind exchange to exchange ("source: LogServiceRequestMessages:GetLogsByDateBefore, destination: log_getByDateBefore_queue")
+2019-01-27 07:37:20.637 +01:00 [Debug] Bind exchange to queue ("source: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybk5r1bdmeeexnfd, destination: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybk5r1bdmeeexnfd")
+2019-01-27 07:37:20.637 +01:00 [Debug] Bind exchange to queue ("source: log_getByDateBetween_queue, destination: log_getByDateBetween_queue")
+2019-01-27 07:37:20.637 +01:00 [Debug] Bind exchange to queue ("source: log_getAll_queue, destination: log_getAll_queue")
+2019-01-27 07:37:20.640 +01:00 [Debug] Declare queue ("name: log_getByDateAfter_queue, durable")
+2019-01-27 07:37:20.642 +01:00 [Debug] Bind exchange to exchange ("source: LogServiceRequestMessages:GetLogsByLevelRequest, destination: log_getByLevel_queue")
+2019-01-27 07:37:20.645 +01:00 [Debug] Declare queue ("name: log_queue, durable")
+2019-01-27 07:37:20.651 +01:00 [Debug] Bind exchange to queue ("source: log_getByDateAfter_queue, destination: log_getByDateAfter_queue")
+2019-01-27 07:37:20.656 +01:00 [Debug] Declare queue ("name: log_getByDateBefore_queue, durable")
+2019-01-27 07:37:20.662 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 07:37:20.662 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 07:37:20.664 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 07:37:20.668 +01:00 [Debug] Declare queue ("name: log_getByLevel_queue, durable")
+2019-01-27 07:37:20.672 +01:00 [Debug] Bind exchange to queue ("source: log_queue, destination: log_queue")
+2019-01-27 07:37:20.674 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 07:37:20.676 +01:00 [Debug] Bind exchange to queue ("source: log_getByDateBefore_queue, destination: log_getByDateBefore_queue")
+2019-01-27 07:37:20.686 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 07:37:20.695 +01:00 [Debug] Bind exchange to queue ("source: log_getByLevel_queue, destination: log_getByLevel_queue")
+2019-01-27 07:37:20.703 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 07:37:20.708 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 07:37:20.754 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/log_getAll_queue - "amq.ctag-SqMzfviboHTU26pIYTNZgA"
+2019-01-27 07:37:20.755 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/log_getByDateBefore_queue - "amq.ctag-oGUSr-uOTXbEUtiQFle9NQ"
+2019-01-27 07:37:20.759 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/log_queue - "amq.ctag-pwQEvyz8wmJDOMdy6uqLfA"
+2019-01-27 07:37:20.768 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/log_getByLevel_queue - "amq.ctag-H5H2lgArEWSeloJouIOBHA"
+2019-01-27 07:37:20.774 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/log_getByDateAfter_queue - "amq.ctag-71hZNNPXyha9ZDEiH-FCpA"
+2019-01-27 07:37:20.778 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/log_getByDateBetween_queue - "amq.ctag-w4wbqJoDlJZnCAPrLZyoRg"
+2019-01-27 07:37:20.786 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybk5r1bdmeeexnfd?durable=false&autodelete=true - "amq.ctag-5xAPmE0-u7fShflU-Rc-Qw"
+2019-01-27 07:37:29.550 +01:00 [Information] Information received from GatewayService/UserController at 27/01/2019 07:37:29 
+ Message: Unsuccessful login attempt of admin@admin.at with IP ::1 TimeStamp: 27/01/2019 06:37:28 
+2019-01-27 07:37:29.553 +01:00 [Information] LogRequestConsumer consumed a message at 27/01/2019 07:37:29
+2019-01-27 07:37:29.555 +01:00 [Information] MassTransit.Context.ConsumerConsumeContextProxy`2[LogService.Consumers.LogRequestConsumer,LogServiceRequestMessages.LogRequest]
+2019-01-27 07:37:29.565 +01:00 [Debug] RECEIVE rabbitmq://localhost/log_queue d1000000-5d81-0015-ada2-08d68421e852 LogServiceRequestMessages.LogRequest LogService.Consumers.LogRequestConsumer(00:00:00.5336359)
+2019-01-27 07:37:31.925 +01:00 [Information] Information received from GatewayService/UserController at 27/01/2019 07:37:31 
+ Message: Successful login attempt of admin@admin.at with IP ::1 TimeStamp: 27/01/2019 06:37:31 
+2019-01-27 07:37:31.930 +01:00 [Information] LogRequestConsumer consumed a message at 27/01/2019 07:37:31
+2019-01-27 07:37:31.932 +01:00 [Information] MassTransit.Context.ConsumerConsumeContextProxy`2[LogService.Consumers.LogRequestConsumer,LogServiceRequestMessages.LogRequest]
+2019-01-27 07:37:31.937 +01:00 [Debug] RECEIVE rabbitmq://localhost/log_queue d1000000-5d81-0015-cb26-08d68421ea4a LogServiceRequestMessages.LogRequest LogService.Consumers.LogRequestConsumer(00:00:00.0284664)
+2019-01-27 07:37:34.367 +01:00 [Information] Information received from GatewayService/UserController at 27/01/2019 07:37:34 
+ Message: Unsuccessful login attempt of c.lauer@test.at with IP ::1 TimeStamp: 27/01/2019 06:37:34 
+2019-01-27 07:37:34.373 +01:00 [Information] LogRequestConsumer consumed a message at 27/01/2019 07:37:34
+2019-01-27 07:37:34.375 +01:00 [Information] MassTransit.Context.ConsumerConsumeContextProxy`2[LogService.Consumers.LogRequestConsumer,LogServiceRequestMessages.LogRequest]
+2019-01-27 07:37:34.379 +01:00 [Debug] RECEIVE rabbitmq://localhost/log_queue d1000000-5d81-0015-6abb-08d68421ebc1 LogServiceRequestMessages.LogRequest LogService.Consumers.LogRequestConsumer(00:00:00.0160861)
+2019-01-27 07:37:45.391 +01:00 [Debug] Stopping hosts...
+2019-01-27 07:37:45.415 +01:00 [Debug] Stopping consumer: rabbitmq://localhost/log_queue
+2019-01-27 07:37:45.430 +01:00 [Debug] Consumer Cancel Ok: rabbitmq://localhost/log_queue - "amq.ctag-pwQEvyz8wmJDOMdy6uqLfA"
+2019-01-27 07:37:45.435 +01:00 [Debug] Consumer completed "amq.ctag-pwQEvyz8wmJDOMdy6uqLfA": 3 received, 1 concurrent
+2019-01-27 07:37:45.441 +01:00 [Debug] Stopping consumer: rabbitmq://localhost/log_getAll_queue
+2019-01-27 07:37:45.441 +01:00 [Debug] Closing model: 4 / "admin@localhost:5672/"
+2019-01-27 07:37:45.444 +01:00 [Debug] Consumer Cancel Ok: rabbitmq://localhost/log_getAll_queue - "amq.ctag-SqMzfviboHTU26pIYTNZgA"
+2019-01-27 07:37:45.445 +01:00 [Debug] Stopping consumer: rabbitmq://localhost/log_getByDateAfter_queue
+2019-01-27 07:37:45.445 +01:00 [Debug] Consumer completed "amq.ctag-SqMzfviboHTU26pIYTNZgA": 0 received, 0 concurrent
+2019-01-27 07:37:45.449 +01:00 [Debug] Consumer Cancel Ok: rabbitmq://localhost/log_getByDateAfter_queue - "amq.ctag-71hZNNPXyha9ZDEiH-FCpA"
+2019-01-27 07:37:45.450 +01:00 [Debug] Consumer completed "amq.ctag-71hZNNPXyha9ZDEiH-FCpA": 0 received, 0 concurrent
+2019-01-27 07:37:45.450 +01:00 [Debug] Stopping consumer: rabbitmq://localhost/log_getByDateBefore_queue
+2019-01-27 07:37:45.454 +01:00 [Debug] Closing model: 7 / "admin@localhost:5672/"
+2019-01-27 07:37:45.458 +01:00 [Debug] Closing model: 1 / "admin@localhost:5672/"
+2019-01-27 07:37:45.460 +01:00 [Debug] Consumer Cancel Ok: rabbitmq://localhost/log_getByDateBefore_queue - "amq.ctag-oGUSr-uOTXbEUtiQFle9NQ"
+2019-01-27 07:37:45.461 +01:00 [Debug] Consumer completed "amq.ctag-oGUSr-uOTXbEUtiQFle9NQ": 0 received, 0 concurrent
+2019-01-27 07:37:45.461 +01:00 [Debug] Stopping consumer: rabbitmq://localhost/log_getByDateBetween_queue
+2019-01-27 07:37:45.470 +01:00 [Debug] Stopping consumer: rabbitmq://localhost/log_getByLevel_queue
+2019-01-27 07:37:45.470 +01:00 [Debug] Consumer Cancel Ok: rabbitmq://localhost/log_getByDateBetween_queue - "amq.ctag-w4wbqJoDlJZnCAPrLZyoRg"
+2019-01-27 07:37:45.470 +01:00 [Debug] Consumer completed "amq.ctag-w4wbqJoDlJZnCAPrLZyoRg": 0 received, 0 concurrent
+2019-01-27 07:37:45.472 +01:00 [Debug] Closing model: 3 / "admin@localhost:5672/"
+2019-01-27 07:37:45.478 +01:00 [Debug] Consumer Cancel Ok: rabbitmq://localhost/log_getByLevel_queue - "amq.ctag-H5H2lgArEWSeloJouIOBHA"
+2019-01-27 07:37:45.478 +01:00 [Debug] Consumer completed "amq.ctag-H5H2lgArEWSeloJouIOBHA": 0 received, 0 concurrent
+2019-01-27 07:37:45.478 +01:00 [Debug] Stopping consumer: rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybk5r1bdmeeexnfd?durable=false&autodelete=true
+2019-01-27 07:37:45.489 +01:00 [Debug] Closing model: 2 / "admin@localhost:5672/"
+2019-01-27 07:37:45.491 +01:00 [Debug] Closing model: 5 / "admin@localhost:5672/"
+2019-01-27 07:37:45.494 +01:00 [Debug] Consumer Cancel Ok: rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybk5r1bdmeeexnfd?durable=false&autodelete=true - "amq.ctag-5xAPmE0-u7fShflU-Rc-Qw"
+2019-01-27 07:37:45.494 +01:00 [Debug] Consumer completed "amq.ctag-5xAPmE0-u7fShflU-Rc-Qw": 0 received, 0 concurrent
+2019-01-27 07:37:45.503 +01:00 [Debug] Closing model: 6 / "admin@localhost:5672/"
+2019-01-27 07:37:45.530 +01:00 [Debug] Disconnecting: "admin@localhost:5672/"
+2019-01-27 07:37:45.538 +01:00 [Debug] Disconnected: "admin@localhost:5672/"
+2019-01-27 09:40:20.084 +01:00 [Debug] Subscribing Consumer: "LogService.Consumers.LogRequestConsumer" (by type, using object consumer factory)
+2019-01-27 09:40:20.184 +01:00 [Debug] Subscribing Consumer: "LogService.Consumers.GetAllLogsRequestConsumer" (by type, using object consumer factory)
+2019-01-27 09:40:20.188 +01:00 [Debug] Subscribing Consumer: "LogService.Consumers.GetLogsByDateAfterConsumer" (by type, using object consumer factory)
+2019-01-27 09:40:20.192 +01:00 [Debug] Subscribing Consumer: "LogService.Consumers.GetLogsByDateBeforeConsumer" (by type, using object consumer factory)
+2019-01-27 09:40:20.198 +01:00 [Debug] Subscribing Consumer: "LogService.Consumers.GetLogsByDateBetweenConsumer" (by type, using object consumer factory)
+2019-01-27 09:40:20.203 +01:00 [Debug] Subscribing Consumer: "LogService.Consumers.GetLogsByLevelRequestConsumer" (by type, using object consumer factory)
+2019-01-27 09:40:21.190 +01:00 [Debug] Starting bus hosts...
+2019-01-27 09:40:21.311 +01:00 [Debug] Connecting: "admin@localhost:5672/"
+2019-01-27 09:40:21.551 +01:00 [Debug] Connected: "admin@localhost:5672/" (address: "amqp://localhost:5672", local: 53078)
+2019-01-27 09:40:21.714 +01:00 [Debug] Declare exchange ("name: log_queue, type: fanout, durable")
+2019-01-27 09:40:21.714 +01:00 [Debug] Declare exchange ("name: log_getByDateBefore_queue, type: fanout, durable")
+2019-01-27 09:40:21.714 +01:00 [Debug] Declare exchange ("name: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybm454bdmeecat87, type: fanout, auto-delete")
+2019-01-27 09:40:21.714 +01:00 [Debug] Declare exchange ("name: log_getAll_queue, type: fanout, durable")
+2019-01-27 09:40:21.714 +01:00 [Debug] Declare exchange ("name: log_getByDateAfter_queue, type: fanout, durable")
+2019-01-27 09:40:21.714 +01:00 [Debug] Declare exchange ("name: log_getByLevel_queue, type: fanout, durable")
+2019-01-27 09:40:21.714 +01:00 [Debug] Declare exchange ("name: log_getByDateBetween_queue, type: fanout, durable")
+2019-01-27 09:40:21.718 +01:00 [Debug] Declare exchange ("name: LogServiceRequestMessages:LogRequest, type: fanout, durable")
+2019-01-27 09:40:21.718 +01:00 [Debug] Declare exchange ("name: LogServiceRequestMessages:GetLogsByDateBefore, type: fanout, durable")
+2019-01-27 09:40:21.723 +01:00 [Debug] Declare exchange ("name: LogServiceRequestMessages:GetAllLogsRequest, type: fanout, durable")
+2019-01-27 09:40:21.728 +01:00 [Debug] Declare exchange ("name: LogServiceRequestMessages:GetLogsByDateAfter, type: fanout, durable")
+2019-01-27 09:40:21.739 +01:00 [Debug] Declare queue ("name: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybm454bdmeecat87, x-expires: 60000")
+2019-01-27 09:40:21.746 +01:00 [Debug] Declare exchange ("name: LogServiceRequestMessages:GetLogsByDateBetween, type: fanout, durable")
+2019-01-27 09:40:21.748 +01:00 [Debug] Bind exchange to exchange ("source: LogServiceRequestMessages:LogRequest, destination: log_queue")
+2019-01-27 09:40:21.748 +01:00 [Debug] Bind exchange to exchange ("source: LogServiceRequestMessages:GetLogsByDateBefore, destination: log_getByDateBefore_queue")
+2019-01-27 09:40:21.748 +01:00 [Debug] Bind exchange to exchange ("source: LogServiceRequestMessages:GetAllLogsRequest, destination: log_getAll_queue")
+2019-01-27 09:40:21.750 +01:00 [Debug] Declare exchange ("name: LogServiceRequestMessages:GetLogsByLevelRequest, type: fanout, durable")
+2019-01-27 09:40:21.756 +01:00 [Debug] Bind exchange to exchange ("source: LogServiceRequestMessages:GetLogsByDateBetween, destination: log_getByDateBetween_queue")
+2019-01-27 09:40:21.756 +01:00 [Debug] Bind exchange to exchange ("source: LogServiceRequestMessages:GetLogsByDateAfter, destination: log_getByDateAfter_queue")
+2019-01-27 09:40:21.770 +01:00 [Debug] Declare queue ("name: log_getByDateBefore_queue, durable")
+2019-01-27 09:40:21.771 +01:00 [Debug] Declare queue ("name: log_queue, durable")
+2019-01-27 09:40:21.772 +01:00 [Debug] Bind exchange to exchange ("source: LogServiceRequestMessages:GetLogsByLevelRequest, destination: log_getByLevel_queue")
+2019-01-27 09:40:21.774 +01:00 [Debug] Bind exchange to queue ("source: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybm454bdmeecat87, destination: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybm454bdmeecat87")
+2019-01-27 09:40:21.775 +01:00 [Debug] Declare queue ("name: log_getAll_queue, durable")
+2019-01-27 09:40:21.778 +01:00 [Debug] Bind exchange to queue ("source: log_queue, destination: log_queue")
+2019-01-27 09:40:21.784 +01:00 [Debug] Bind exchange to queue ("source: log_getByDateBefore_queue, destination: log_getByDateBefore_queue")
+2019-01-27 09:40:21.789 +01:00 [Debug] Declare queue ("name: log_getByDateAfter_queue, durable")
+2019-01-27 09:40:21.798 +01:00 [Debug] Declare queue ("name: log_getByDateBetween_queue, durable")
+2019-01-27 09:40:21.803 +01:00 [Debug] Declare queue ("name: log_getByLevel_queue, durable")
+2019-01-27 09:40:21.810 +01:00 [Debug] Bind exchange to queue ("source: log_getAll_queue, destination: log_getAll_queue")
+2019-01-27 09:40:21.822 +01:00 [Debug] Bind exchange to queue ("source: log_getByDateAfter_queue, destination: log_getByDateAfter_queue")
+2019-01-27 09:40:21.822 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 09:40:21.823 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 09:40:21.823 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 09:40:21.827 +01:00 [Debug] Bind exchange to queue ("source: log_getByDateBetween_queue, destination: log_getByDateBetween_queue")
+2019-01-27 09:40:21.830 +01:00 [Debug] Bind exchange to queue ("source: log_getByLevel_queue, destination: log_getByLevel_queue")
+2019-01-27 09:40:21.834 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 09:40:21.839 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 09:40:21.854 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 09:40:21.858 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 09:40:21.921 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/log_queue - "amq.ctag-Wi_Kg9l8MDiCxXOPl8R01Q"
+2019-01-27 09:40:21.921 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybm454bdmeecat87?durable=false&autodelete=true - "amq.ctag-E72x7qqjg9Nj5uy-nh_hAQ"
+2019-01-27 09:40:21.921 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/log_getByDateBetween_queue - "amq.ctag-mRxUU0Lw_CoHJfyurd_Ckw"
+2019-01-27 09:40:21.925 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/log_getByDateAfter_queue - "amq.ctag-remqk6TjJwgMjaXTt9HSKA"
+2019-01-27 09:40:21.932 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/log_getAll_queue - "amq.ctag-ITBM6FuTBeAAwwCslOKzAA"
+2019-01-27 09:40:21.941 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/log_getByLevel_queue - "amq.ctag-IuSod-2Ff8mVQD-03ub78w"
+2019-01-27 09:40:21.947 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/log_getByDateBefore_queue - "amq.ctag-RVp7bM0brZyR25_DCPySlg"
+2019-01-27 10:25:53.026 +01:00 [Debug] Subscribing Consumer: "LogService.Consumers.LogRequestConsumer" (by type, using object consumer factory)
+2019-01-27 10:25:53.139 +01:00 [Debug] Subscribing Consumer: "LogService.Consumers.GetAllLogsRequestConsumer" (by type, using object consumer factory)
+2019-01-27 10:25:53.145 +01:00 [Debug] Subscribing Consumer: "LogService.Consumers.GetLogsByDateAfterConsumer" (by type, using object consumer factory)
+2019-01-27 10:25:53.150 +01:00 [Debug] Subscribing Consumer: "LogService.Consumers.GetLogsByDateBeforeConsumer" (by type, using object consumer factory)
+2019-01-27 10:25:53.154 +01:00 [Debug] Subscribing Consumer: "LogService.Consumers.GetLogsByDateBetweenConsumer" (by type, using object consumer factory)
+2019-01-27 10:25:53.159 +01:00 [Debug] Subscribing Consumer: "LogService.Consumers.GetLogsByLevelRequestConsumer" (by type, using object consumer factory)
+2019-01-27 10:25:53.988 +01:00 [Debug] Starting bus hosts...
+2019-01-27 10:25:54.108 +01:00 [Debug] Connecting: "admin@localhost:5672/"
+2019-01-27 10:25:54.428 +01:00 [Debug] Connected: "admin@localhost:5672/" (address: "amqp://localhost:5672", local: 53860)
+2019-01-27 10:25:54.634 +01:00 [Debug] Declare exchange ("name: log_getByDateBetween_queue, type: fanout, durable")
+2019-01-27 10:25:54.634 +01:00 [Debug] Declare exchange ("name: log_getByLevel_queue, type: fanout, durable")
+2019-01-27 10:25:54.634 +01:00 [Debug] Declare exchange ("name: log_queue, type: fanout, durable")
+2019-01-27 10:25:54.634 +01:00 [Debug] Declare exchange ("name: log_getByDateAfter_queue, type: fanout, durable")
+2019-01-27 10:25:54.634 +01:00 [Debug] Declare exchange ("name: log_getAll_queue, type: fanout, durable")
+2019-01-27 10:25:54.634 +01:00 [Debug] Declare exchange ("name: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmmk8bdmeeqmq8o, type: fanout, auto-delete")
+2019-01-27 10:25:54.634 +01:00 [Debug] Declare exchange ("name: log_getByDateBefore_queue, type: fanout, durable")
+2019-01-27 10:25:54.638 +01:00 [Debug] Declare exchange ("name: LogServiceRequestMessages:GetLogsByDateBetween, type: fanout, durable")
+2019-01-27 10:25:54.638 +01:00 [Debug] Declare exchange ("name: LogServiceRequestMessages:GetLogsByLevelRequest, type: fanout, durable")
+2019-01-27 10:25:54.640 +01:00 [Debug] Declare exchange ("name: LogServiceRequestMessages:LogRequest, type: fanout, durable")
+2019-01-27 10:25:54.642 +01:00 [Debug] Declare exchange ("name: LogServiceRequestMessages:GetLogsByDateAfter, type: fanout, durable")
+2019-01-27 10:25:54.646 +01:00 [Debug] Declare exchange ("name: LogServiceRequestMessages:GetAllLogsRequest, type: fanout, durable")
+2019-01-27 10:25:54.665 +01:00 [Debug] Declare exchange ("name: LogServiceRequestMessages:GetLogsByDateBefore, type: fanout, durable")
+2019-01-27 10:25:54.665 +01:00 [Debug] Bind exchange to exchange ("source: LogServiceRequestMessages:GetLogsByDateBetween, destination: log_getByDateBetween_queue")
+2019-01-27 10:25:54.666 +01:00 [Debug] Bind exchange to exchange ("source: LogServiceRequestMessages:GetLogsByDateAfter, destination: log_getByDateAfter_queue")
+2019-01-27 10:25:54.672 +01:00 [Debug] Bind exchange to exchange ("source: LogServiceRequestMessages:GetAllLogsRequest, destination: log_getAll_queue")
+2019-01-27 10:25:54.672 +01:00 [Debug] Bind exchange to exchange ("source: LogServiceRequestMessages:GetLogsByLevelRequest, destination: log_getByLevel_queue")
+2019-01-27 10:25:54.672 +01:00 [Debug] Bind exchange to exchange ("source: LogServiceRequestMessages:LogRequest, destination: log_queue")
+2019-01-27 10:25:54.676 +01:00 [Debug] Bind exchange to exchange ("source: LogServiceRequestMessages:GetLogsByDateBefore, destination: log_getByDateBefore_queue")
+2019-01-27 10:25:54.681 +01:00 [Debug] Declare queue ("name: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmmk8bdmeeqmq8o, x-expires: 60000")
+2019-01-27 10:25:54.686 +01:00 [Debug] Declare queue ("name: log_queue, durable")
+2019-01-27 10:25:54.686 +01:00 [Debug] Declare queue ("name: log_getByDateBetween_queue, durable")
+2019-01-27 10:25:54.689 +01:00 [Debug] Declare queue ("name: log_getAll_queue, durable")
+2019-01-27 10:25:54.696 +01:00 [Debug] Declare queue ("name: log_getByLevel_queue, durable")
+2019-01-27 10:25:54.700 +01:00 [Debug] Declare queue ("name: log_getByDateAfter_queue, durable")
+2019-01-27 10:25:54.709 +01:00 [Debug] Declare queue ("name: log_getByDateBefore_queue, durable")
+2019-01-27 10:25:54.718 +01:00 [Debug] Bind exchange to queue ("source: log_getByDateBetween_queue, destination: log_getByDateBetween_queue")
+2019-01-27 10:25:54.718 +01:00 [Debug] Bind exchange to queue ("source: log_queue, destination: log_queue")
+2019-01-27 10:25:54.719 +01:00 [Debug] Bind exchange to queue ("source: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmmk8bdmeeqmq8o, destination: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmmk8bdmeeqmq8o")
+2019-01-27 10:25:54.719 +01:00 [Debug] Bind exchange to queue ("source: log_getAll_queue, destination: log_getAll_queue")
+2019-01-27 10:25:54.725 +01:00 [Debug] Bind exchange to queue ("source: log_getByLevel_queue, destination: log_getByLevel_queue")
+2019-01-27 10:25:54.731 +01:00 [Debug] Bind exchange to queue ("source: log_getByDateAfter_queue, destination: log_getByDateAfter_queue")
+2019-01-27 10:25:54.736 +01:00 [Debug] Bind exchange to queue ("source: log_getByDateBefore_queue, destination: log_getByDateBefore_queue")
+2019-01-27 10:25:54.754 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 10:25:54.755 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 10:25:54.754 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 10:25:54.755 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 10:25:54.754 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 10:25:54.756 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 10:25:54.760 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 10:25:54.843 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/log_getByLevel_queue - "amq.ctag-mpbyrenhi3fb5CYCM5xGWg"
+2019-01-27 10:25:54.844 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/log_getByDateBefore_queue - "amq.ctag-SwqV5x1Ntv292XkYY2DezA"
+2019-01-27 10:25:54.843 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmmk8bdmeeqmq8o?durable=false&autodelete=true - "amq.ctag-BoZ0eUKlxEjG0eCgTcUuMg"
+2019-01-27 10:25:54.851 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/log_getAll_queue - "amq.ctag-3GWSvvVbnD5ASM3zbraqkQ"
+2019-01-27 10:25:54.857 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/log_queue - "amq.ctag-U85l7Egy2JzGTEyn8B5l0A"
+2019-01-27 10:25:54.863 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/log_getByDateAfter_queue - "amq.ctag-O5nw3U40656U6PCsauEAzw"
+2019-01-27 10:25:54.871 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/log_getByDateBetween_queue - "amq.ctag-KTfMhqh_EuAHAJl8Q5L8bg"
+2019-01-27 10:43:23.015 +01:00 [Debug] Subscribing Consumer: "LogService.Consumers.LogRequestConsumer" (by type, using object consumer factory)
+2019-01-27 10:43:23.153 +01:00 [Debug] Subscribing Consumer: "LogService.Consumers.GetAllLogsRequestConsumer" (by type, using object consumer factory)
+2019-01-27 10:43:23.159 +01:00 [Debug] Subscribing Consumer: "LogService.Consumers.GetLogsByDateAfterConsumer" (by type, using object consumer factory)
+2019-01-27 10:43:23.165 +01:00 [Debug] Subscribing Consumer: "LogService.Consumers.GetLogsByDateBeforeConsumer" (by type, using object consumer factory)
+2019-01-27 10:43:23.171 +01:00 [Debug] Subscribing Consumer: "LogService.Consumers.GetLogsByDateBetweenConsumer" (by type, using object consumer factory)
+2019-01-27 10:43:23.177 +01:00 [Debug] Subscribing Consumer: "LogService.Consumers.GetLogsByLevelRequestConsumer" (by type, using object consumer factory)
+2019-01-27 10:44:02.211 +01:00 [Debug] Subscribing Consumer: "LogService.Consumers.LogRequestConsumer" (by type, using object consumer factory)
+2019-01-27 10:44:02.336 +01:00 [Debug] Subscribing Consumer: "LogService.Consumers.GetAllLogsRequestConsumer" (by type, using object consumer factory)
+2019-01-27 10:44:02.341 +01:00 [Debug] Subscribing Consumer: "LogService.Consumers.GetLogsByDateAfterConsumer" (by type, using object consumer factory)
+2019-01-27 10:44:02.347 +01:00 [Debug] Subscribing Consumer: "LogService.Consumers.GetLogsByDateBeforeConsumer" (by type, using object consumer factory)
+2019-01-27 10:44:02.353 +01:00 [Debug] Subscribing Consumer: "LogService.Consumers.GetLogsByDateBetweenConsumer" (by type, using object consumer factory)
+2019-01-27 10:44:02.361 +01:00 [Debug] Subscribing Consumer: "LogService.Consumers.GetLogsByLevelRequestConsumer" (by type, using object consumer factory)
+2019-01-27 10:44:59.705 +01:00 [Debug] Subscribing Consumer: "LogService.Consumers.LogRequestConsumer" (by type, using object consumer factory)
+2019-01-27 10:44:59.817 +01:00 [Debug] Subscribing Consumer: "LogService.Consumers.GetAllLogsRequestConsumer" (by type, using object consumer factory)
+2019-01-27 10:44:59.822 +01:00 [Debug] Subscribing Consumer: "LogService.Consumers.GetLogsByDateAfterConsumer" (by type, using object consumer factory)
+2019-01-27 10:44:59.826 +01:00 [Debug] Subscribing Consumer: "LogService.Consumers.GetLogsByDateBeforeConsumer" (by type, using object consumer factory)
+2019-01-27 10:44:59.833 +01:00 [Debug] Subscribing Consumer: "LogService.Consumers.GetLogsByDateBetweenConsumer" (by type, using object consumer factory)
+2019-01-27 10:44:59.837 +01:00 [Debug] Subscribing Consumer: "LogService.Consumers.GetLogsByLevelRequestConsumer" (by type, using object consumer factory)
+2019-01-27 10:46:04.258 +01:00 [Debug] Subscribing Consumer: "LogService.Consumers.LogRequestConsumer" (by type, using object consumer factory)
+2019-01-27 10:46:04.405 +01:00 [Debug] Subscribing Consumer: "LogService.Consumers.GetAllLogsRequestConsumer" (by type, using object consumer factory)
+2019-01-27 10:46:04.411 +01:00 [Debug] Subscribing Consumer: "LogService.Consumers.GetLogsByDateAfterConsumer" (by type, using object consumer factory)
+2019-01-27 10:46:04.416 +01:00 [Debug] Subscribing Consumer: "LogService.Consumers.GetLogsByDateBeforeConsumer" (by type, using object consumer factory)
+2019-01-27 10:46:04.423 +01:00 [Debug] Subscribing Consumer: "LogService.Consumers.GetLogsByDateBetweenConsumer" (by type, using object consumer factory)
+2019-01-27 10:46:04.430 +01:00 [Debug] Subscribing Consumer: "LogService.Consumers.GetLogsByLevelRequestConsumer" (by type, using object consumer factory)
+2019-01-27 10:46:05.263 +01:00 [Debug] Starting bus hosts...
+2019-01-27 10:46:05.396 +01:00 [Debug] Connecting: "admin@localhost:5672/"
+2019-01-27 10:46:05.665 +01:00 [Debug] Connected: "admin@localhost:5672/" (address: "amqp://localhost:5672", local: 54001)
+2019-01-27 10:46:05.842 +01:00 [Debug] Declare exchange ("name: log_getByDateBefore_queue, type: fanout, durable")
+2019-01-27 10:46:05.842 +01:00 [Debug] Declare exchange ("name: log_getByLevel_queue, type: fanout, durable")
+2019-01-27 10:46:05.842 +01:00 [Debug] Declare exchange ("name: log_queue, type: fanout, durable")
+2019-01-27 10:46:05.842 +01:00 [Debug] Declare exchange ("name: log_getAll_queue, type: fanout, durable")
+2019-01-27 10:46:05.842 +01:00 [Debug] Declare exchange ("name: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybk9n3bdmeexny8n, type: fanout, auto-delete")
+2019-01-27 10:46:05.842 +01:00 [Debug] Declare exchange ("name: log_getByDateAfter_queue, type: fanout, durable")
+2019-01-27 10:46:05.842 +01:00 [Debug] Declare exchange ("name: log_getByDateBetween_queue, type: fanout, durable")
+2019-01-27 10:46:05.845 +01:00 [Debug] Declare exchange ("name: LogServiceRequestMessages:GetLogsByDateBefore, type: fanout, durable")
+2019-01-27 10:46:05.846 +01:00 [Debug] Declare exchange ("name: LogServiceRequestMessages:GetLogsByLevelRequest, type: fanout, durable")
+2019-01-27 10:46:05.847 +01:00 [Debug] Declare exchange ("name: LogServiceRequestMessages:LogRequest, type: fanout, durable")
+2019-01-27 10:46:05.850 +01:00 [Debug] Declare exchange ("name: LogServiceRequestMessages:GetAllLogsRequest, type: fanout, durable")
+2019-01-27 10:46:05.868 +01:00 [Debug] Declare exchange ("name: LogServiceRequestMessages:GetLogsByDateAfter, type: fanout, durable")
+2019-01-27 10:46:05.870 +01:00 [Debug] Declare queue ("name: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybk9n3bdmeexny8n, x-expires: 60000")
+2019-01-27 10:46:05.876 +01:00 [Debug] Bind exchange to exchange ("source: LogServiceRequestMessages:GetAllLogsRequest, destination: log_getAll_queue")
+2019-01-27 10:46:05.881 +01:00 [Debug] Declare exchange ("name: LogServiceRequestMessages:GetLogsByDateBetween, type: fanout, durable")
+2019-01-27 10:46:05.893 +01:00 [Debug] Bind exchange to exchange ("source: LogServiceRequestMessages:GetLogsByDateBefore, destination: log_getByDateBefore_queue")
+2019-01-27 10:46:05.893 +01:00 [Debug] Bind exchange to exchange ("source: LogServiceRequestMessages:GetLogsByLevelRequest, destination: log_getByLevel_queue")
+2019-01-27 10:46:05.893 +01:00 [Debug] Bind exchange to exchange ("source: LogServiceRequestMessages:LogRequest, destination: log_queue")
+2019-01-27 10:46:05.893 +01:00 [Debug] Bind exchange to exchange ("source: LogServiceRequestMessages:GetLogsByDateAfter, destination: log_getByDateAfter_queue")
+2019-01-27 10:46:05.893 +01:00 [Debug] Bind exchange to exchange ("source: LogServiceRequestMessages:GetLogsByDateBetween, destination: log_getByDateBetween_queue")
+2019-01-27 10:46:05.906 +01:00 [Debug] Declare queue ("name: log_getAll_queue, durable")
+2019-01-27 10:46:05.913 +01:00 [Debug] Declare queue ("name: log_getByDateBefore_queue, durable")
+2019-01-27 10:46:05.916 +01:00 [Debug] Bind exchange to queue ("source: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybk9n3bdmeexny8n, destination: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybk9n3bdmeexny8n")
+2019-01-27 10:46:05.917 +01:00 [Debug] Declare queue ("name: log_getByLevel_queue, durable")
+2019-01-27 10:46:05.922 +01:00 [Debug] Declare queue ("name: log_queue, durable")
+2019-01-27 10:46:05.936 +01:00 [Debug] Declare queue ("name: log_getByDateAfter_queue, durable")
+2019-01-27 10:46:05.939 +01:00 [Debug] Declare queue ("name: log_getByDateBetween_queue, durable")
+2019-01-27 10:46:05.944 +01:00 [Debug] Bind exchange to queue ("source: log_getAll_queue, destination: log_getAll_queue")
+2019-01-27 10:46:05.947 +01:00 [Debug] Bind exchange to queue ("source: log_getByDateBefore_queue, destination: log_getByDateBefore_queue")
+2019-01-27 10:46:05.960 +01:00 [Debug] Bind exchange to queue ("source: log_getByLevel_queue, destination: log_getByLevel_queue")
+2019-01-27 10:46:05.964 +01:00 [Debug] Bind exchange to queue ("source: log_queue, destination: log_queue")
+2019-01-27 10:46:05.969 +01:00 [Debug] Bind exchange to queue ("source: log_getByDateAfter_queue, destination: log_getByDateAfter_queue")
+2019-01-27 10:46:05.972 +01:00 [Debug] Bind exchange to queue ("source: log_getByDateBetween_queue, destination: log_getByDateBetween_queue")
+2019-01-27 10:46:05.985 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 10:46:05.985 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 10:46:05.989 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 10:46:05.995 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 10:46:06.000 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 10:46:06.010 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 10:46:06.011 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 10:46:06.097 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/log_getAll_queue - "amq.ctag-Ai5weH5C_MK_s54XesqSXA"
+2019-01-27 10:46:06.097 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/log_getByDateBetween_queue - "amq.ctag-F8yL7t1CkTRpghbGf6G_qA"
+2019-01-27 10:46:06.104 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/log_getByDateAfter_queue - "amq.ctag-8TFxfuj_nOIv0WfI5KZLmA"
+2019-01-27 10:46:06.113 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/log_queue - "amq.ctag-VQGcR2QODCEQYiX39HFNiA"
+2019-01-27 10:46:06.123 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/log_getByLevel_queue - "amq.ctag-hoEz-Xs83aP1UsEpdJM11w"
+2019-01-27 10:46:06.130 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/log_getByDateBefore_queue - "amq.ctag-R9SN7ZdG1El2F4iec6CoZA"
+2019-01-27 10:46:06.134 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybk9n3bdmeexny8n?durable=false&autodelete=true - "amq.ctag-VLV4HuoEi3vF2A50MVmXhA"
+2019-01-27 10:48:31.179 +01:00 [Information] Information received from GatewayService/UserController at 27/01/2019 10:48:30 
+ Message: Unsuccessful login attempt of c.lauer@test.at with IP ::1 TimeStamp: 27/01/2019 09:48:30 
+2019-01-27 10:48:31.181 +01:00 [Information] LogRequestConsumer consumed a message at 27/01/2019 10:48:31
+2019-01-27 10:48:31.182 +01:00 [Information] MassTransit.Context.ConsumerConsumeContextProxy`2[LogService.Consumers.LogRequestConsumer,LogServiceRequestMessages.LogRequest]
+2019-01-27 10:48:31.191 +01:00 [Debug] RECEIVE rabbitmq://localhost/log_queue d1000000-5d81-0015-434b-08d6843c97fa LogServiceRequestMessages.LogRequest LogService.Consumers.LogRequestConsumer(00:00:00.5255258)
+2019-01-27 10:48:46.331 +01:00 [Information] Information received from GatewayService/UserController at 27/01/2019 10:48:46 
+ Message: Unsuccessful login attempt of c.lauer@test.at with IP ::1 TimeStamp: 27/01/2019 09:48:46 
+2019-01-27 10:48:46.334 +01:00 [Information] LogRequestConsumer consumed a message at 27/01/2019 10:48:46
+2019-01-27 10:48:46.336 +01:00 [Information] MassTransit.Context.ConsumerConsumeContextProxy`2[LogService.Consumers.LogRequestConsumer,LogServiceRequestMessages.LogRequest]
+2019-01-27 10:48:46.339 +01:00 [Debug] RECEIVE rabbitmq://localhost/log_queue d1000000-5d81-0015-247d-08d6843ca191 LogServiceRequestMessages.LogRequest LogService.Consumers.LogRequestConsumer(00:00:00.0319360)
+2019-01-27 10:48:54.747 +01:00 [Information] Information received from GatewayService/UserController at 27/01/2019 10:48:54 
+ Message: Successful login attempt of c.lauer@test.at with IP ::1 TimeStamp: 27/01/2019 09:48:54 
+2019-01-27 10:48:54.751 +01:00 [Information] LogRequestConsumer consumed a message at 27/01/2019 10:48:54
+2019-01-27 10:48:54.753 +01:00 [Information] MassTransit.Context.ConsumerConsumeContextProxy`2[LogService.Consumers.LogRequestConsumer,LogServiceRequestMessages.LogRequest]
+2019-01-27 10:48:54.756 +01:00 [Debug] RECEIVE rabbitmq://localhost/log_queue d1000000-5d81-0015-0fcc-08d6843ca698 LogServiceRequestMessages.LogRequest LogService.Consumers.LogRequestConsumer(00:00:00.0154164)
+2019-01-27 10:49:11.367 +01:00 [Debug] Creating model: "admin@localhost:5672/"
+2019-01-27 10:49:11.385 +01:00 [Debug] Declare exchange ("name: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmdj6bdmeexnby1, type: fanout, auto-delete")
+2019-01-27 10:49:11.522 +01:00 [Debug] SEND rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmdj6bdmeexnby1?durable=false&autodelete=true d1000000-5d81-0015-eb69-08d6843cb086 LogServiceResponseMessages.LogListResponse
+2019-01-27 10:49:11.538 +01:00 [Debug] RECEIVE rabbitmq://localhost/log_getAll_queue d1000000-5d81-0015-25f9-08d6843cb051 LogServiceRequestMessages.GetAllLogsRequest LogService.Consumers.GetAllLogsRequestConsumer(00:00:00.4638174)
+2019-01-27 10:49:29.301 +01:00 [Debug] SEND rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmdj6bdmeexnby1?durable=false&autodelete=true d1000000-5d81-0015-38ef-08d6843cbb31 LogServiceResponseMessages.LogListResponse
+2019-01-27 10:49:29.304 +01:00 [Debug] RECEIVE rabbitmq://localhost/log_getAll_queue d1000000-5d81-0015-3f28-08d6843cbb2f LogServiceRequestMessages.GetAllLogsRequest LogService.Consumers.GetAllLogsRequestConsumer(00:00:00.0153938)
+2019-01-27 11:18:49.926 +01:00 [Debug] Subscribing Consumer: "LogService.Consumers.LogRequestConsumer" (by type, using object consumer factory)
+2019-01-27 11:18:50.041 +01:00 [Debug] Subscribing Consumer: "LogService.Consumers.GetAllLogsRequestConsumer" (by type, using object consumer factory)
+2019-01-27 11:18:50.046 +01:00 [Debug] Subscribing Consumer: "LogService.Consumers.GetLogsByDateAfterConsumer" (by type, using object consumer factory)
+2019-01-27 11:18:50.052 +01:00 [Debug] Subscribing Consumer: "LogService.Consumers.GetLogsByDateBeforeConsumer" (by type, using object consumer factory)
+2019-01-27 11:18:50.057 +01:00 [Debug] Subscribing Consumer: "LogService.Consumers.GetLogsByDateBetweenConsumer" (by type, using object consumer factory)
+2019-01-27 11:18:50.064 +01:00 [Debug] Subscribing Consumer: "LogService.Consumers.GetLogsByLevelRequestConsumer" (by type, using object consumer factory)
+2019-01-27 11:18:50.989 +01:00 [Debug] Starting bus hosts...
+2019-01-27 11:18:51.145 +01:00 [Debug] Connecting: "admin@localhost:5672/"
+2019-01-27 11:18:51.417 +01:00 [Debug] Connected: "admin@localhost:5672/" (address: "amqp://localhost:5672", local: 54315)
+2019-01-27 11:18:51.619 +01:00 [Debug] Declare exchange ("name: log_getByLevel_queue, type: fanout, durable")
+2019-01-27 11:18:51.619 +01:00 [Debug] Declare exchange ("name: log_queue, type: fanout, durable")
+2019-01-27 11:18:51.619 +01:00 [Debug] Declare exchange ("name: log_getByDateBetween_queue, type: fanout, durable")
+2019-01-27 11:18:51.619 +01:00 [Debug] Declare exchange ("name: log_getByDateBefore_queue, type: fanout, durable")
+2019-01-27 11:18:51.619 +01:00 [Debug] Declare exchange ("name: log_getByDateAfter_queue, type: fanout, durable")
+2019-01-27 11:18:51.619 +01:00 [Debug] Declare exchange ("name: log_getAll_queue, type: fanout, durable")
+2019-01-27 11:18:51.619 +01:00 [Debug] Declare exchange ("name: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmuxxbdmeeogwrn, type: fanout, auto-delete")
+2019-01-27 11:18:51.624 +01:00 [Debug] Declare exchange ("name: LogServiceRequestMessages:GetLogsByLevelRequest, type: fanout, durable")
+2019-01-27 11:18:51.625 +01:00 [Debug] Declare exchange ("name: LogServiceRequestMessages:LogRequest, type: fanout, durable")
+2019-01-27 11:18:51.627 +01:00 [Debug] Declare exchange ("name: LogServiceRequestMessages:GetLogsByDateBetween, type: fanout, durable")
+2019-01-27 11:18:51.631 +01:00 [Debug] Declare exchange ("name: LogServiceRequestMessages:GetLogsByDateBefore, type: fanout, durable")
+2019-01-27 11:18:51.632 +01:00 [Debug] Declare exchange ("name: LogServiceRequestMessages:GetLogsByDateAfter, type: fanout, durable")
+2019-01-27 11:18:51.634 +01:00 [Debug] Declare exchange ("name: LogServiceRequestMessages:GetAllLogsRequest, type: fanout, durable")
+2019-01-27 11:18:51.654 +01:00 [Debug] Bind exchange to exchange ("source: LogServiceRequestMessages:LogRequest, destination: log_queue")
+2019-01-27 11:18:51.654 +01:00 [Debug] Bind exchange to exchange ("source: LogServiceRequestMessages:GetLogsByLevelRequest, destination: log_getByLevel_queue")
+2019-01-27 11:18:51.665 +01:00 [Debug] Bind exchange to exchange ("source: LogServiceRequestMessages:GetLogsByDateAfter, destination: log_getByDateAfter_queue")
+2019-01-27 11:18:51.665 +01:00 [Debug] Bind exchange to exchange ("source: LogServiceRequestMessages:GetLogsByDateBefore, destination: log_getByDateBefore_queue")
+2019-01-27 11:18:51.665 +01:00 [Debug] Bind exchange to exchange ("source: LogServiceRequestMessages:GetLogsByDateBetween, destination: log_getByDateBetween_queue")
+2019-01-27 11:18:51.669 +01:00 [Debug] Declare queue ("name: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmuxxbdmeeogwrn, x-expires: 60000")
+2019-01-27 11:18:51.678 +01:00 [Debug] Declare queue ("name: log_getByLevel_queue, durable")
+2019-01-27 11:18:51.681 +01:00 [Debug] Bind exchange to exchange ("source: LogServiceRequestMessages:GetAllLogsRequest, destination: log_getAll_queue")
+2019-01-27 11:18:51.685 +01:00 [Debug] Declare queue ("name: log_queue, durable")
+2019-01-27 11:18:51.693 +01:00 [Debug] Declare queue ("name: log_getByDateBefore_queue, durable")
+2019-01-27 11:18:51.699 +01:00 [Debug] Declare queue ("name: log_getByDateBetween_queue, durable")
+2019-01-27 11:18:51.699 +01:00 [Debug] Bind exchange to queue ("source: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmuxxbdmeeogwrn, destination: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmuxxbdmeeogwrn")
+2019-01-27 11:18:51.700 +01:00 [Debug] Declare queue ("name: log_getByDateAfter_queue, durable")
+2019-01-27 11:18:51.705 +01:00 [Debug] Bind exchange to queue ("source: log_getByLevel_queue, destination: log_getByLevel_queue")
+2019-01-27 11:18:51.722 +01:00 [Debug] Bind exchange to queue ("source: log_queue, destination: log_queue")
+2019-01-27 11:18:51.722 +01:00 [Debug] Bind exchange to queue ("source: log_getByDateBefore_queue, destination: log_getByDateBefore_queue")
+2019-01-27 11:18:51.722 +01:00 [Debug] Bind exchange to queue ("source: log_getByDateBetween_queue, destination: log_getByDateBetween_queue")
+2019-01-27 11:18:51.723 +01:00 [Debug] Declare queue ("name: log_getAll_queue, durable")
+2019-01-27 11:18:51.729 +01:00 [Debug] Bind exchange to queue ("source: log_getByDateAfter_queue, destination: log_getByDateAfter_queue")
+2019-01-27 11:18:51.741 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 11:18:51.741 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 11:18:51.741 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 11:18:51.744 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 11:18:51.749 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 11:18:51.751 +01:00 [Debug] Bind exchange to queue ("source: log_getAll_queue, destination: log_getAll_queue")
+2019-01-27 11:18:51.753 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 11:18:51.785 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 11:18:51.830 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/log_getByDateBefore_queue - "amq.ctag-n2cbv5dvZuKPhMqw-CalvQ"
+2019-01-27 11:18:51.841 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/log_getByDateAfter_queue - "amq.ctag-oLEcucIE9WJXzPBcubUYyQ"
+2019-01-27 11:18:51.847 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/log_getAll_queue - "amq.ctag-lnHlHMks_0lETX7w277sGw"
+2019-01-27 11:18:51.853 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/log_getByLevel_queue - "amq.ctag-HQYP_FQN4s7S-DDlW5RMxQ"
+2019-01-27 11:18:51.861 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmuxxbdmeeogwrn?durable=false&autodelete=true - "amq.ctag-bt7l7NnWdtamZrXEJCaiPw"
+2019-01-27 11:18:51.878 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/log_getByDateBetween_queue - "amq.ctag-OQsYU2t8X7gdXglCf6-x7g"
+2019-01-27 11:18:51.885 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/log_queue - "amq.ctag-chspJqVmKPi_vRFpyAICsQ"
+2019-01-27 11:24:14.497 +01:00 [Information] Information received from GatewayService/UserController at 27/01/2019 11:24:14 
+ Message: Unsuccessful login attempt of c.lauer@test.at with IP ::1 TimeStamp: 27/01/2019 10:24:13 
+2019-01-27 11:24:14.503 +01:00 [Information] LogRequestConsumer consumed a message at 27/01/2019 11:24:14
+2019-01-27 11:24:14.504 +01:00 [Information] MassTransit.Context.ConsumerConsumeContextProxy`2[LogService.Consumers.LogRequestConsumer,LogServiceRequestMessages.LogRequest]
+2019-01-27 11:24:14.513 +01:00 [Debug] RECEIVE rabbitmq://localhost/log_queue d1000000-5d81-0015-1a1f-08d684419582 LogServiceRequestMessages.LogRequest LogService.Consumers.LogRequestConsumer(00:00:00.5368996)
+2019-01-27 11:24:16.422 +01:00 [Information] Information received from GatewayService/UserController at 27/01/2019 11:24:16 
+ Message: Unsuccessful login attempt of c.lauer@test.at with IP ::1 TimeStamp: 27/01/2019 10:24:16 
+2019-01-27 11:24:16.424 +01:00 [Information] LogRequestConsumer consumed a message at 27/01/2019 11:24:16
+2019-01-27 11:24:16.425 +01:00 [Information] MassTransit.Context.ConsumerConsumeContextProxy`2[LogService.Consumers.LogRequestConsumer,LogServiceRequestMessages.LogRequest]
+2019-01-27 11:24:16.427 +01:00 [Debug] RECEIVE rabbitmq://localhost/log_queue d1000000-5d81-0015-d980-08d684419733 LogServiceRequestMessages.LogRequest LogService.Consumers.LogRequestConsumer(00:00:00.0244445)

@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using PatientService.Exceptions;
-using PatientServiceModels;
+using PatientServiceModels.Exceptions;
+using PatientServiceModels.NewApproach;
 
-namespace PatientService.Models
+namespace PatientServiceModels
 {
     public enum Gender { M,F}
 
@@ -44,11 +43,15 @@ namespace PatientService.Models
         [Required]
         public virtual PatientAddress Address { get; set; }
 
-        public virtual ICollection<Document> DocumentIds { get; set; }
+        //public virtual ICollection<Document> DocumentIds { get; set; }
 
-        public virtual ICollection<StudyFolder> StudyFolders { get; set; }
+        //public virtual ICollection<StudyFolder> StudyFolders { get; set; }
 
-        public StudyFolder Parent { get; set; }
+        public virtual ICollection<PatientFolder> PatientFolders { get; set; }
+        public virtual ICollection<PatientTopDocument> PatientDocuments { get; set; } 
+        public TopLevelFolder ParentFolder { get; set; }
+
+        //public StudyFolder Parent { get; set; }
 
 
         public Patient(string title, string socialInsuranceNumber,
@@ -86,7 +89,41 @@ namespace PatientService.Models
 
         public Patient(string title, string socialInsuranceNumber,
             string firstname, string lastname, Gender gender, DateTime birthDate,
-            string street, string zipCode, string town, Country country, bool studyAccepted)
+            string street, string zipCode, string town, Country country, int GDPRId, bool studyAccepted, TopLevelFolder folder)
+        {
+            if (socialInsuranceNumber == null) throw new ArgumentNullException(nameof(socialInsuranceNumber));
+
+            if (!Enum.IsDefined(typeof(Gender), gender))
+                throw new InvalidEnumArgumentException(nameof(gender), (int)gender, typeof(Gender));
+
+
+            Title = title ?? throw new ArgumentNullException(nameof(title));
+
+            Gender = gender;
+
+            FirstName = firstname ?? throw new ArgumentNullException(nameof(firstname));
+
+            LastName = lastname ?? throw new ArgumentNullException(nameof(lastname));
+
+            GDPRAcceptedId = GDPRId;
+
+            StudyAccepted = studyAccepted;
+
+            BirthDate = BirthDateIsValid(birthDate.Date) ? birthDate.Date : throw new InvalidBirthDateException("Future birthdate!");
+
+            ParentFolder = folder;
+
+            SocialInsuranceNumber = SocialInsuranceNumberIsValid(socialInsuranceNumber)
+                ? socialInsuranceNumber
+                : throw new InvalidInsuranceNumberException("SocialSecurityNumber is not Valid!");
+
+            Address = new PatientAddress(street, zipCode, town, country);
+
+        }
+
+        public Patient(string title, string socialInsuranceNumber,
+            string firstname, string lastname, Gender gender, DateTime birthDate,
+            string street, string zipCode, string town, Country country, bool studyAccepted, TopLevelFolder folder)
         {
             if (socialInsuranceNumber == null) throw new ArgumentNullException(nameof(socialInsuranceNumber));
 
@@ -106,6 +143,7 @@ namespace PatientService.Models
 
             BirthDate = BirthDateIsValid(birthDate.Date) ? birthDate.Date : throw new InvalidBirthDateException("Future birthdate!");
 
+            ParentFolder = folder;
 
             SocialInsuranceNumber = SocialInsuranceNumberIsValid(socialInsuranceNumber)
                 ? socialInsuranceNumber

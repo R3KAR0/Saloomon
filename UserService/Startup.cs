@@ -60,11 +60,20 @@ namespace UserService
             services.AddDbContext<ApplicationUserContext>(options =>
                 options.UseSqlServer(Configuration["SqlConnectionString"]));
 
-            services.AddIdentityCore<ApplicationUser>(options => { });
-            services.AddIdentityCore<ApplicationUser>(options => { });  
+            services.AddIdentityCore<ApplicationUser>(options =>
+                {
+                    options.User.RequireUniqueEmail = true;
+                    options.Lockout.AllowedForNewUsers = true;
+                    options.Lockout.MaxFailedAccessAttempts = 5;
+                    options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(10);
+                })
+                .AddEntityFrameworkStores<ApplicationUserContext>();
+            //.AddRoles<>();
+
             services.AddScoped<IUserStore<ApplicationUser>, UserOnlyStore<ApplicationUser, ApplicationUserContext>>();
             services.AddScoped<UserManager<ApplicationUser>>();
 
+            
             //Moved to DefaultModule!
             //services.AddScoped<UserManager<ApplicationUser>>();
 

@@ -1,8 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
-using PatientServiceModels;
 
-namespace PatientService.Models
+namespace PatientServiceModels
 {
     public class PatientAddress
     {

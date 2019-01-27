@@ -40,10 +40,13 @@ namespace GatewayService.Controllers
 
         private readonly IRequestClient<GetAllPatientsRequest, PatientListResponse> _getAllPatientsClient;
         private readonly IRequestClient<UserAuthorizedRequest, UserAuthorizedResponse> _authorizeClient;
+        private readonly IRequestClient<CreatePatientRequest, PatientCreatedResponse> _createPatientClient;
 
-        public PatientsController(IRequestClient<GetAllPatientsRequest, PatientListResponse> getAllPatientsClient, IRequestClient<UserAuthorizedRequest, UserAuthorizedResponse> authorizeClient)
+        public PatientsController(IRequestClient<GetAllPatientsRequest, PatientListResponse> getAllPatientsClient, IRequestClient<UserAuthorizedRequest, UserAuthorizedResponse> authorizeClient,
+            IRequestClient<CreatePatientRequest, PatientCreatedResponse> createPatientClient)
         {
             _getAllPatientsClient = getAllPatientsClient;
+            _createPatientClient = createPatientClient;
             _authorizeClient = authorizeClient;
         }
 
@@ -56,7 +59,24 @@ namespace GatewayService.Controllers
             var currentUser = new CurrentUser(HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value, HttpContext.User.FindFirst(ClaimTypes.Name).Value);
             Serilog.Log.Information($"CreatePatient was requested by {currentUser}");
 
-            throw new NotImplementedException();
+            var res = await _createPatientClient.Request(new
+            {
+                Title = patientRequest.Title,
+                SocialInsuranceNumber = patientRequest.SocialInsuranceNumber,
+                GDPRAcceptedId = patientRequest.GDPRAcceptedId,
+                StudyAccepted = patientRequest.StudyAccepted,
+                Gender = patientRequest.Gender,
+                FirstName = patientRequest.FirstName,
+                LastName = patientRequest.LastName,
+                BirthDate = patientRequest.BirthDate,
+                Street = patientRequest.Street,
+                ZipCode = patientRequest.ZipCode,
+                Town = patientRequest.Town,
+                Country = patientRequest.Country,
+                FolderId = patientRequest.FolderId
+            });
+
+            return res.Success ? Ok() : StatusCode(500);
         }
 
 

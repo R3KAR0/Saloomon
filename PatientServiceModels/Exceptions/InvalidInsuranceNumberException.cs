@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace PatientService.Exceptions
+namespace PatientServiceModels.Exceptions
 {
     public class InvalidInsuranceNumberException : Exception
     {

@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using PatientService.Models;
 using PatientServiceModels;
 
 namespace PatientService.Repositories

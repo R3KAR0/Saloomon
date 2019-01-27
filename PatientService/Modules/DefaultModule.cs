@@ -3,6 +3,7 @@ using Autofac;
 using GreenPipes;
 using MassTransit;
 using PatientService.Consumers;
+using PatientService.Consumers.PatientConsumers;
 using PatientService.Repositories;
 
 namespace PatientService.Modules
@@ -16,6 +17,8 @@ namespace PatientService.Modules
             builder.Register(c => new PatientsRepository(c.Resolve<PatientsServiceContext>())).AsSelf();
 
             builder.RegisterType<GetAllPatientsRequestConsumer>();
+            builder.RegisterType<CreatePatientRequestConsumer>();
+
             builder.Register(c => Bus.Factory.CreateUsingRabbitMq(cfg =>
             {
                 c = c.Resolve<IComponentContext>();
@@ -39,6 +42,11 @@ namespace PatientService.Modules
                 cfg.ReceiveEndpoint(host, Startup.Configuration["GetAllPatientsQueue"], ep =>
                 {
                     ep.Consumer(typeof(GetAllPatientsRequestConsumer), c.Resolve);
+                });
+
+                cfg.ReceiveEndpoint(host, Startup.Configuration["CreatePatientQueue"], ep =>
+                {
+                    ep.Consumer(typeof(CreatePatientRequestConsumer), c.Resolve);
                 });
             }))
             .As<IBusControl>()

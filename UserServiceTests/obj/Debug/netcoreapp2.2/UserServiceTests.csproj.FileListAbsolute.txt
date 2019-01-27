@@ -1,0 +1,14 @@
+F:\Repos\GitLab\saloomon-dotnet\UserServiceTests\bin\Debug\netcoreapp2.2\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+F:\Repos\GitLab\saloomon-dotnet\UserServiceTests\bin\Debug\netcoreapp2.2\xunit.runner.reporters.netcoreapp10.dll
+F:\Repos\GitLab\saloomon-dotnet\UserServiceTests\bin\Debug\netcoreapp2.2\xunit.runner.utility.netcoreapp10.dll
+F:\Repos\GitLab\saloomon-dotnet\UserServiceTests\bin\Debug\netcoreapp2.2\UserServiceTests.deps.json
+F:\Repos\GitLab\saloomon-dotnet\UserServiceTests\bin\Debug\netcoreapp2.2\UserServiceTests.runtimeconfig.json
+F:\Repos\GitLab\saloomon-dotnet\UserServiceTests\bin\Debug\netcoreapp2.2\UserServiceTests.runtimeconfig.dev.json
+F:\Repos\GitLab\saloomon-dotnet\UserServiceTests\bin\Debug\netcoreapp2.2\UserServiceTests.dll
+F:\Repos\GitLab\saloomon-dotnet\UserServiceTests\bin\Debug\netcoreapp2.2\UserServiceTests.pdb
+F:\Repos\GitLab\saloomon-dotnet\UserServiceTests\obj\Debug\netcoreapp2.2\UserServiceTests.csprojAssemblyReference.cache
+F:\Repos\GitLab\saloomon-dotnet\UserServiceTests\obj\Debug\netcoreapp2.2\UserServiceTests.csproj.CoreCompileInputs.cache
+F:\Repos\GitLab\saloomon-dotnet\UserServiceTests\obj\Debug\netcoreapp2.2\UserServiceTests.AssemblyInfoInputs.cache
+F:\Repos\GitLab\saloomon-dotnet\UserServiceTests\obj\Debug\netcoreapp2.2\UserServiceTests.AssemblyInfo.cs
+F:\Repos\GitLab\saloomon-dotnet\UserServiceTests\obj\Debug\netcoreapp2.2\UserServiceTests.dll
+F:\Repos\GitLab\saloomon-dotnet\UserServiceTests\obj\Debug\netcoreapp2.2\UserServiceTests.pdb

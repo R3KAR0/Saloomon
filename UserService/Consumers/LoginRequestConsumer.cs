@@ -30,32 +30,42 @@ namespace UserService.Consumers
             {
 
                 var user = await _manager.FindByEmailAsync(context.Message.Email);
-                if (user != null && await _manager.CheckPasswordAsync(user, context.Message.Password))
+                if (user != null  && !await _manager.IsLockedOutAsync(user))
                 {
-
-                    var tokenHandler = new JwtSecurityTokenHandler();
-                    var key = Encoding.ASCII.GetBytes(Startup.Configuration["Secret"]);
-                    var tokenDescriptor = new SecurityTokenDescriptor
+                    if (await _manager.CheckPasswordAsync(user, context.Message.Password))
                     {
-                        
-                        Subject = new ClaimsIdentity(new Claim[]
+                        var tokenHandler = new JwtSecurityTokenHandler();
+                        var key = Encoding.ASCII.GetBytes(Startup.Configuration["Secret"]);
+                        var tokenDescriptor = new SecurityTokenDescriptor
                         {
-                            new Claim(ClaimTypes.NameIdentifier, user.Id),
-                            new Claim(ClaimTypes.Name, user.UserName),
-                            new Claim(ClaimTypes.Role, user.Type.ToString())
-                        }),
-                        Expires = DateTime.UtcNow.AddDays(7),
-                        SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
-                    };
-                    var token = tokenHandler.CreateToken(tokenDescriptor);
-                    user.Token = tokenHandler.WriteToken(token);
 
-                    await context.RespondAsync<LoginResponse>(new {Token = user.Token});
+                            Subject = new ClaimsIdentity(new Claim[]
+                            {
+                                new Claim(ClaimTypes.NameIdentifier, user.Id),
+                                new Claim(ClaimTypes.Name, user.UserName),
+                                new Claim(ClaimTypes.Role, user.Type.ToString())
+                            }),
+                            Expires = DateTime.UtcNow.AddDays(7),
+                            SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key),
+                                SecurityAlgorithms.HmacSha256Signature)
+                        };
+                        var token = tokenHandler.CreateToken(tokenDescriptor);
+                        user.Token = tokenHandler.WriteToken(token);
 
+                        await context.RespondAsync<LoginResponse>(new {Token = user.Token});
+                    }
+
+                    await _manager.AccessFailedAsync(user);
+                    if (await _manager.IsLockedOutAsync(user))
+                    {
+                        Log.Information($"User had been locked out due to 5 failed login attempts {user.Email}");
+                    }
+                    Log.Information($"Login failed {context.Message.Email}");
+                    await context.RespondAsync<LoginResponse>(new { });
                 }
                 else
                 {
-                    Serilog.Log.Information($"Login failed {context.Message.Email}");
+                    Log.Information($"Login failed used email address: {context.Message.Email}");
                     await context.RespondAsync<LoginResponse>(new { });
                 }
             }

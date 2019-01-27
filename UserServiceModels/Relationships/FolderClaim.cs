@@ -2,6 +2,7 @@
 
 namespace UserServiceModels.Relationships
 {
+    /*
     public enum ModifyClaim { Read, Write, Delete }
 
     public class FolderClaim
@@ -14,4 +15,5 @@ namespace UserServiceModels.Relationships
 
         public ModifyClaim Claim { get; set; }
     }
+    */
 }

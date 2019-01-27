@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v2.2",
+    "signature": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v2.2": {
+      "LogServiceRequestMessages/1.0.0": {
+        "dependencies": {
+          "LogServiceModels": "1.0.0"
+        },
+        "runtime": {
+          "LogServiceRequestMessages.dll": {}
+        }
+      },
+      "LogServiceModels/1.0.0": {
+        "runtime": {
+          "LogServiceModels.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "LogServiceRequestMessages/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "LogServiceModels/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -1,0 +1,9 @@
+F:\Repos\GitLab\saloomon-dotnet\DatenakquirierungsServiceMessages\bin\Debug\netcoreapp2.2\DatenakquirierungsServiceMessages.deps.json
+F:\Repos\GitLab\saloomon-dotnet\DatenakquirierungsServiceMessages\bin\Debug\netcoreapp2.2\DatenakquirierungsServiceMessages.dll
+F:\Repos\GitLab\saloomon-dotnet\DatenakquirierungsServiceMessages\bin\Debug\netcoreapp2.2\DatenakquirierungsServiceMessages.pdb
+F:\Repos\GitLab\saloomon-dotnet\DatenakquirierungsServiceMessages\obj\Debug\netcoreapp2.2\DatenakquirierungsServiceMessages.csproj.CoreCompileInputs.cache
+F:\Repos\GitLab\saloomon-dotnet\DatenakquirierungsServiceMessages\obj\Debug\netcoreapp2.2\DatenakquirierungsServiceMessages.AssemblyInfoInputs.cache
+F:\Repos\GitLab\saloomon-dotnet\DatenakquirierungsServiceMessages\obj\Debug\netcoreapp2.2\DatenakquirierungsServiceMessages.AssemblyInfo.cs
+F:\Repos\GitLab\saloomon-dotnet\DatenakquirierungsServiceMessages\obj\Debug\netcoreapp2.2\DatenakquirierungsServiceMessages.dll
+F:\Repos\GitLab\saloomon-dotnet\DatenakquirierungsServiceMessages\obj\Debug\netcoreapp2.2\DatenakquirierungsServiceMessages.pdb
+F:\Repos\GitLab\saloomon-dotnet\DatenakquirierungsServiceMessages\obj\Debug\netcoreapp2.2\DatenakquirierungsServiceMessages.csprojAssemblyReference.cache

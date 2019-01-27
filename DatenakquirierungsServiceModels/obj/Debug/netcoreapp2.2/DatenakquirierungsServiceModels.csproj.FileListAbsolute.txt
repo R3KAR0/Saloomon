@@ -1,0 +1,9 @@
+F:\Repos\GitLab\saloomon-dotnet\DatenakquirierungsServiceModels\bin\Debug\netcoreapp2.2\DatenakquirierungsServiceModels.deps.json
+F:\Repos\GitLab\saloomon-dotnet\DatenakquirierungsServiceModels\bin\Debug\netcoreapp2.2\DatenakquirierungsServiceModels.dll
+F:\Repos\GitLab\saloomon-dotnet\DatenakquirierungsServiceModels\bin\Debug\netcoreapp2.2\DatenakquirierungsServiceModels.pdb
+F:\Repos\GitLab\saloomon-dotnet\DatenakquirierungsServiceModels\obj\Debug\netcoreapp2.2\DatenakquirierungsServiceModels.csprojAssemblyReference.cache
+F:\Repos\GitLab\saloomon-dotnet\DatenakquirierungsServiceModels\obj\Debug\netcoreapp2.2\DatenakquirierungsServiceModels.csproj.CoreCompileInputs.cache
+F:\Repos\GitLab\saloomon-dotnet\DatenakquirierungsServiceModels\obj\Debug\netcoreapp2.2\DatenakquirierungsServiceModels.AssemblyInfoInputs.cache
+F:\Repos\GitLab\saloomon-dotnet\DatenakquirierungsServiceModels\obj\Debug\netcoreapp2.2\DatenakquirierungsServiceModels.AssemblyInfo.cs
+F:\Repos\GitLab\saloomon-dotnet\DatenakquirierungsServiceModels\obj\Debug\netcoreapp2.2\DatenakquirierungsServiceModels.dll
+F:\Repos\GitLab\saloomon-dotnet\DatenakquirierungsServiceModels\obj\Debug\netcoreapp2.2\DatenakquirierungsServiceModels.pdb

@@ -1,0 +1,9 @@
+F:\Repos\GitLab\saloomon-dotnet\PatientServiceModels\bin\Debug\netcoreapp2.2\PatientServiceModels.deps.json
+F:\Repos\GitLab\saloomon-dotnet\PatientServiceModels\bin\Debug\netcoreapp2.2\PatientServiceModels.dll
+F:\Repos\GitLab\saloomon-dotnet\PatientServiceModels\bin\Debug\netcoreapp2.2\PatientServiceModels.pdb
+F:\Repos\GitLab\saloomon-dotnet\PatientServiceModels\obj\Debug\netcoreapp2.2\PatientServiceModels.csprojAssemblyReference.cache
+F:\Repos\GitLab\saloomon-dotnet\PatientServiceModels\obj\Debug\netcoreapp2.2\PatientServiceModels.csproj.CoreCompileInputs.cache
+F:\Repos\GitLab\saloomon-dotnet\PatientServiceModels\obj\Debug\netcoreapp2.2\PatientServiceModels.AssemblyInfoInputs.cache
+F:\Repos\GitLab\saloomon-dotnet\PatientServiceModels\obj\Debug\netcoreapp2.2\PatientServiceModels.AssemblyInfo.cs
+F:\Repos\GitLab\saloomon-dotnet\PatientServiceModels\obj\Debug\netcoreapp2.2\PatientServiceModels.dll
+F:\Repos\GitLab\saloomon-dotnet\PatientServiceModels\obj\Debug\netcoreapp2.2\PatientServiceModels.pdb

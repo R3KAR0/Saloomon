@@ -1,0 +1,12 @@
+F:\Repos\GitLab\saloomon-dotnet\PatientResponses\bin\Debug\netcoreapp2.2\PatientServiceResponseMessages.deps.json
+F:\Repos\GitLab\saloomon-dotnet\PatientResponses\bin\Debug\netcoreapp2.2\PatientServiceResponseMessages.dll
+F:\Repos\GitLab\saloomon-dotnet\PatientResponses\bin\Debug\netcoreapp2.2\PatientServiceResponseMessages.pdb
+F:\Repos\GitLab\saloomon-dotnet\PatientResponses\bin\Debug\netcoreapp2.2\PatientServiceModels.dll
+F:\Repos\GitLab\saloomon-dotnet\PatientResponses\bin\Debug\netcoreapp2.2\PatientServiceModels.pdb
+F:\Repos\GitLab\saloomon-dotnet\PatientResponses\obj\Debug\netcoreapp2.2\PatientServiceResponseMessages.csprojAssemblyReference.cache
+F:\Repos\GitLab\saloomon-dotnet\PatientResponses\obj\Debug\netcoreapp2.2\PatientServiceResponseMessages.csproj.CoreCompileInputs.cache
+F:\Repos\GitLab\saloomon-dotnet\PatientResponses\obj\Debug\netcoreapp2.2\PatientServiceResponseMessages.AssemblyInfoInputs.cache
+F:\Repos\GitLab\saloomon-dotnet\PatientResponses\obj\Debug\netcoreapp2.2\PatientServiceResponseMessages.AssemblyInfo.cs
+F:\Repos\GitLab\saloomon-dotnet\PatientResponses\obj\Debug\netcoreapp2.2\PatientServiceResponseMessages.csproj.CopyComplete
+F:\Repos\GitLab\saloomon-dotnet\PatientResponses\obj\Debug\netcoreapp2.2\PatientServiceResponseMessages.dll
+F:\Repos\GitLab\saloomon-dotnet\PatientResponses\obj\Debug\netcoreapp2.2\PatientServiceResponseMessages.pdb

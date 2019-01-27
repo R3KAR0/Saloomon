@@ -1,0 +1,70 @@
+2019-01-27 10:25:53.013 +01:00 [Debug] Subscribing Consumer: "PatientService.Consumers.GetAllPatientsRequestConsumer" (by type, using object consumer factory)
+2019-01-27 10:25:54.048 +01:00 [Debug] Starting bus hosts...
+2019-01-27 10:25:54.140 +01:00 [Debug] Connecting: "admin@localhost:5672/"
+2019-01-27 10:25:54.453 +01:00 [Debug] Connected: "admin@localhost:5672/" (address: "amqp://localhost:5672", local: 53861)
+2019-01-27 10:25:54.658 +01:00 [Debug] Declare exchange ("name: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybkezgbdmeeqmq8x, type: fanout, auto-delete")
+2019-01-27 10:25:54.658 +01:00 [Debug] Declare exchange ("name: GetAllPatients_Queue, type: fanout, durable")
+2019-01-27 10:25:54.676 +01:00 [Debug] Declare exchange ("name: PatientServiceRequestMessages:GetAllPatientsRequest, type: fanout, durable")
+2019-01-27 10:25:54.688 +01:00 [Debug] Declare queue ("name: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybkezgbdmeeqmq8x, x-expires: 60000")
+2019-01-27 10:25:54.703 +01:00 [Debug] Bind exchange to exchange ("source: PatientServiceRequestMessages:GetAllPatientsRequest, destination: GetAllPatients_Queue")
+2019-01-27 10:25:54.714 +01:00 [Debug] Declare queue ("name: GetAllPatients_Queue, durable")
+2019-01-27 10:25:54.724 +01:00 [Debug] Bind exchange to queue ("source: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybkezgbdmeeqmq8x, destination: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybkezgbdmeeqmq8x")
+2019-01-27 10:25:54.730 +01:00 [Debug] Bind exchange to queue ("source: GetAllPatients_Queue, destination: GetAllPatients_Queue")
+2019-01-27 10:25:54.750 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 10:25:54.750 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 10:25:54.822 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybkezgbdmeeqmq8x?durable=false&autodelete=true - "amq.ctag-mcg3h_pHR1UsGSqSqVMkFQ"
+2019-01-27 10:25:54.822 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/GetAllPatients_Queue - "amq.ctag-jO0Hg-_xuGIXMG8uYrHSmg"
+2019-01-27 10:43:23.022 +01:00 [Debug] Subscribing Consumer: "PatientService.Consumers.GetAllPatientsRequestConsumer" (by type, using object consumer factory)
+2019-01-27 10:43:23.153 +01:00 [Debug] Subscribing Consumer: "PatientService.Consumers.GetAllPatientsRequestConsumer" (by type, using object consumer factory)
+2019-01-27 10:44:02.204 +01:00 [Debug] Subscribing Consumer: "PatientService.Consumers.GetAllPatientsRequestConsumer" (by type, using object consumer factory)
+2019-01-27 10:44:02.333 +01:00 [Debug] Subscribing Consumer: "PatientService.Consumers.GetAllPatientsRequestConsumer" (by type, using object consumer factory)
+2019-01-27 10:44:59.675 +01:00 [Debug] Subscribing Consumer: "PatientService.Consumers.GetAllPatientsRequestConsumer" (by type, using object consumer factory)
+2019-01-27 10:44:59.791 +01:00 [Debug] Subscribing Consumer: "PatientService.Consumers.CreatePatientRequestConsumer" (by type, using object consumer factory)
+2019-01-27 10:46:04.213 +01:00 [Debug] Subscribing Consumer: "PatientService.Consumers.GetAllPatientsRequestConsumer" (by type, using object consumer factory)
+2019-01-27 10:46:04.342 +01:00 [Debug] Subscribing Consumer: "PatientService.Consumers.CreatePatientRequestConsumer" (by type, using object consumer factory)
+2019-01-27 10:46:05.234 +01:00 [Debug] Starting bus hosts...
+2019-01-27 10:46:05.333 +01:00 [Debug] Connecting: "admin@localhost:5672/"
+2019-01-27 10:46:05.610 +01:00 [Debug] Connected: "admin@localhost:5672/" (address: "amqp://localhost:5672", local: 54000)
+2019-01-27 10:46:05.772 +01:00 [Debug] Declare exchange ("name: patients_create_queue, type: fanout, durable")
+2019-01-27 10:46:05.772 +01:00 [Debug] Declare exchange ("name: patients_getAll_queue, type: fanout, durable")
+2019-01-27 10:46:05.772 +01:00 [Debug] Declare exchange ("name: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmxq9bdmeexnyg7, type: fanout, auto-delete")
+2019-01-27 10:46:05.777 +01:00 [Debug] Declare exchange ("name: PatientServiceRequestMessages:CreatePatientRequest, type: fanout, durable")
+2019-01-27 10:46:05.779 +01:00 [Debug] Declare exchange ("name: PatientServiceRequestMessages:GetAllPatientsRequest, type: fanout, durable")
+2019-01-27 10:46:05.832 +01:00 [Debug] Declare queue ("name: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmxq9bdmeexnyg7, x-expires: 60000")
+2019-01-27 10:46:05.832 +01:00 [Debug] Bind exchange to exchange ("source: PatientServiceRequestMessages:CreatePatientRequest, destination: patients_create_queue")
+2019-01-27 10:46:05.832 +01:00 [Debug] Bind exchange to exchange ("source: PatientServiceRequestMessages:GetAllPatientsRequest, destination: patients_getAll_queue")
+2019-01-27 10:46:05.844 +01:00 [Debug] Declare queue ("name: patients_create_queue, durable")
+2019-01-27 10:46:05.844 +01:00 [Debug] Declare queue ("name: patients_getAll_queue, durable")
+2019-01-27 10:46:05.849 +01:00 [Debug] Bind exchange to queue ("source: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmxq9bdmeexnyg7, destination: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmxq9bdmeexnyg7")
+2019-01-27 10:46:05.854 +01:00 [Debug] Bind exchange to queue ("source: patients_create_queue, destination: patients_create_queue")
+2019-01-27 10:46:05.859 +01:00 [Debug] Bind exchange to queue ("source: patients_getAll_queue, destination: patients_getAll_queue")
+2019-01-27 10:46:05.871 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 10:46:05.899 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 10:46:05.907 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 10:46:05.989 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/patients_getAll_queue - "amq.ctag-saebUA1-WdaLnvaE4M2BXw"
+2019-01-27 10:46:05.989 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmxq9bdmeexnyg7?durable=false&autodelete=true - "amq.ctag-hK6pb8Wh1mKvaBlH4LOjEg"
+2019-01-27 10:46:06.001 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/patients_create_queue - "amq.ctag-ItbnUIxh8aRzoEURsgJBhQ"
+2019-01-27 11:18:49.857 +01:00 [Debug] Subscribing Consumer: "PatientService.Consumers.PatientConsumers.GetAllPatientsRequestConsumer" (by type, using object consumer factory)
+2019-01-27 11:18:49.988 +01:00 [Debug] Subscribing Consumer: "PatientService.Consumers.PatientConsumers.CreatePatientRequestConsumer" (by type, using object consumer factory)
+2019-01-27 11:18:50.927 +01:00 [Debug] Starting bus hosts...
+2019-01-27 11:18:51.047 +01:00 [Debug] Connecting: "admin@localhost:5672/"
+2019-01-27 11:18:51.345 +01:00 [Debug] Connected: "admin@localhost:5672/" (address: "amqp://localhost:5672", local: 54314)
+2019-01-27 11:18:51.578 +01:00 [Debug] Declare exchange ("name: patients_create_queue, type: fanout, durable")
+2019-01-27 11:18:51.578 +01:00 [Debug] Declare exchange ("name: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmaz9bdmeeogwda, type: fanout, auto-delete")
+2019-01-27 11:18:51.578 +01:00 [Debug] Declare exchange ("name: patients_getAll_queue, type: fanout, durable")
+2019-01-27 11:18:51.582 +01:00 [Debug] Declare exchange ("name: PatientServiceRequestMessages:CreatePatientRequest, type: fanout, durable")
+2019-01-27 11:18:51.586 +01:00 [Debug] Declare exchange ("name: PatientServiceRequestMessages:GetAllPatientsRequest, type: fanout, durable")
+2019-01-27 11:18:51.611 +01:00 [Debug] Declare queue ("name: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmaz9bdmeeogwda, x-expires: 60000")
+2019-01-27 11:18:51.612 +01:00 [Debug] Bind exchange to exchange ("source: PatientServiceRequestMessages:CreatePatientRequest, destination: patients_create_queue")
+2019-01-27 11:18:51.612 +01:00 [Debug] Bind exchange to exchange ("source: PatientServiceRequestMessages:GetAllPatientsRequest, destination: patients_getAll_queue")
+2019-01-27 11:18:51.621 +01:00 [Debug] Declare queue ("name: patients_getAll_queue, durable")
+2019-01-27 11:18:51.621 +01:00 [Debug] Declare queue ("name: patients_create_queue, durable")
+2019-01-27 11:18:51.631 +01:00 [Debug] Bind exchange to queue ("source: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmaz9bdmeeogwda, destination: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmaz9bdmeeogwda")
+2019-01-27 11:18:51.631 +01:00 [Debug] Bind exchange to queue ("source: patients_getAll_queue, destination: patients_getAll_queue")
+2019-01-27 11:18:51.631 +01:00 [Debug] Bind exchange to queue ("source: patients_create_queue, destination: patients_create_queue")
+2019-01-27 11:18:51.652 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 11:18:51.652 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 11:18:51.652 +01:00 [Debug] Setting Prefetch Count: 16
+2019-01-27 11:18:51.777 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/patients_getAll_queue - "amq.ctag-cNCWyK0LVTNAMQ8u6xB4dw"
+2019-01-27 11:18:51.777 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/patients_create_queue - "amq.ctag-lJ0egHbGeFQQhzwEAeT12A"
+2019-01-27 11:18:51.777 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmaz9bdmeeogwda?durable=false&autodelete=true - "amq.ctag-fGf_3Nj4GaH8vLMwrSS8vA"

@@ -5,6 +5,8 @@ using GreenPipes;
 using LogServiceRequestMessages;
 using LogServiceResponseMessages;
 using MassTransit;
+using PatientServiceRequestMessages;
+using PatientServiceResponseMessages;
 using Polly;
 using UserServiceRequestMessages;
 using UserServiceResponseMessages;
@@ -157,6 +159,16 @@ namespace GatewayService.Modules
             #endregion
 
 
+            #region PatientRequestClients
+
+            builder.Register(c => new MessageRequestClient<CreatePatientRequest, PatientCreatedResponse>(
+                    c.Resolve<IBusControl>(),
+                    new Uri(Startup.Configuration["RabbitMqUri"] + Startup.Configuration["CreatePatientQueue"]),
+                    timeout
+                ))
+                .As<IRequestClient<CreatePatientRequest, PatientCreatedResponse>>();
+
+            #endregion
 
             #region PollyPolicies
             builder.Register(c =>

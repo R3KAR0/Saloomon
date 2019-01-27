@@ -1,0 +1,12 @@
+F:\Repos\GitLab\saloomon-dotnet\LogServiceRequestMessages\bin\Debug\netcoreapp2.2\LogServiceRequestMessages.deps.json
+F:\Repos\GitLab\saloomon-dotnet\LogServiceRequestMessages\bin\Debug\netcoreapp2.2\LogServiceRequestMessages.dll
+F:\Repos\GitLab\saloomon-dotnet\LogServiceRequestMessages\bin\Debug\netcoreapp2.2\LogServiceRequestMessages.pdb
+F:\Repos\GitLab\saloomon-dotnet\LogServiceRequestMessages\bin\Debug\netcoreapp2.2\LogServiceModels.dll
+F:\Repos\GitLab\saloomon-dotnet\LogServiceRequestMessages\bin\Debug\netcoreapp2.2\LogServiceModels.pdb
+F:\Repos\GitLab\saloomon-dotnet\LogServiceRequestMessages\obj\Debug\netcoreapp2.2\LogServiceRequestMessages.csprojAssemblyReference.cache
+F:\Repos\GitLab\saloomon-dotnet\LogServiceRequestMessages\obj\Debug\netcoreapp2.2\LogServiceRequestMessages.csproj.CoreCompileInputs.cache
+F:\Repos\GitLab\saloomon-dotnet\LogServiceRequestMessages\obj\Debug\netcoreapp2.2\LogServiceRequestMessages.AssemblyInfoInputs.cache
+F:\Repos\GitLab\saloomon-dotnet\LogServiceRequestMessages\obj\Debug\netcoreapp2.2\LogServiceRequestMessages.AssemblyInfo.cs
+F:\Repos\GitLab\saloomon-dotnet\LogServiceRequestMessages\obj\Debug\netcoreapp2.2\LogServiceRequestMessages.csproj.CopyComplete
+F:\Repos\GitLab\saloomon-dotnet\LogServiceRequestMessages\obj\Debug\netcoreapp2.2\LogServiceRequestMessages.dll
+F:\Repos\GitLab\saloomon-dotnet\LogServiceRequestMessages\obj\Debug\netcoreapp2.2\LogServiceRequestMessages.pdb

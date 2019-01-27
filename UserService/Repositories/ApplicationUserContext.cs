@@ -37,8 +37,7 @@ namespace UserService.Repositories
                 .WithMany(g => g.Groups)
                 .HasForeignKey(g => g.GroupId);
 
-
-
+            /*
             modelBuilder.Entity<FolderClaim>()
                 .HasKey(fc => new {fc.FolderId, fc.GroupId});
             modelBuilder.Entity<FolderClaim>()
@@ -47,7 +46,7 @@ namespace UserService.Repositories
                 .OnDelete(DeleteBehavior.Cascade)
                 .HasForeignKey(fc => fc.GroupId);
 
-
+            */
 
             base.OnModelCreating(modelBuilder);
         }

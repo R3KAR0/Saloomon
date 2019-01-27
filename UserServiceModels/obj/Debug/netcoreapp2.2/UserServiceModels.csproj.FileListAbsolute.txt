@@ -1,0 +1,16 @@
+F:\Repos\GitLab\saloomon-dotnet\UserServiceModels\obj\Debug\netcoreapp2.2\UserServiceModels.csprojAssemblyReference.cache
+F:\Repos\GitLab\saloomon-dotnet\UserServiceModels\obj\Debug\netcoreapp2.2\UserServiceModels.csproj.CoreCompileInputs.cache
+F:\Repos\GitLab\saloomon-dotnet\UserServiceModels\obj\Debug\netcoreapp2.2\UserServiceModels.AssemblyInfoInputs.cache
+F:\Repos\GitLab\saloomon-dotnet\UserServiceModels\obj\Debug\netcoreapp2.2\UserServiceModels.AssemblyInfo.cs
+F:\Repos\GitLab\saloomon-dotnet\UserServiceModels\bin\Debug\netcoreapp2.2\UserServiceModels.deps.json
+F:\Repos\GitLab\saloomon-dotnet\UserServiceModels\bin\Debug\netcoreapp2.2\UserServiceModels.dll
+F:\Repos\GitLab\saloomon-dotnet\UserServiceModels\bin\Debug\netcoreapp2.2\UserServiceModels.pdb
+F:\Repos\GitLab\saloomon-dotnet\UserServiceModels\bin\Debug\netcoreapp2.2\Microsoft.Extensions.Identity.Core.dll
+F:\Repos\GitLab\saloomon-dotnet\UserServiceModels\bin\Debug\netcoreapp2.2\Microsoft.Extensions.Identity.Stores.dll
+F:\Repos\GitLab\saloomon-dotnet\UserServiceModels\bin\Debug\netcoreapp2.2\PatientServiceModels.dll
+F:\Repos\GitLab\saloomon-dotnet\UserServiceModels\bin\Debug\netcoreapp2.2\PatientServiceModels.pdb
+F:\Repos\GitLab\saloomon-dotnet\UserServiceModels\bin\Debug\netcoreapp2.2\Microsoft.Extensions.Identity.Core.xml
+F:\Repos\GitLab\saloomon-dotnet\UserServiceModels\bin\Debug\netcoreapp2.2\Microsoft.Extensions.Identity.Stores.xml
+F:\Repos\GitLab\saloomon-dotnet\UserServiceModels\obj\Debug\netcoreapp2.2\UserServiceModels.csproj.CopyComplete
+F:\Repos\GitLab\saloomon-dotnet\UserServiceModels\obj\Debug\netcoreapp2.2\UserServiceModels.dll
+F:\Repos\GitLab\saloomon-dotnet\UserServiceModels\obj\Debug\netcoreapp2.2\UserServiceModels.pdb

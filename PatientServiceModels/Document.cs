@@ -6,6 +6,7 @@ using System.Text;
 
 namespace PatientServiceModels
 {
+    /*
     public class Document : IDocumentParent
     {
         [Key]
@@ -17,5 +18,5 @@ namespace PatientServiceModels
         public List<Document> FollowUps { get; set; }
 
         public IDocumentParent Parent { get; set; }
-    }
+    }*/
 }

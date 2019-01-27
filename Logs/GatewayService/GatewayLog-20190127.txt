@@ -1,0 +1,218 @@
+2019-01-27 07:28:20.768 +01:00 [Debug] Starting bus hosts...
+2019-01-27 07:28:20.913 +01:00 [Debug] Connecting: "admin@localhost:5672/"
+2019-01-27 07:28:21.143 +01:00 [Debug] Connected: "admin@localhost:5672/" (address: "amqp://localhost:5672", local: 51646)
+2019-01-27 07:28:21.346 +01:00 [Debug] Declare exchange ("name: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybkcskbdmeeefbyc, type: fanout, auto-delete")
+2019-01-27 07:28:21.360 +01:00 [Debug] Declare queue ("name: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybkcskbdmeeefbyc, x-expires: 60000")
+2019-01-27 07:28:21.372 +01:00 [Debug] Bind exchange to queue ("source: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybkcskbdmeeefbyc, destination: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybkcskbdmeeefbyc")
+2019-01-27 07:28:21.391 +01:00 [Debug] Setting Prefetch Count: 50
+2019-01-27 07:28:21.496 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybkcskbdmeeefbyc?durable=false&autodelete=true - "amq.ctag-apsJbjjOxSJ2Q037u39eKA"
+2019-01-27 07:33:11.884 +01:00 [Information] RegisterNewUser was requested by UserServiceModels.CurrentUser
+2019-01-27 07:33:12.046 +01:00 [Debug] Creating model: "admin@localhost:5672/"
+2019-01-27 07:33:12.065 +01:00 [Debug] Declare exchange ("name: users_createAdmin_queue, type: fanout, durable")
+2019-01-27 07:33:12.241 +01:00 [Debug] SEND rabbitmq://localhost/users_createAdmin_queue d1000000-5d81-0015-1c53-08d684214f6d UserServiceRequestMessages.CreateAdminRequest
+2019-01-27 07:33:13.945 +01:00 [Debug] RECEIVE rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybkcskbdmeeefbyc?durable=false&autodelete=true d1000000-5d81-0015-a2f2-08d68421505a UserServiceResponseMessages.RegisterResponse MassTransit.MessageHandler<UserServiceResponseMessages.RegisterResponse>(00:00:00.0438529)
+2019-01-27 07:33:23.705 +01:00 [Information] Login was requested by ::1
+2019-01-27 07:33:23.717 +01:00 [Debug] Creating model: "admin@localhost:5672/"
+2019-01-27 07:33:23.734 +01:00 [Debug] Declare exchange ("name: users_login_queue, type: fanout, durable")
+2019-01-27 07:33:23.761 +01:00 [Debug] SEND rabbitmq://localhost/users_login_queue d1000000-5d81-0015-cad2-08d684215660 UserServiceRequestMessages.LoginRequest
+2019-01-27 07:33:23.921 +01:00 [Debug] RECEIVE rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybkcskbdmeeefbyc?durable=false&autodelete=true d1000000-5d81-0015-dc25-08d684215672 UserServiceResponseMessages.LoginResponse MassTransit.MessageHandler<UserServiceResponseMessages.LoginResponse>(00:00:00.0369836)
+2019-01-27 07:33:23.950 +01:00 [Debug] Creating model: "admin@localhost:5672/"
+2019-01-27 07:33:23.954 +01:00 [Debug] Declare exchange ("name: LogServiceRequestMessages:LogRequest, type: fanout, durable")
+2019-01-27 07:33:24.000 +01:00 [Debug] SEND rabbitmq://localhost/LogServiceRequestMessages:LogRequest d1000000-5d81-0015-97e0-08d684215681 LogServiceRequestMessages.LogRequest
+2019-01-27 07:33:28.475 +01:00 [Debug] Creating model: "admin@localhost:5672/"
+2019-01-27 07:33:28.484 +01:00 [Debug] Declare exchange ("name: log_getAll_queue, type: fanout, durable")
+2019-01-27 07:33:28.499 +01:00 [Debug] SEND rabbitmq://localhost/log_getAll_queue d1000000-5d81-0015-2ba9-08d684215934 LogServiceRequestMessages.GetAllLogsRequest
+2019-01-27 07:33:28.959 +01:00 [Debug] RECEIVE rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybkcskbdmeeefbyc?durable=false&autodelete=true d1000000-5d81-0015-8089-08d684215966 LogServiceResponseMessages.LogListResponse MassTransit.MessageHandler<LogServiceResponseMessages.LogListResponse>(00:00:00.0128292)
+2019-01-27 07:33:41.386 +01:00 [Information] Login was requested by ::1
+2019-01-27 07:33:41.412 +01:00 [Debug] SEND rabbitmq://localhost/users_login_queue d1000000-5d81-0015-d525-08d6842160e4 UserServiceRequestMessages.LoginRequest
+2019-01-27 07:33:41.429 +01:00 [Debug] RECEIVE rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybkcskbdmeeefbyc?durable=false&autodelete=true d1000000-5d81-0015-02a8-08d6842160ea UserServiceResponseMessages.LoginResponse MassTransit.MessageHandler<UserServiceResponseMessages.LoginResponse>(00:00:00.0035163)
+2019-01-27 07:33:41.432 +01:00 [Debug] SEND rabbitmq://localhost/LogServiceRequestMessages:LogRequest d1000000-5d81-0015-9c25-08d6842160ea LogServiceRequestMessages.LogRequest
+2019-01-27 07:33:43.424 +01:00 [Debug] SEND rabbitmq://localhost/log_getAll_queue d1000000-5d81-0015-2575-08d68421621a LogServiceRequestMessages.GetAllLogsRequest
+2019-01-27 07:33:43.433 +01:00 [Debug] RECEIVE rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybkcskbdmeeefbyc?durable=false&autodelete=true d1000000-5d81-0015-c995-08d68421621b LogServiceResponseMessages.LogListResponse MassTransit.MessageHandler<LogServiceResponseMessages.LogListResponse>(00:00:00.0024126)
+2019-01-27 07:33:50.579 +01:00 [Information] Login was requested by ::1
+2019-01-27 07:33:50.590 +01:00 [Debug] SEND rabbitmq://localhost/users_login_queue d1000000-5d81-0015-54f5-08d68421665f UserServiceRequestMessages.LoginRequest
+2019-01-27 07:33:50.596 +01:00 [Debug] RECEIVE rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybkcskbdmeeefbyc?durable=false&autodelete=true d1000000-5d81-0015-d908-08d684216660 UserServiceResponseMessages.LoginResponse MassTransit.MessageHandler<UserServiceResponseMessages.LoginResponse>(00:00:00.0028628)
+2019-01-27 07:33:50.598 +01:00 [Debug] SEND rabbitmq://localhost/LogServiceRequestMessages:LogRequest d1000000-5d81-0015-53a8-08d684216661 LogServiceRequestMessages.LogRequest
+2019-01-27 07:34:12.338 +01:00 [Information] RegisterNewUser was requested by UserServiceModels.CurrentUser
+2019-01-27 07:34:12.365 +01:00 [Debug] Creating model: "admin@localhost:5672/"
+2019-01-27 07:34:12.370 +01:00 [Debug] Declare exchange ("name: users_registration_queue, type: fanout, durable")
+2019-01-27 07:34:12.385 +01:00 [Debug] SEND rabbitmq://localhost/users_registration_queue d1000000-5d81-0015-bff5-08d68421735c UserServiceRequestMessages.RegisterRequest
+2019-01-27 07:34:12.430 +01:00 [Debug] RECEIVE rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybkcskbdmeeefbyc?durable=false&autodelete=true d1000000-5d81-0015-773a-08d684217364 UserServiceResponseMessages.RegisterResponse MassTransit.MessageHandler<UserServiceResponseMessages.RegisterResponse>(00:00:00.0020711)
+2019-01-27 07:34:30.335 +01:00 [Debug] RECEIVE rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybkcskbdmeeefbyc?durable=false&autodelete=true d1000000-5d81-0015-e65f-08d684217e10 LogServiceResponseMessages.LogListResponse MassTransit.MessageHandler<LogServiceResponseMessages.LogListResponse>(00:00:00.0002997)
+2019-01-27 07:34:30.338 +01:00 [Debug] SEND rabbitmq://localhost/log_getAll_queue d1000000-5d81-0015-f61f-08d684217e0f LogServiceRequestMessages.GetAllLogsRequest
+2019-01-27 07:34:44.369 +01:00 [Information] Login was requested by ::1
+2019-01-27 07:34:44.376 +01:00 [Debug] SEND rabbitmq://localhost/users_login_queue d1000000-5d81-0015-ef13-08d68421866e UserServiceRequestMessages.LoginRequest
+2019-01-27 07:34:44.390 +01:00 [Debug] RECEIVE rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybkcskbdmeeefbyc?durable=false&autodelete=true d1000000-5d81-0015-33f9-08d684218671 UserServiceResponseMessages.LoginResponse MassTransit.MessageHandler<UserServiceResponseMessages.LoginResponse>(00:00:00.0030169)
+2019-01-27 07:34:44.393 +01:00 [Debug] SEND rabbitmq://localhost/LogServiceRequestMessages:LogRequest d1000000-5d81-0015-c122-08d684218671 LogServiceRequestMessages.LogRequest
+2019-01-27 07:35:01.401 +01:00 [Information] Login was requested by ::1
+2019-01-27 07:35:01.414 +01:00 [Debug] SEND rabbitmq://localhost/users_login_queue d1000000-5d81-0015-4148-08d684219096 UserServiceRequestMessages.LoginRequest
+2019-01-27 07:35:13.115 +01:00 [Information] Login was requested by ::1
+2019-01-27 07:35:13.121 +01:00 [Debug] SEND rabbitmq://localhost/users_login_queue d1000000-5d81-0015-3447-08d684219791 UserServiceRequestMessages.LoginRequest
+2019-01-27 07:35:17.892 +01:00 [Information] Login was requested by ::1
+2019-01-27 07:35:17.899 +01:00 [Debug] SEND rabbitmq://localhost/users_login_queue d1000000-5d81-0015-42ff-08d684219a6a UserServiceRequestMessages.LoginRequest
+2019-01-27 07:35:26.934 +01:00 [Information] Login was requested by ::1
+2019-01-27 07:35:26.941 +01:00 [Debug] SEND rabbitmq://localhost/users_login_queue d1000000-5d81-0015-e1a0-08d684219fcd UserServiceRequestMessages.LoginRequest
+2019-01-27 07:35:30.918 +01:00 [Information] Login was requested by ::1
+2019-01-27 07:35:30.925 +01:00 [Debug] SEND rabbitmq://localhost/users_login_queue d1000000-5d81-0015-d747-08d68421a22d UserServiceRequestMessages.LoginRequest
+2019-01-27 07:35:30.938 +01:00 [Debug] RECEIVE rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybkcskbdmeeefbyc?durable=false&autodelete=true d1000000-5d81-0015-de3c-08d68421a22f UserServiceResponseMessages.LoginResponse MassTransit.MessageHandler<UserServiceResponseMessages.LoginResponse>(00:00:00.0029233)
+2019-01-27 07:35:30.940 +01:00 [Debug] SEND rabbitmq://localhost/LogServiceRequestMessages:LogRequest d1000000-5d81-0015-5b91-08d68421a230 LogServiceRequestMessages.LogRequest
+2019-01-27 07:35:33.878 +01:00 [Information] Login was requested by ::1
+2019-01-27 07:35:33.888 +01:00 [Debug] SEND rabbitmq://localhost/users_login_queue d1000000-5d81-0015-8c8f-08d68421a3f1 UserServiceRequestMessages.LoginRequest
+2019-01-27 07:35:33.894 +01:00 [Debug] RECEIVE rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybkcskbdmeeefbyc?durable=false&autodelete=true d1000000-5d81-0015-fa2c-08d68421a3f2 UserServiceResponseMessages.LoginResponse MassTransit.MessageHandler<UserServiceResponseMessages.LoginResponse>(00:00:00.0025322)
+2019-01-27 07:35:33.896 +01:00 [Debug] SEND rabbitmq://localhost/LogServiceRequestMessages:LogRequest d1000000-5d81-0015-6f85-08d68421a3f3 LogServiceRequestMessages.LogRequest
+2019-01-27 07:35:34.591 +01:00 [Information] Login was requested by ::1
+2019-01-27 07:35:34.602 +01:00 [Debug] RECEIVE rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybkcskbdmeeefbyc?durable=false&autodelete=true d1000000-5d81-0015-5c18-08d68421a45f UserServiceResponseMessages.LoginResponse MassTransit.MessageHandler<UserServiceResponseMessages.LoginResponse>(00:00:00.0003016)
+2019-01-27 07:35:34.604 +01:00 [Debug] SEND rabbitmq://localhost/users_login_queue d1000000-5d81-0015-31cb-08d68421a45e UserServiceRequestMessages.LoginRequest
+2019-01-27 07:35:34.615 +01:00 [Debug] SEND rabbitmq://localhost/LogServiceRequestMessages:LogRequest d1000000-5d81-0015-050b-08d68421a461 LogServiceRequestMessages.LogRequest
+2019-01-27 07:35:35.230 +01:00 [Information] Login was requested by ::1
+2019-01-27 07:35:35.237 +01:00 [Debug] SEND rabbitmq://localhost/users_login_queue d1000000-5d81-0015-b904-08d68421a4bf UserServiceRequestMessages.LoginRequest
+2019-01-27 07:35:35.244 +01:00 [Debug] RECEIVE rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybkcskbdmeeefbyc?durable=false&autodelete=true d1000000-5d81-0015-f83f-08d68421a4c0 UserServiceResponseMessages.LoginResponse MassTransit.MessageHandler<UserServiceResponseMessages.LoginResponse>(00:00:00.0028264)
+2019-01-27 07:35:35.254 +01:00 [Debug] SEND rabbitmq://localhost/LogServiceRequestMessages:LogRequest d1000000-5d81-0015-6c3c-08d68421a4c1 LogServiceRequestMessages.LogRequest
+2019-01-27 07:35:35.798 +01:00 [Information] Login was requested by ::1
+2019-01-27 07:35:35.804 +01:00 [Debug] SEND rabbitmq://localhost/users_login_queue d1000000-5d81-0015-4a8b-08d68421a516 UserServiceRequestMessages.LoginRequest
+2019-01-27 07:35:35.812 +01:00 [Debug] RECEIVE rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybkcskbdmeeefbyc?durable=false&autodelete=true d1000000-5d81-0015-a8e9-08d68421a517 UserServiceResponseMessages.LoginResponse MassTransit.MessageHandler<UserServiceResponseMessages.LoginResponse>(00:00:00.0026337)
+2019-01-27 07:35:35.814 +01:00 [Debug] SEND rabbitmq://localhost/LogServiceRequestMessages:LogRequest d1000000-5d81-0015-2320-08d68421a518 LogServiceRequestMessages.LogRequest
+2019-01-27 07:35:36.470 +01:00 [Information] Login was requested by ::1
+2019-01-27 07:35:36.477 +01:00 [Debug] SEND rabbitmq://localhost/users_login_queue d1000000-5d81-0015-f892-08d68421a57c UserServiceRequestMessages.LoginRequest
+2019-01-27 07:35:36.507 +01:00 [Debug] RECEIVE rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybkcskbdmeeefbyc?durable=false&autodelete=true d1000000-5d81-0015-a1ce-08d68421a581 UserServiceResponseMessages.LoginResponse MassTransit.MessageHandler<UserServiceResponseMessages.LoginResponse>(00:00:00.0028630)
+2019-01-27 07:35:36.509 +01:00 [Debug] SEND rabbitmq://localhost/LogServiceRequestMessages:LogRequest d1000000-5d81-0015-1daf-08d68421a582 LogServiceRequestMessages.LogRequest
+2019-01-27 07:35:50.265 +01:00 [Debug] Stopping hosts...
+2019-01-27 07:35:50.287 +01:00 [Debug] Stopping consumer: rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybkcskbdmeeefbyc?durable=false&autodelete=true
+2019-01-27 07:35:50.302 +01:00 [Debug] Consumer Cancel Ok: rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybkcskbdmeeefbyc?durable=false&autodelete=true - "amq.ctag-apsJbjjOxSJ2Q037u39eKA"
+2019-01-27 07:35:50.307 +01:00 [Debug] Consumer completed "amq.ctag-apsJbjjOxSJ2Q037u39eKA": 15 received, 1 concurrent
+2019-01-27 07:35:50.312 +01:00 [Debug] Closing model: 1 / "admin@localhost:5672/"
+2019-01-27 07:35:50.317 +01:00 [Debug] Stopping transport: "users_createAdmin_queue"
+2019-01-27 07:35:50.333 +01:00 [Debug] Stopping transport: "users_login_queue"
+2019-01-27 07:35:50.336 +01:00 [Debug] Stopping transport: "LogServiceRequestMessages:LogRequest"
+2019-01-27 07:35:50.339 +01:00 [Debug] Stopping transport: "log_getAll_queue"
+2019-01-27 07:35:50.341 +01:00 [Debug] Stopping transport: "users_registration_queue"
+2019-01-27 07:35:50.351 +01:00 [Debug] Closing model: 4 / "admin@localhost:5672/"
+2019-01-27 07:35:50.351 +01:00 [Debug] Closing model: 5 / "admin@localhost:5672/"
+2019-01-27 07:35:50.351 +01:00 [Debug] Closing model: 2 / "admin@localhost:5672/"
+2019-01-27 07:35:50.351 +01:00 [Debug] Closing model: 6 / "admin@localhost:5672/"
+2019-01-27 07:35:50.351 +01:00 [Debug] Closing model: 3 / "admin@localhost:5672/"
+2019-01-27 07:35:50.402 +01:00 [Debug] Disconnecting: "admin@localhost:5672/"
+2019-01-27 07:35:50.410 +01:00 [Debug] Disconnected: "admin@localhost:5672/"
+2019-01-27 07:37:19.994 +01:00 [Debug] Starting bus hosts...
+2019-01-27 07:37:20.166 +01:00 [Debug] Connecting: "admin@localhost:5672/"
+2019-01-27 07:37:20.424 +01:00 [Debug] Connected: "admin@localhost:5672/" (address: "amqp://localhost:5672", local: 51821)
+2019-01-27 07:37:20.608 +01:00 [Debug] Declare exchange ("name: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmwqobdmeeexngy, type: fanout, auto-delete")
+2019-01-27 07:37:20.622 +01:00 [Debug] Declare queue ("name: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmwqobdmeeexngy, x-expires: 60000")
+2019-01-27 07:37:20.637 +01:00 [Debug] Bind exchange to queue ("source: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmwqobdmeeexngy, destination: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmwqobdmeeexngy")
+2019-01-27 07:37:20.655 +01:00 [Debug] Setting Prefetch Count: 50
+2019-01-27 07:37:20.806 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmwqobdmeeexngy?durable=false&autodelete=true - "amq.ctag-Hs9wHlsj5eHaQss3OVEZrw"
+2019-01-27 07:37:26.448 +01:00 [Information] Login was requested by ::1
+2019-01-27 07:37:26.625 +01:00 [Debug] Creating model: "admin@localhost:5672/"
+2019-01-27 07:37:26.647 +01:00 [Debug] Declare exchange ("name: users_login_queue, type: fanout, durable")
+2019-01-27 07:37:26.820 +01:00 [Debug] SEND rabbitmq://localhost/users_login_queue d1000000-5d81-0015-56ea-08d68421e72b UserServiceRequestMessages.LoginRequest
+2019-01-27 07:37:28.555 +01:00 [Debug] RECEIVE rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmwqobdmeeexngy?durable=false&autodelete=true d1000000-5d81-0015-87ad-08d68421e816 UserServiceResponseMessages.LoginResponse MassTransit.MessageHandler<UserServiceResponseMessages.LoginResponse>(00:00:00.0521658)
+2019-01-27 07:37:28.593 +01:00 [Debug] Creating model: "admin@localhost:5672/"
+2019-01-27 07:37:28.600 +01:00 [Debug] Declare exchange ("name: LogServiceRequestMessages:LogRequest, type: fanout, durable")
+2019-01-27 07:37:28.641 +01:00 [Debug] SEND rabbitmq://localhost/LogServiceRequestMessages:LogRequest d1000000-5d81-0015-ada2-08d68421e852 LogServiceRequestMessages.LogRequest
+2019-01-27 07:37:31.813 +01:00 [Information] Login was requested by ::1
+2019-01-27 07:37:31.842 +01:00 [Debug] SEND rabbitmq://localhost/users_login_queue d1000000-5d81-0015-f297-08d68421ea3d UserServiceRequestMessages.LoginRequest
+2019-01-27 07:37:31.907 +01:00 [Debug] RECEIVE rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmwqobdmeeexngy?durable=false&autodelete=true d1000000-5d81-0015-1cb1-08d68421ea49 UserServiceResponseMessages.LoginResponse MassTransit.MessageHandler<UserServiceResponseMessages.LoginResponse>(00:00:00.0034109)
+2019-01-27 07:37:31.912 +01:00 [Debug] SEND rabbitmq://localhost/LogServiceRequestMessages:LogRequest d1000000-5d81-0015-cb26-08d68421ea4a LogServiceRequestMessages.LogRequest
+2019-01-27 07:37:31.919 +01:00 [Debug] SKIP rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmwqobdmeeexngy?durable=false&autodelete=true d1000000-5d81-0015-a582-08d68421ea4b
+2019-01-27 07:37:31.951 +01:00 [Debug] Declare exchange ("name: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmwqobdmeeexngy_skipped, type: fanout, auto-delete")
+2019-01-27 07:37:31.955 +01:00 [Debug] Declare queue ("name: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmwqobdmeeexngy_skipped, auto-delete")
+2019-01-27 07:37:31.968 +01:00 [Debug] Bind exchange to queue ("source: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmwqobdmeeexngy_skipped, destination: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmwqobdmeeexngy_skipped")
+2019-01-27 07:37:34.341 +01:00 [Information] Login was requested by ::1
+2019-01-27 07:37:34.356 +01:00 [Debug] SEND rabbitmq://localhost/users_login_queue d1000000-5d81-0015-b9c2-08d68421ebbe UserServiceRequestMessages.LoginRequest
+2019-01-27 07:37:34.360 +01:00 [Debug] RECEIVE rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmwqobdmeeexngy?durable=false&autodelete=true d1000000-5d81-0015-e829-08d68421ebc0 UserServiceResponseMessages.LoginResponse MassTransit.MessageHandler<UserServiceResponseMessages.LoginResponse>(00:00:00.0002671)
+2019-01-27 07:37:34.365 +01:00 [Debug] SEND rabbitmq://localhost/LogServiceRequestMessages:LogRequest d1000000-5d81-0015-6abb-08d68421ebc1 LogServiceRequestMessages.LogRequest
+2019-01-27 09:40:21.365 +01:00 [Debug] Starting bus hosts...
+2019-01-27 09:40:21.521 +01:00 [Debug] Connecting: "admin@localhost:5672/"
+2019-01-27 09:40:21.776 +01:00 [Debug] Connected: "admin@localhost:5672/" (address: "amqp://localhost:5672", local: 53080)
+2019-01-27 09:40:21.996 +01:00 [Debug] Declare exchange ("name: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmohgbdmeeca1yq, type: fanout, auto-delete")
+2019-01-27 09:40:22.009 +01:00 [Debug] Declare queue ("name: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmohgbdmeeca1yq, x-expires: 60000")
+2019-01-27 09:40:22.020 +01:00 [Debug] Bind exchange to queue ("source: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmohgbdmeeca1yq, destination: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmohgbdmeeca1yq")
+2019-01-27 09:40:22.035 +01:00 [Debug] Setting Prefetch Count: 50
+2019-01-27 09:40:22.141 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmohgbdmeeca1yq?durable=false&autodelete=true - "amq.ctag-A7zft9OeH5r79IkQxMXJ9A"
+2019-01-27 10:25:54.036 +01:00 [Debug] Starting bus hosts...
+2019-01-27 10:25:54.217 +01:00 [Debug] Connecting: "admin@localhost:5672/"
+2019-01-27 10:25:54.535 +01:00 [Debug] Connected: "admin@localhost:5672/" (address: "amqp://localhost:5672", local: 53862)
+2019-01-27 10:25:54.772 +01:00 [Debug] Declare exchange ("name: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybm43mbdmeeqmxyw, type: fanout, auto-delete")
+2019-01-27 10:25:54.793 +01:00 [Debug] Declare queue ("name: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybm43mbdmeeqmxyw, x-expires: 60000")
+2019-01-27 10:25:54.809 +01:00 [Debug] Bind exchange to queue ("source: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybm43mbdmeeqmxyw, destination: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybm43mbdmeeqmxyw")
+2019-01-27 10:25:54.827 +01:00 [Debug] Setting Prefetch Count: 50
+2019-01-27 10:25:54.975 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybm43mbdmeeqmxyw?durable=false&autodelete=true - "amq.ctag-DyCYzzjj0YzqwF4A877Wrg"
+2019-01-27 10:46:05.274 +01:00 [Debug] Starting bus hosts...
+2019-01-27 10:46:05.460 +01:00 [Debug] Connecting: "admin@localhost:5672/"
+2019-01-27 10:46:05.702 +01:00 [Debug] Connected: "admin@localhost:5672/" (address: "amqp://localhost:5672", local: 54002)
+2019-01-27 10:46:05.942 +01:00 [Debug] Declare exchange ("name: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmdj6bdmeexnby1, type: fanout, auto-delete")
+2019-01-27 10:46:05.976 +01:00 [Debug] Declare queue ("name: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmdj6bdmeexnby1, x-expires: 60000")
+2019-01-27 10:46:05.996 +01:00 [Debug] Bind exchange to queue ("source: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmdj6bdmeexnby1, destination: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmdj6bdmeexnby1")
+2019-01-27 10:46:06.024 +01:00 [Debug] Setting Prefetch Count: 50
+2019-01-27 10:46:06.178 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmdj6bdmeexnby1?durable=false&autodelete=true - "amq.ctag-3Zn15J6W7CYMcZ7kekKR5w"
+2019-01-27 10:48:18.203 +01:00 [Information] RegisterNewUser was requested by UserServiceModels.CurrentUser
+2019-01-27 10:48:18.368 +01:00 [Debug] Creating model: "admin@localhost:5672/"
+2019-01-27 10:48:18.390 +01:00 [Debug] Declare exchange ("name: users_createAdmin_queue, type: fanout, durable")
+2019-01-27 10:48:18.564 +01:00 [Debug] SEND rabbitmq://localhost/users_createAdmin_queue d1000000-5d81-0015-a3a9-08d6843c90f0 UserServiceRequestMessages.CreateAdminRequest
+2019-01-27 10:48:21.132 +01:00 [Debug] RECEIVE rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmdj6bdmeexnby1?durable=false&autodelete=true d1000000-5d81-0015-7957-08d6843c9260 UserServiceResponseMessages.RegisterResponse MassTransit.MessageHandler<UserServiceResponseMessages.RegisterResponse>(00:00:00.0454506)
+2019-01-27 10:48:30.037 +01:00 [Information] Login was requested by ::1
+2019-01-27 10:48:30.049 +01:00 [Debug] Creating model: "admin@localhost:5672/"
+2019-01-27 10:48:30.059 +01:00 [Debug] Declare exchange ("name: users_login_queue, type: fanout, durable")
+2019-01-27 10:48:30.072 +01:00 [Debug] SEND rabbitmq://localhost/users_login_queue d1000000-5d81-0015-d831-08d6843c97e2 UserServiceRequestMessages.LoginRequest
+2019-01-27 10:48:30.180 +01:00 [Debug] RECEIVE rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmdj6bdmeexnby1?durable=false&autodelete=true d1000000-5d81-0015-673a-08d6843c97ed UserServiceResponseMessages.LoginResponse MassTransit.MessageHandler<UserServiceResponseMessages.LoginResponse>(00:00:00.0340151)
+2019-01-27 10:48:30.209 +01:00 [Debug] Creating model: "admin@localhost:5672/"
+2019-01-27 10:48:30.214 +01:00 [Debug] Declare exchange ("name: LogServiceRequestMessages:LogRequest, type: fanout, durable")
+2019-01-27 10:48:30.256 +01:00 [Debug] SEND rabbitmq://localhost/LogServiceRequestMessages:LogRequest d1000000-5d81-0015-434b-08d6843c97fa LogServiceRequestMessages.LogRequest
+2019-01-27 10:48:42.187 +01:00 [Information] RegisterNewUser was requested by UserServiceModels.CurrentUser
+2019-01-27 10:48:42.204 +01:00 [Debug] Creating model: "admin@localhost:5672/"
+2019-01-27 10:48:42.208 +01:00 [Debug] Declare exchange ("name: users_registration_queue, type: fanout, durable")
+2019-01-27 10:48:42.222 +01:00 [Debug] SEND rabbitmq://localhost/users_registration_queue d1000000-5d81-0015-a89f-08d6843c9f20 UserServiceRequestMessages.RegisterRequest
+2019-01-27 10:48:42.296 +01:00 [Debug] RECEIVE rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmdj6bdmeexnby1?durable=false&autodelete=true d1000000-5d81-0015-b148-08d6843c9f2c UserServiceResponseMessages.RegisterResponse MassTransit.MessageHandler<UserServiceResponseMessages.RegisterResponse>(00:00:00.0025688)
+2019-01-27 10:48:46.226 +01:00 [Information] Login was requested by ::1
+2019-01-27 10:48:46.244 +01:00 [Debug] SEND rabbitmq://localhost/users_login_queue d1000000-5d81-0015-b473-08d6843ca185 UserServiceRequestMessages.LoginRequest
+2019-01-27 10:48:46.306 +01:00 [Debug] RECEIVE rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmdj6bdmeexnby1?durable=false&autodelete=true d1000000-5d81-0015-9d60-08d6843ca190 UserServiceResponseMessages.LoginResponse MassTransit.MessageHandler<UserServiceResponseMessages.LoginResponse>(00:00:00.0030845)
+2019-01-27 10:48:46.309 +01:00 [Debug] SEND rabbitmq://localhost/LogServiceRequestMessages:LogRequest d1000000-5d81-0015-247d-08d6843ca191 LogServiceRequestMessages.LogRequest
+2019-01-27 10:48:54.683 +01:00 [Information] Login was requested by ::1
+2019-01-27 10:48:54.690 +01:00 [Debug] SEND rabbitmq://localhost/users_login_queue d1000000-5d81-0015-c167-08d6843ca68f UserServiceRequestMessages.LoginRequest
+2019-01-27 10:48:54.740 +01:00 [Debug] RECEIVE rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmdj6bdmeexnby1?durable=false&autodelete=true d1000000-5d81-0015-8000-08d6843ca697 UserServiceResponseMessages.LoginResponse MassTransit.MessageHandler<UserServiceResponseMessages.LoginResponse>(00:00:00.0028306)
+2019-01-27 10:48:54.743 +01:00 [Debug] SEND rabbitmq://localhost/LogServiceRequestMessages:LogRequest d1000000-5d81-0015-0fcc-08d6843ca698 LogServiceRequestMessages.LogRequest
+2019-01-27 10:48:54.761 +01:00 [Debug] SKIP rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmdj6bdmeexnby1?durable=false&autodelete=true d1000000-5d81-0015-c241-08d6843ca69a
+2019-01-27 10:48:54.781 +01:00 [Debug] Declare exchange ("name: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmdj6bdmeexnby1_skipped, type: fanout, auto-delete")
+2019-01-27 10:48:54.785 +01:00 [Debug] Declare queue ("name: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmdj6bdmeexnby1_skipped, auto-delete")
+2019-01-27 10:48:54.789 +01:00 [Debug] Bind exchange to queue ("source: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmdj6bdmeexnby1_skipped, destination: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmdj6bdmeexnby1_skipped")
+2019-01-27 10:49:11.040 +01:00 [Debug] Creating model: "admin@localhost:5672/"
+2019-01-27 10:49:11.044 +01:00 [Debug] Declare exchange ("name: log_getAll_queue, type: fanout, durable")
+2019-01-27 10:49:11.068 +01:00 [Debug] SEND rabbitmq://localhost/log_getAll_queue d1000000-5d81-0015-25f9-08d6843cb051 LogServiceRequestMessages.GetAllLogsRequest
+2019-01-27 10:49:11.550 +01:00 [Debug] RECEIVE rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmdj6bdmeexnby1?durable=false&autodelete=true d1000000-5d81-0015-eb69-08d6843cb086 LogServiceResponseMessages.LogListResponse MassTransit.MessageHandler<LogServiceResponseMessages.LogListResponse>(00:00:00.0093732)
+2019-01-27 10:49:29.290 +01:00 [Debug] SEND rabbitmq://localhost/log_getAll_queue d1000000-5d81-0015-3f28-08d6843cbb2f LogServiceRequestMessages.GetAllLogsRequest
+2019-01-27 10:49:29.304 +01:00 [Debug] RECEIVE rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmdj6bdmeexnby1?durable=false&autodelete=true d1000000-5d81-0015-38ef-08d6843cbb31 LogServiceResponseMessages.LogListResponse MassTransit.MessageHandler<LogServiceResponseMessages.LogListResponse>(00:00:00.0023448)
+2019-01-27 11:18:51.196 +01:00 [Debug] Starting bus hosts...
+2019-01-27 11:18:51.378 +01:00 [Debug] Connecting: "admin@localhost:5672/"
+2019-01-27 11:18:51.711 +01:00 [Debug] Connected: "admin@localhost:5672/" (address: "amqp://localhost:5672", local: 54317)
+2019-01-27 11:18:51.957 +01:00 [Debug] Declare exchange ("name: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmystbdmeeogwfa, type: fanout, auto-delete")
+2019-01-27 11:18:51.986 +01:00 [Debug] Declare queue ("name: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmystbdmeeogwfa, x-expires: 60000")
+2019-01-27 11:18:52.007 +01:00 [Debug] Bind exchange to queue ("source: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmystbdmeeogwfa, destination: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmystbdmeeogwfa")
+2019-01-27 11:18:52.030 +01:00 [Debug] Setting Prefetch Count: 50
+2019-01-27 11:18:52.201 +01:00 [Debug] ConsumerOk: rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmystbdmeeogwfa?durable=false&autodelete=true - "amq.ctag-rF5bfiJ6LpIuDv_0vDQllg"
+2019-01-27 11:23:48.588 +01:00 [Information] RegisterNewUser was requested by UserServiceModels.CurrentUser
+2019-01-27 11:23:48.762 +01:00 [Debug] Creating model: "admin@localhost:5672/"
+2019-01-27 11:23:48.784 +01:00 [Debug] Declare exchange ("name: users_registration_queue, type: fanout, durable")
+2019-01-27 11:23:48.971 +01:00 [Debug] SEND rabbitmq://localhost/users_registration_queue d1000000-5d81-0015-1401-08d6844186c1 UserServiceRequestMessages.RegisterRequest
+2019-01-27 11:23:51.417 +01:00 [Debug] RECEIVE rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmystbdmeeogwfa?durable=false&autodelete=true d1000000-5d81-0015-0f84-08d684418814 UserServiceResponseMessages.RegisterResponse MassTransit.MessageHandler<UserServiceResponseMessages.RegisterResponse>(00:00:00.0795699)
+2019-01-27 11:23:51.452 +01:00 [Debug] SKIP rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmystbdmeeogwfa?durable=false&autodelete=true d1000000-5d81-0015-44bb-08d684418848
+2019-01-27 11:23:51.472 +01:00 [Debug] Declare exchange ("name: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmystbdmeeogwfa_skipped, type: fanout, auto-delete")
+2019-01-27 11:23:51.476 +01:00 [Debug] Declare queue ("name: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmystbdmeeogwfa_skipped, auto-delete")
+2019-01-27 11:23:51.489 +01:00 [Debug] Bind exchange to queue ("source: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmystbdmeeogwfa_skipped, destination: bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmystbdmeeogwfa_skipped")
+2019-01-27 11:24:02.290 +01:00 [Information] RegisterNewUser was requested by UserServiceModels.CurrentUser
+2019-01-27 11:24:02.308 +01:00 [Debug] Creating model: "admin@localhost:5672/"
+2019-01-27 11:24:02.318 +01:00 [Debug] Declare exchange ("name: users_createAdmin_queue, type: fanout, durable")
+2019-01-27 11:24:02.332 +01:00 [Debug] SEND rabbitmq://localhost/users_createAdmin_queue d1000000-5d81-0015-93af-08d684418ecf UserServiceRequestMessages.CreateAdminRequest
+2019-01-27 11:24:02.368 +01:00 [Debug] RECEIVE rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmystbdmeeogwfa?durable=false&autodelete=true d1000000-5d81-0015-f6b7-08d684418ed5 UserServiceResponseMessages.RegisterResponse MassTransit.MessageHandler<UserServiceResponseMessages.RegisterResponse>(00:00:00.0029454)
+2019-01-27 11:24:02.485 +01:00 [Debug] SKIP rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmystbdmeeogwfa?durable=false&autodelete=true d1000000-5d81-0015-1dce-08d684418ee5
+2019-01-27 11:24:13.184 +01:00 [Information] Login was requested by ::1
+2019-01-27 11:24:13.196 +01:00 [Debug] Creating model: "admin@localhost:5672/"
+2019-01-27 11:24:13.200 +01:00 [Debug] Declare exchange ("name: users_login_queue, type: fanout, durable")
+2019-01-27 11:24:13.215 +01:00 [Debug] SEND rabbitmq://localhost/users_login_queue d1000000-5d81-0015-1bd8-08d68441954c UserServiceRequestMessages.LoginRequest
+2019-01-27 11:24:13.517 +01:00 [Debug] RECEIVE rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmystbdmeeogwfa?durable=false&autodelete=true d1000000-5d81-0015-00ce-08d684419574 UserServiceResponseMessages.LoginResponse MassTransit.MessageHandler<UserServiceResponseMessages.LoginResponse>(00:00:00.0376935)
+2019-01-27 11:24:13.549 +01:00 [Debug] Creating model: "admin@localhost:5672/"
+2019-01-27 11:24:13.554 +01:00 [Debug] Declare exchange ("name: LogServiceRequestMessages:LogRequest, type: fanout, durable")
+2019-01-27 11:24:13.599 +01:00 [Debug] SEND rabbitmq://localhost/LogServiceRequestMessages:LogRequest d1000000-5d81-0015-1a1f-08d684419582 LogServiceRequestMessages.LogRequest
+2019-01-27 11:24:16.357 +01:00 [Information] Login was requested by ::1
+2019-01-27 11:24:16.373 +01:00 [Debug] SEND rabbitmq://localhost/users_login_queue d1000000-5d81-0015-d197-08d68441972d UserServiceRequestMessages.LoginRequest
+2019-01-27 11:24:16.401 +01:00 [Debug] RECEIVE rabbitmq://localhost/bus-DESKTOP-0NBVUVP-dotnet-4ryyyyn7orybmystbdmeeogwfa?durable=false&autodelete=true d1000000-5d81-0015-52b5-08d684419733 UserServiceResponseMessages.LoginResponse MassTransit.MessageHandler<UserServiceResponseMessages.LoginResponse>(00:00:00.0032285)
+2019-01-27 11:24:16.403 +01:00 [Debug] SEND rabbitmq://localhost/LogServiceRequestMessages:LogRequest d1000000-5d81-0015-d980-08d684419733 LogServiceRequestMessages.LogRequest

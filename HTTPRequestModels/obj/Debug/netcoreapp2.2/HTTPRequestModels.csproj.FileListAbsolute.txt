@@ -1,0 +1,12 @@
+F:\Repos\GitLab\saloomon-dotnet\HTTPRequestModels\bin\Debug\netcoreapp2.2\HTTPRequestModels.deps.json
+F:\Repos\GitLab\saloomon-dotnet\HTTPRequestModels\bin\Debug\netcoreapp2.2\HTTPRequestModels.dll
+F:\Repos\GitLab\saloomon-dotnet\HTTPRequestModels\bin\Debug\netcoreapp2.2\HTTPRequestModels.pdb
+F:\Repos\GitLab\saloomon-dotnet\HTTPRequestModels\bin\Debug\netcoreapp2.2\PatientServiceModels.dll
+F:\Repos\GitLab\saloomon-dotnet\HTTPRequestModels\bin\Debug\netcoreapp2.2\PatientServiceModels.pdb
+F:\Repos\GitLab\saloomon-dotnet\HTTPRequestModels\obj\Debug\netcoreapp2.2\HTTPRequestModels.csprojAssemblyReference.cache
+F:\Repos\GitLab\saloomon-dotnet\HTTPRequestModels\obj\Debug\netcoreapp2.2\HTTPRequestModels.csproj.CoreCompileInputs.cache
+F:\Repos\GitLab\saloomon-dotnet\HTTPRequestModels\obj\Debug\netcoreapp2.2\HTTPRequestModels.AssemblyInfoInputs.cache
+F:\Repos\GitLab\saloomon-dotnet\HTTPRequestModels\obj\Debug\netcoreapp2.2\HTTPRequestModels.AssemblyInfo.cs
+F:\Repos\GitLab\saloomon-dotnet\HTTPRequestModels\obj\Debug\netcoreapp2.2\HTTPRequestModels.csproj.CopyComplete
+F:\Repos\GitLab\saloomon-dotnet\HTTPRequestModels\obj\Debug\netcoreapp2.2\HTTPRequestModels.dll
+F:\Repos\GitLab\saloomon-dotnet\HTTPRequestModels\obj\Debug\netcoreapp2.2\HTTPRequestModels.pdb

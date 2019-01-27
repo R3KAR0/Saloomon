@@ -1,0 +1,14 @@
+F:\Repos\GitLab\saloomon-dotnet\GatewayServiceTests\bin\Debug\netcoreapp2.2\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+F:\Repos\GitLab\saloomon-dotnet\GatewayServiceTests\bin\Debug\netcoreapp2.2\xunit.runner.reporters.netcoreapp10.dll
+F:\Repos\GitLab\saloomon-dotnet\GatewayServiceTests\bin\Debug\netcoreapp2.2\xunit.runner.utility.netcoreapp10.dll
+F:\Repos\GitLab\saloomon-dotnet\GatewayServiceTests\bin\Debug\netcoreapp2.2\GatewayServiceTests.deps.json
+F:\Repos\GitLab\saloomon-dotnet\GatewayServiceTests\bin\Debug\netcoreapp2.2\GatewayServiceTests.runtimeconfig.json
+F:\Repos\GitLab\saloomon-dotnet\GatewayServiceTests\bin\Debug\netcoreapp2.2\GatewayServiceTests.runtimeconfig.dev.json
+F:\Repos\GitLab\saloomon-dotnet\GatewayServiceTests\bin\Debug\netcoreapp2.2\GatewayServiceTests.dll
+F:\Repos\GitLab\saloomon-dotnet\GatewayServiceTests\bin\Debug\netcoreapp2.2\GatewayServiceTests.pdb
+F:\Repos\GitLab\saloomon-dotnet\GatewayServiceTests\obj\Debug\netcoreapp2.2\GatewayServiceTests.csprojAssemblyReference.cache
+F:\Repos\GitLab\saloomon-dotnet\GatewayServiceTests\obj\Debug\netcoreapp2.2\GatewayServiceTests.csproj.CoreCompileInputs.cache
+F:\Repos\GitLab\saloomon-dotnet\GatewayServiceTests\obj\Debug\netcoreapp2.2\GatewayServiceTests.AssemblyInfoInputs.cache
+F:\Repos\GitLab\saloomon-dotnet\GatewayServiceTests\obj\Debug\netcoreapp2.2\GatewayServiceTests.AssemblyInfo.cs
+F:\Repos\GitLab\saloomon-dotnet\GatewayServiceTests\obj\Debug\netcoreapp2.2\GatewayServiceTests.dll
+F:\Repos\GitLab\saloomon-dotnet\GatewayServiceTests\obj\Debug\netcoreapp2.2\GatewayServiceTests.pdb

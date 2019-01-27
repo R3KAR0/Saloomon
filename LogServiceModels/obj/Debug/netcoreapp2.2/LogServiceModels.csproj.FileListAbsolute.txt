@@ -1,0 +1,9 @@
+F:\Repos\GitLab\saloomon-dotnet\LogServiceModels\bin\Debug\netcoreapp2.2\LogServiceModels.deps.json
+F:\Repos\GitLab\saloomon-dotnet\LogServiceModels\bin\Debug\netcoreapp2.2\LogServiceModels.dll
+F:\Repos\GitLab\saloomon-dotnet\LogServiceModels\bin\Debug\netcoreapp2.2\LogServiceModels.pdb
+F:\Repos\GitLab\saloomon-dotnet\LogServiceModels\obj\Debug\netcoreapp2.2\LogServiceModels.csprojAssemblyReference.cache
+F:\Repos\GitLab\saloomon-dotnet\LogServiceModels\obj\Debug\netcoreapp2.2\LogServiceModels.csproj.CoreCompileInputs.cache
+F:\Repos\GitLab\saloomon-dotnet\LogServiceModels\obj\Debug\netcoreapp2.2\LogServiceModels.AssemblyInfoInputs.cache
+F:\Repos\GitLab\saloomon-dotnet\LogServiceModels\obj\Debug\netcoreapp2.2\LogServiceModels.AssemblyInfo.cs
+F:\Repos\GitLab\saloomon-dotnet\LogServiceModels\obj\Debug\netcoreapp2.2\LogServiceModels.dll
+F:\Repos\GitLab\saloomon-dotnet\LogServiceModels\obj\Debug\netcoreapp2.2\LogServiceModels.pdb

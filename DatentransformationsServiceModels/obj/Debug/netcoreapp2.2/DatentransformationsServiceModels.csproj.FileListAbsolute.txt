@@ -1,0 +1,9 @@
+F:\Repos\GitLab\saloomon-dotnet\DatentransformationsServiceModels\bin\Debug\netcoreapp2.2\DatentransformationsServiceModels.deps.json
+F:\Repos\GitLab\saloomon-dotnet\DatentransformationsServiceModels\bin\Debug\netcoreapp2.2\DatentransformationsServiceModels.dll
+F:\Repos\GitLab\saloomon-dotnet\DatentransformationsServiceModels\bin\Debug\netcoreapp2.2\DatentransformationsServiceModels.pdb
+F:\Repos\GitLab\saloomon-dotnet\DatentransformationsServiceModels\obj\Debug\netcoreapp2.2\DatentransformationsServiceModels.csprojAssemblyReference.cache
+F:\Repos\GitLab\saloomon-dotnet\DatentransformationsServiceModels\obj\Debug\netcoreapp2.2\DatentransformationsServiceModels.csproj.CoreCompileInputs.cache
+F:\Repos\GitLab\saloomon-dotnet\DatentransformationsServiceModels\obj\Debug\netcoreapp2.2\DatentransformationsServiceModels.AssemblyInfoInputs.cache
+F:\Repos\GitLab\saloomon-dotnet\DatentransformationsServiceModels\obj\Debug\netcoreapp2.2\DatentransformationsServiceModels.AssemblyInfo.cs
+F:\Repos\GitLab\saloomon-dotnet\DatentransformationsServiceModels\obj\Debug\netcoreapp2.2\DatentransformationsServiceModels.dll
+F:\Repos\GitLab\saloomon-dotnet\DatentransformationsServiceModels\obj\Debug\netcoreapp2.2\DatentransformationsServiceModels.pdb

@@ -9,7 +9,7 @@ namespace UserServiceModels
         [Key]
         public int Id { get; set; }
 
-        public virtual ICollection<FolderClaim> Claims { get; set; }
+        //public virtual ICollection<FolderClaim> Claims { get; set; }
 
         public /*virtual*/  ICollection<UserGroups> Groups { get; set; }
 
